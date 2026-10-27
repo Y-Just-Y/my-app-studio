@@ -25,14 +25,14 @@ Accuracy approval is not proof of understanding. Label simulated trials explicit
 - Keep decision: Learner: “lets keep it, signup and login worked and after logging out i couldnt get back to the dashboard without logging in again”.
 - Review: Learner confirmed the APP-002 summary is accurate and authorized public inclusion, commit and push on October 27, 2026. Approval confirms record accuracy, not understanding.
 - Help/gaps: Learner approved signup, login, private dashboard and logout, with new users as regular members. AI connected the prepared security helpers and built the forms/API. Full checks passed: 98 foundation tests, 14 cumulative contracts and 2 Chromium journeys. AI reviewed desktop login and mobile signup rendering. AI explained password hashing, signed expiring cookies and server-side logout revocation. Learner chose keep based on the successful signup/login and post-logout dashboard restriction. Accuracy review approved; public inclusion, commit and push authorized.
-- Evidence links / next step: [Issue #3](https://github.com/Y-Just-Y/my-app-studio/issues/3); APP-002 evidence reviewed and approved for publication; PR and CI verification next.
+- Evidence links / next step: [Issue #3](https://github.com/Y-Just-Y/my-app-studio/issues/3); APP-002 evidence reviewed and published; PR #4 merged, issue #3 closed, final evidence status passed.
 
 ## APP-003
 
-- Prediction: Pending.
-- Check interpretation: Pending.
-- Browser observation: Pending.
-- Keep decision: Pending.
-- Review: Pending.
-- Help/gaps: Pending.
-- Evidence links / next step: Keep APP-002 before agreeing this lesson.
+- Prediction: Learner: “it should deny access and return 403 forbidden, because being logged in as a regular member doesnt give them admin permission”.
+- Check interpretation: Learner: “it would catch a bug where the app keeps using the old admin role from the session, so someone could still access the admin api after being changed back to a regular member”. This referred to the passing same-session member/admin/member API test.
+- Browser observation: Learner as a regular member: “it says admin access required and that my account doesnt have permission to open the page, but i can still go back to my dashboard”. After local promotion, learner: “now it says administration and welcomes derrick, i can see the admin page without logging in again”. After downgrade, learner: “it says admin access required again, i cant see the admin page anymore even though im still logged in, but i can still use my dashboard”.
+- Keep decision: Learner: “lets keep it, regular members can use the dashboard but cant access the admin page, and changing the role takes effect without having to log out and back in”.
+- Review: Learner confirmed the APP-003 summary is accurate and authorized public inclusion, commit and push on October 27, 2026. This confirms record accuracy, not understanding.
+- Help/gaps: Learner approved dashboard access for members and admin-only page/API access. AI implemented both routes with the prepared current-database-role guard. AI tests verify direct requests and promotion/downgrade on an existing session. All 118 cumulative tests passed. AI visually reviewed admin desktop/mobile and member denial pages with a disposable isolated database, leaving the learner account unchanged. Member browser observation recorded; promotion and downgrade observations recorded; learner chose keep based on the access restrictions and same-session role updates. Accuracy review approved; publication, commit and push authorized.
+- Evidence links / next step: [Issue #5](https://github.com/Y-Just-Y/my-app-studio/issues/5); APP-003 evidence reviewed and approved for publication; PR and CI verification next.
