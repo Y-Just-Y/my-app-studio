@@ -1,16 +1,20 @@
 {
-  "name": "Your Project",
-  "audience": "Not chosen yet",
-  "archetype": "Not chosen yet",
-  "promise": "Not chosen yet",
-  "headline": "A small idea. A real application.",
-  "summary": "This working page is your starting point. Give it a purpose and a brand, then build accounts and permissions one feature at a time.",
-  "voice": ["Not chosen yet"],
-  "design_direction": "Not chosen yet",
+  "name": "Newark Civic Pulse",
+  "audience": "Newark residents understanding local decisions, with city comparisons for context",
+  "archetype": "Sage",
+  "promise": "Understand your city. Compare the context. Know what\u2019s next.",
+  "headline": "Local decisions. Clearer context.",
+  "summary": "The decisions, deadlines, and public dollars shaping Newark\u2014organized for the people who live here.",
+  "voice": [
+    "Clear",
+    "Factual",
+    "Transparent"
+  ],
+  "design_direction": "Civic newsroom: strong original architectural N mark, charcoal and warm ivory with orange accents. Local decisions, deadlines and funding lead; city context and a smaller symbolic clock follow.",
   "palette": {
-    "ink": "#182C34",
-    "paper": "#F6F5EF",
-    "accent": "#285A50",
+    "ink": "#242622",
+    "paper": "#FAF6ED",
+    "accent": "#A63E18",
     "surface": "#FFFFFF"
   }
 }
