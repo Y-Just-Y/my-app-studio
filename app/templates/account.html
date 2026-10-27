@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}{{ 'Create account' if signup else 'Log in' }} · Newark Civic Pulse{% endblock %}
+{% block content %}
+<section class="account-layout">
+  <div class="account-intro"><p class="eyebrow">Your civic starting point</p><h1>{{ 'Join the local picture.' if signup else 'Welcome back.' }}</h1><p>A member space for Newark Civic Pulse. Civic data remains a preview while we build.</p><a class="text-link" href="/">Back to the civic briefing →</a></div>
+  <div class="panel account-panel"><p class="eyebrow">Member access</p><h2>{{ 'Create account' if signup else 'Log in' }}</h2>
+  {% if request.query_params.get('created') %}<p class="notice">Account created. Log in to open your member space.</p>{% endif %}
+  {% if error %}<p class="error" role="alert">{{ error }}</p>{% endif %}
+  <form class="form-stack" method="post" action="{{ '/signup' if signup else '/login' }}">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+    <label for="username">Username</label><input id="username" name="username" value="{{ username or '' }}" autocomplete="username" required minlength="{{ 3 if signup else 1 }}" maxlength="32" aria-describedby="username-help">
+    <p id="username-help" class="field-help">{{ '3–32 letters, numbers, or underscores.' if signup else 'Use the username you created.' }}</p>
+    <label for="password">Password</label><input id="password" name="password" type="password" autocomplete="{{ 'new-password' if signup else 'current-password' }}" required minlength="{{ 15 if signup else 1 }}" maxlength="128" aria-describedby="password-help">
+    <p id="password-help" class="field-help">{{ 'Use a disposable local passphrase, 15–128 characters.' if signup else 'Use your disposable local account password.' }}</p>
+    <button class="button" type="submit">{{ 'Create account' if signup else 'Log in' }}</button>
+  </form>
+  <p class="account-switch">{% if signup %}Already a member? <a href="/login">Log in</a>{% else %}New here? <a href="/signup">Create an account</a>{% endif %}</p>
+  {% if signup %}<p class="field-help">Every new account starts as a regular member.</p>{% endif %}
+  </div>
+</section>
+{% endblock %}

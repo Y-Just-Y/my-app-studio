@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block title %}Your member space · Newark Civic Pulse{% endblock %}
+{% block content %}
+<section class="member-heading"><p class="eyebrow">Newark Civic Pulse / Members</p><h1>Your member space</h1><p>Welcome, <strong>{{ user.username }}</strong>. You’re signed in.</p></section>
+<section class="member-grid"><div class="panel"><p class="eyebrow">Your account</p><h2>A place to begin.</h2><dl><dt>Username</dt><dd>{{ user.username }}</dd><dt>Role</dt><dd>{{ user.role }}</dd></dl><form method="post" action="/logout"><input type="hidden" name="csrf_token" value="{{ csrf_token }}"><button class="button" type="submit">Log out</button></form></div><div class="panel"><p class="eyebrow">The local picture</p><h2>Stay curious about your city.</h2><p>The civic briefing is still a design preview. Live figures, saved topics, and alerts are not available yet.</p><a class="text-link" href="/#idea">Explore the civic briefing →</a></div></section>
+{% endblock %}
