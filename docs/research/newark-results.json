@@ -1,0 +1,1802 @@
+{
+  "schema_version": 1,
+  "phase": "completed",
+  "plan_frozen_at_utc": "2026-11-10T18:56:10.327557+00:00",
+  "date_context": "2026-11-10 America/New_York",
+  "scope": "Local real-source/real-model evaluation; not hosted or human peer evidence",
+  "source_fingerprint": "22cb9f59a32b608c8c1b95a5c48808e50c1f4b7a44c9488cfc5e500dfdadb9a6",
+  "models": {
+    "chat_model": "gpt-5-mini",
+    "embedding_model": "text-embedding-3-small",
+    "dimensions": 1536,
+    "resolved_provider_snapshot": "Not exposed by the current gateway receipt."
+  },
+  "corpus": [
+    {
+      "chunk_id": "newark-agenda-517475-v1-001",
+      "source_id": "newark-agenda-517475",
+      "content_hash": "d5a6621ecc71c73c9d7ef5775f24c7002996a4eb841997cf72eaf5640b28b081",
+      "source_hash": "a7a8e3ce81720ebd3902851847a5856575fe6a8ed4da7831b22e9079c08750bc",
+      "version": 1,
+      "url": "https://newark.legistar.com/MeetingDetail.aspx?LEGID=302232&GID=7&G=76B7E664-B393-4911-9914-3B4B31917701",
+      "fetched_at": "2026-11-10T18:43:01.128530+00:00"
+    },
+    {
+      "chunk_id": "newark-agenda-517479-v1-001",
+      "source_id": "newark-agenda-517479",
+      "content_hash": "4c5881923cef039c7f8b1f4d21c0384256b94c7ae7879b4eec5335c620b4ce80",
+      "source_hash": "18ad0022b84f8f5234c95ac79d0a2f92c13d0318ff3a7b2d3692d2f6b1a55a7f",
+      "version": 1,
+      "url": "https://newark.legistar.com/MeetingDetail.aspx?LEGID=302232&GID=7&G=76B7E664-B393-4911-9914-3B4B31917701",
+      "fetched_at": "2026-11-10T18:43:01.128530+00:00"
+    },
+    {
+      "chunk_id": "newark-agenda-517479-v1-002",
+      "source_id": "newark-agenda-517479",
+      "content_hash": "c55a95571fb9b5196b4bda45fe4dfb869772c849f4e2dcbff3a17f1d7394beb6",
+      "source_hash": "18ad0022b84f8f5234c95ac79d0a2f92c13d0318ff3a7b2d3692d2f6b1a55a7f",
+      "version": 1,
+      "url": "https://newark.legistar.com/MeetingDetail.aspx?LEGID=302232&GID=7&G=76B7E664-B393-4911-9914-3B4B31917701",
+      "fetched_at": "2026-11-10T18:43:01.128530+00:00"
+    },
+    {
+      "chunk_id": "newark-meeting-302227-v1-001",
+      "source_id": "newark-meeting-302227",
+      "content_hash": "b625aa7236e8b01efc10004530c3fd505cd89c428c24ba38de9b2206aab4be00",
+      "source_hash": "8d45b3ac9fae69e9affd137848767bc8e13b36c1cfa38af726f4767741b5144c",
+      "version": 1,
+      "url": "https://newark.legistar.com/MeetingDetail.aspx?LEGID=302227&GID=7&G=76B7E664-B393-4911-9914-3B4B31917701",
+      "fetched_at": "2026-11-10T18:43:01.128530+00:00"
+    },
+    {
+      "chunk_id": "newark-meeting-302228-v1-001",
+      "source_id": "newark-meeting-302228",
+      "content_hash": "240f506fc3da9788db60b301d17314d3b88c6d88a61c714bf200b70b07868ee0",
+      "source_hash": "eb0be5f1c414c9720adb3b9b9e6833ab0cefaf118d1242504422c2c6db848c9c",
+      "version": 1,
+      "url": "https://newark.legistar.com/MeetingDetail.aspx?LEGID=302228&GID=7&G=76B7E664-B393-4911-9914-3B4B31917701",
+      "fetched_at": "2026-11-10T18:43:01.128530+00:00"
+    },
+    {
+      "chunk_id": "newark-meeting-302230-v1-001",
+      "source_id": "newark-meeting-302230",
+      "content_hash": "0da6bf9113ca6a2064339a66df35bab45674d18f63c8f39c9e6ced7e6825d674",
+      "source_hash": "799b45fa0fec0fde8eb6285438ad7801c655a273a2a4e9e52f4a841ac60d04ac",
+      "version": 1,
+      "url": "https://newark.legistar.com/MeetingDetail.aspx?LEGID=302230&GID=7&G=76B7E664-B393-4911-9914-3B4B31917701",
+      "fetched_at": "2026-11-10T18:43:01.128530+00:00"
+    },
+    {
+      "chunk_id": "newark-meeting-302231-v1-001",
+      "source_id": "newark-meeting-302231",
+      "content_hash": "5ba5312fc88da626408f243ec5cf1a6b1452632f0c92c6f8af83b1266534df79",
+      "source_hash": "4269b2b7f631c5fcc5fbad9558ecbf29096e527294443b13a3cb7ebd493eebef",
+      "version": 1,
+      "url": "https://newark.legistar.com/MeetingDetail.aspx?LEGID=302231&GID=7&G=76B7E664-B393-4911-9914-3B4B31917701",
+      "fetched_at": "2026-11-10T18:43:01.128530+00:00"
+    },
+    {
+      "chunk_id": "newark-meeting-302232-v1-001",
+      "source_id": "newark-meeting-302232",
+      "content_hash": "27b51d7b7f8648004072954539c01fcea14f358341e91a3c1825b7c11ebe538b",
+      "source_hash": "7c5ffe2e51e0b60ba233cabc4298d675383632b24abbca50a571d47cc695489d",
+      "version": 1,
+      "url": "https://newark.legistar.com/MeetingDetail.aspx?LEGID=302232&GID=7&G=76B7E664-B393-4911-9914-3B4B31917701",
+      "fetched_at": "2026-11-10T18:43:01.128530+00:00"
+    }
+  ],
+  "question_plan": [
+    {
+      "id": "Q1",
+      "kind": "exact-term",
+      "question": "What scheduled time and location are listed for the Newark Municipal Council meeting on November 5, 2026?",
+      "expected_source_ids": [
+        "newark-meeting-302232"
+      ],
+      "expected_facts": [
+        "12:30 PM",
+        "America/New_York",
+        "Council Chamber"
+      ],
+      "criterion": "Report the scheduled details without claiming the meeting occurred."
+    },
+    {
+      "id": "Q2",
+      "kind": "paraphrase",
+      "question": "For the council session dated November 5, 2026, where were residents told to go, and what local clock time was listed?",
+      "expected_source_ids": [
+        "newark-meeting-302232"
+      ],
+      "expected_facts": [
+        "12:30 PM",
+        "Council Chamber"
+      ],
+      "criterion": "Recover the same schedule evidence despite the wording change."
+    },
+    {
+      "id": "Q3",
+      "kind": "relationship",
+      "question": "Which council meeting listed ordinance 26-0816, and what was that meeting's scheduled start time?",
+      "expected_source_ids": [
+        "newark-agenda-517475",
+        "newark-meeting-302232"
+      ],
+      "expected_facts": [
+        "26-0816",
+        "November 5, 2026",
+        "12:30 PM"
+      ],
+      "criterion": "Link the agenda item to the schedule; do not infer final passage."
+    },
+    {
+      "id": "Q4",
+      "kind": "comparison",
+      "question": "Were the November 5, 2026 and October 21, 2026 Newark council sessions scheduled at the same local time? State both listed times.",
+      "expected_source_ids": [
+        "newark-meeting-302232",
+        "newark-meeting-302231"
+      ],
+      "expected_facts": [
+        "12:30 PM",
+        "6:30 PM"
+      ],
+      "criterion": "Preserve both dates and the different local scheduled times."
+    },
+    {
+      "id": "Q5",
+      "kind": "unanswerable",
+      "question": "What is the total approved City of Newark budget for 2026 in dollars?",
+      "expected_source_ids": [],
+      "expected_facts": [],
+      "criterion": "Declare insufficient evidence; invent no amount and cite no support."
+    }
+  ],
+  "limits": {
+    "generation_calls_maximum": 5,
+    "query_embedding_calls_maximum": 5,
+    "top_k": 5,
+    "generation_output_token_cap": 1536,
+    "automatic_retries": 0,
+    "reported_cost": "No dollar total measured here; consult the OpenAI project usage."
+  },
+  "calls_attempted": {
+    "query_embedding": 5,
+    "generation": 5
+  },
+  "results": [
+    {
+      "id": "Q1",
+      "status": "completed",
+      "keyword": {
+        "ranked_chunks": [
+          {
+            "rank": 1,
+            "chunk_id": "newark-meeting-302232-v1-001",
+            "source_id": "newark-meeting-302232",
+            "score": 1.0
+          },
+          {
+            "rank": 2,
+            "chunk_id": "newark-agenda-517479-v1-001",
+            "source_id": "newark-agenda-517479",
+            "score": 2.0
+          },
+          {
+            "rank": 3,
+            "chunk_id": "newark-agenda-517475-v1-001",
+            "source_id": "newark-agenda-517475",
+            "score": 3.0
+          },
+          {
+            "rank": 4,
+            "chunk_id": "newark-meeting-302231-v1-001",
+            "source_id": "newark-meeting-302231",
+            "score": 4.0
+          },
+          {
+            "rank": 5,
+            "chunk_id": "newark-meeting-302230-v1-001",
+            "source_id": "newark-meeting-302230",
+            "score": 5.0
+          }
+        ],
+        "expected_source_coverage_at_5": 1.0,
+        "all_expected_sources_present": true
+      },
+      "vector": {
+        "ranked_chunks": [
+          {
+            "rank": 1,
+            "chunk_id": "newark-meeting-302232-v1-001",
+            "source_id": "newark-meeting-302232",
+            "score": 0.8371359407901764,
+            "vector_distance": 0.1628640592098236
+          },
+          {
+            "rank": 2,
+            "chunk_id": "newark-meeting-302231-v1-001",
+            "source_id": "newark-meeting-302231",
+            "score": 0.8116106986999512,
+            "vector_distance": 0.18838930130004883
+          },
+          {
+            "rank": 3,
+            "chunk_id": "newark-meeting-302227-v1-001",
+            "source_id": "newark-meeting-302227",
+            "score": 0.8110258877277374,
+            "vector_distance": 0.18897411227226257
+          },
+          {
+            "rank": 4,
+            "chunk_id": "newark-meeting-302230-v1-001",
+            "source_id": "newark-meeting-302230",
+            "score": 0.806865319609642,
+            "vector_distance": 0.19313468039035797
+          },
+          {
+            "rank": 5,
+            "chunk_id": "newark-meeting-302228-v1-001",
+            "source_id": "newark-meeting-302228",
+            "score": 0.802012175321579,
+            "vector_distance": 0.19798782467842102
+          }
+        ],
+        "expected_source_coverage_at_5": 1.0,
+        "all_expected_sources_present": true
+      },
+      "hybrid_rrf_60": {
+        "ranked_chunks": [
+          {
+            "rank": 1,
+            "chunk_id": "newark-meeting-302232-v1-001",
+            "source_id": "newark-meeting-302232",
+            "score": 0.03278688524590164,
+            "vector_distance": 0.1628640592098236
+          },
+          {
+            "rank": 2,
+            "chunk_id": "newark-meeting-302231-v1-001",
+            "source_id": "newark-meeting-302231",
+            "score": 0.031754032258064516,
+            "vector_distance": 0.18838930130004883
+          },
+          {
+            "rank": 3,
+            "chunk_id": "newark-meeting-302230-v1-001",
+            "source_id": "newark-meeting-302230",
+            "score": 0.031009615384615385,
+            "vector_distance": 0.19313468039035797
+          },
+          {
+            "rank": 4,
+            "chunk_id": "newark-agenda-517479-v1-001",
+            "source_id": "newark-agenda-517479",
+            "score": 0.016129032258064516
+          },
+          {
+            "rank": 5,
+            "chunk_id": "newark-agenda-517475-v1-001",
+            "source_id": "newark-agenda-517475",
+            "score": 0.015873015873015872
+          }
+        ],
+        "expected_source_coverage_at_5": 1.0,
+        "all_expected_sources_present": true
+      },
+      "generation_context": [
+        {
+          "chunk_id": "newark-meeting-302232-v1-001",
+          "source_id": "newark-meeting-302232",
+          "heading": "Meeting schedule and official agenda record",
+          "text": "Newark Municipal Council meeting — November 5, 2026\nMeeting date: 2026-11-05 (November 5, 2026).\nScheduled time: 12:30 PM, America/New_York.\nLocation: Council Chamber.\nAgenda publication status: Final.\n\nThis is an imported public meeting record. A scheduled meeting or final agenda does not establish that a meeting occurred or an item passed. Consult the linked official record for current details and minutes.",
+          "content_hash": "27b51d7b7f8648004072954539c01fcea14f358341e91a3c1825b7c11ebe538b",
+          "version": 1,
+          "title": "Newark Municipal Council meeting — November 5, 2026",
+          "url": "https://newark.legistar.com/MeetingDetail.aspx?LEGID=302232&GID=7&G=76B7E664-B393-4911-9914-3B4B31917701",
+          "fetched_at": "2026-11-10T18:43:01.128530+00:00",
+          "source_updated_at": "2026-10-30T18:47:56.233",
+          "metadata": {
+            "agenda_status": "Final",
+            "api_url": "https://webapi.legistar.com/v1/newark/events?%24filter=EventDate+lt+datetime%272026-11-11T00%3A00%3A00%27+and+EventBodyName+eq+%27Municipal+Council%27&%24orderby=EventDate+desc%2CEventId+desc&%24top=5",
+            "body": "Municipal Council",
+            "city_clerk_url": "https://www.newarknj.gov/166/Office-of-the-City-Clerk",
+            "event_id": 302232,
+            "kind": "meeting",
+            "location": "Council Chamber",
+            "meeting_date": "2026-11-05",
+            "meeting_date_display": "November 5, 2026",
+            "meeting_starts_at": "2026-11-05T12:30:00-05:00",
+            "meeting_time": "12:30 PM",
+            "publisher": "City of Newark / Legistar",
+            "response_sha256": "57e33b22bd70cd078c852df8e59fe43f6aee19008224d6a007be9800f820924d",
+            "source_access": "Public official API metadata; attribution retained.",
+            "timezone": "America/New_York"
+          },
+          "source_hash": "7c5ffe2e51e0b60ba233cabc4298d675383632b24abbca50a571d47cc695489d",
+          "vector_distance": 0.1628640592098236,
+          "score": 0.03278688524590164
+        },
+        {
+          "chunk_id": "newark-meeting-302231-v1-001",
+          "source_id": "newark-meeting-302231",
+          "heading": "Meeting schedule and official agenda record",
+          "text": "Newark Municipal Council meeting — October 21, 2026\nMeeting date: 2026-10-21 (October 21, 2026).\nScheduled time: 6:30 PM, America/New_York.\nLocation: Council Chamber.\nAgenda publication status: Final.\n\nThis is an imported public meeting record. A scheduled meeting or final agenda does not establish that a meeting occurred or an item passed. Consult the linked official record for current details and minutes.",
+          "content_hash": "5ba5312fc88da626408f243ec5cf1a6b1452632f0c92c6f8af83b1266534df79",
+          "version": 1,
+          "title": "Newark Municipal Council meeting — October 21, 2026",
+          "url": "https://newark.legistar.com/MeetingDetail.aspx?LEGID=302231&GID=7&G=76B7E664-B393-4911-9914-3B4B31917701",
+          "fetched_at": "2026-11-10T18:43:01.128530+00:00",
+          "source_updated_at": "2026-10-16T19:27:07.717",
+          "metadata": {
+            "agenda_status": "Final",
+            "api_url": "https://webapi.legistar.com/v1/newark/events?%24filter=EventDate+lt+datetime%272026-11-11T00%3A00%3A00%27+and+EventBodyName+eq+%27Municipal+Council%27&%24orderby=EventDate+desc%2CEventId+desc&%24top=5",
+            "body": "Municipal Council",
+            "city_clerk_url": "https://www.newarknj.gov/166/Office-of-the-City-Clerk",
+            "event_id": 302231,
+            "kind": "meeting",
+            "location": "Council Chamber",
+            "meeting_date": "2026-10-21",
+            "meeting_date_display": "October 21, 2026",
+            "meeting_starts_at": "2026-10-21T18:30:00-04:00",
+            "meeting_time": "6:30 PM",
+            "publisher": "City of Newark / Legistar",
+            "response_sha256": "57e33b22bd70cd078c852df8e59fe43f6aee19008224d6a007be9800f820924d",
+            "source_access": "Public official API metadata; attribution retained.",
+            "timezone": "America/New_York"
+          },
+          "source_hash": "4269b2b7f631c5fcc5fbad9558ecbf29096e527294443b13a3cb7ebd493eebef",
+          "vector_distance": 0.18838930130004883,
+          "score": 0.031754032258064516
+        },
+        {
+          "chunk_id": "newark-meeting-302230-v1-001",
+          "source_id": "newark-meeting-302230",
+          "heading": "Meeting schedule and official agenda record",
+          "text": "Newark Municipal Council meeting — October 13, 2026\nMeeting date: 2026-10-13 (October 13, 2026).\nScheduled time: 10:00 AM, America/New_York.\nLocation: Council Chamber.\nAgenda publication status: Final.\n\nThis is an imported public meeting record. A scheduled meeting or final agenda does not establish that a meeting occurred or an item passed. Consult the linked official record for current details and minutes.",
+          "content_hash": "0da6bf9113ca6a2064339a66df35bab45674d18f63c8f39c9e6ced7e6825d674",
+          "version": 1,
+          "title": "Newark Municipal Council meeting — October 13, 2026",
+          "url": "https://newark.legistar.com/MeetingDetail.aspx?LEGID=302230&GID=7&G=76B7E664-B393-4911-9914-3B4B31917701",
+          "fetched_at": "2026-11-10T18:43:01.128530+00:00",
+          "source_updated_at": "2026-10-09T12:12:47.69",
+          "metadata": {
+            "agenda_status": "Final",
+            "api_url": "https://webapi.legistar.com/v1/newark/events?%24filter=EventDate+lt+datetime%272026-11-11T00%3A00%3A00%27+and+EventBodyName+eq+%27Municipal+Council%27&%24orderby=EventDate+desc%2CEventId+desc&%24top=5",
+            "body": "Municipal Council",
+            "city_clerk_url": "https://www.newarknj.gov/166/Office-of-the-City-Clerk",
+            "event_id": 302230,
+            "kind": "meeting",
+            "location": "Council Chamber",
+            "meeting_date": "2026-10-13",
+            "meeting_date_display": "October 13, 2026",
+            "meeting_starts_at": "2026-10-13T10:00:00-04:00",
+            "meeting_time": "10:00 AM",
+            "publisher": "City of Newark / Legistar",
+            "response_sha256": "57e33b22bd70cd078c852df8e59fe43f6aee19008224d6a007be9800f820924d",
+            "source_access": "Public official API metadata; attribution retained.",
+            "timezone": "America/New_York"
+          },
+          "source_hash": "799b45fa0fec0fde8eb6285438ad7801c655a273a2a4e9e52f4a841ac60d04ac",
+          "vector_distance": 0.19313468039035797,
+          "score": 0.031009615384615385
+        },
+        {
+          "chunk_id": "newark-agenda-517479-v1-001",
+          "source_id": "newark-agenda-517479",
+          "title": "26-1056 · AN ORDINANCE GRANTING A TWENTY-FIVE (25) YEAR LONG TERM TAX ABATEMENT TO CLINTON HEIGHTS RESIDENCE URBAN RENEWAL, LLC, 275-277 16th AVENUE, UNIT C, NEWARK, NEW JERSEY 07103, FOR A",
+          "heading": "Ordinance agenda item 26-1056",
+          "text": "Newark Municipal Council agenda item 26-1056.\nMeeting date: 2026-11-05.\nRecord type: Ordinance.\nTitle: AN ORDINANCE GRANTING A TWENTY-FIVE (25) YEAR LONG TERM TAX ABATEMENT TO CLINTON HEIGHTS RESIDENCE URBAN RENEWAL, LLC, 275-277 16th AVENUE, UNIT C, NEWARK, NEW JERSEY 07103, FOR A PROJECT LOCATED IN THE SOUTH WARD AT 722-728 CLINTON AVENUE, NEWARK, NEW JERSEY 07108, AND IDENTIFIED ON THE CITY’S TAX MAP AS BLOCK 3043, LOT 87 (FORMERLY KNOWN AS LOTS 87 and 88) (THE “PROPERTY”), TO CONSTRUCT A NEW FIVE (5)-STORY MIXED USE BUILDING CONTAINING (I) FOUR HUNDRED FORTY-SIX (446) SQUARE FEET OF COMMERCIAL/RETAIL SPACE ON THE GROUND FLOOR; (II) FORTY (40) RESIDENTIAL RENTAL UNITS ON FLOORS TWO (2) THROUGH FIVE (5), CONSISTING OF TWENTY (20) MARKET-RATE RESIDENTIAL RENTAL UNITS, INCLUDING TWO (2) STUDIO UNITS, TEN (10) ONE-BEDROOM UNITS, AND EIGHT (8) TWO-BEDROOM UNITS, (III) TWENTY (20) AFFORDABLE RESIDENTIAL RENTAL UNITS, INCLUDING OF EIGHT (8) UNITS RESTRICTED TO TENANTS EARNING UP TO 20% OF THE AREA MEDIAN INCOME (“AMI”), CONSISTING OF TWO (2) STUDIOS, TWO (2) ONE-BEDROOM UNITS, AND FOUR (4) TWO-BEDROOM UNITS; FOUR (4) UNITS RESTRICTED TO TENANTS AT 50% OF AMI, CONSISTING OF TWO (2) TWO-BEDROOM UNITS AND TWO (2) THREE BEDROOM UNITS; SIX (6) UNITS RESTRICTED TO TENANTS AT 65% OF AMI, CONSISTING OF FOUR (4) TWO-BEDROOM UNITS AND TWO (2) THREE-BEDROOM UNITS; AND TWO (2) THREE BEDROOM UNITS; AND TWO (2) UNITS RESTRICTED TO TENANTS AT 80% OF AMI, BOTH OF WHICH ARE TWO-BEDROOM UNITS, (IV) A FITNESS AREA, 212 SQUARE FOOT TENANT AMENITY LOUNGE, BICYCLE STORAGE, AND ROOFTOP; AND (V)",
+          "url": "https://newark.legistar.com/MeetingDetail.aspx?LEGID=302232&GID=7&G=76B7E664-B393-4911-9914-3B4B31917701",
+          "fetched_at": "2026-11-10T18:43:01.128530+00:00",
+          "source_updated_at": "2026-11-06T16:02:38.62",
+          "metadata": {
+            "api_url": "https://webapi.legistar.com/v1/newark/events/302232/eventitems?%24top=100",
+            "body": "Municipal Council",
+            "event_id": 302232,
+            "event_item_id": 517479,
+            "kind": "agenda_item",
+            "matter_file": "26-1056",
+            "matter_id": 1612048,
+            "matter_status": "Adopted",
+            "matter_type": "Ordinance",
+            "meeting_date": "2026-11-05",
+            "publisher": "City of Newark / Legistar",
+            "response_sha256": "79bae6c75f62195aebfb1d86a47072ccc77758b8e72393778c6b2f7e0895d657",
+            "source_access": "Public official API metadata; attribution retained.",
+            "timezone": "America/New_York"
+          },
+          "content_hash": "4c5881923cef039c7f8b1f4d21c0384256b94c7ae7879b4eec5335c620b4ce80",
+          "source_hash": "18ad0022b84f8f5234c95ac79d0a2f92c13d0318ff3a7b2d3692d2f6b1a55a7f",
+          "version": 1,
+          "score": 0.016129032258064516
+        },
+        {
+          "chunk_id": "newark-agenda-517475-v1-001",
+          "source_id": "newark-agenda-517475",
+          "title": "26-0816 · AN ORDINANCE GRANTING A TWENTY (20) YEAR LONG TERM TAX ABATEMENT TO SUMMER AVENUE APARTMENTS URBAN RENEWAL, LLC, 4 LIBELLA COURT, NEWARK, NEW JERSEY 07105, FOR A PROJECT LOCATED IN",
+          "heading": "Ordinance agenda item 26-0816",
+          "text": "Newark Municipal Council agenda item 26-0816.\nMeeting date: 2026-11-05.\nRecord type: Ordinance.\nTitle: AN ORDINANCE GRANTING A TWENTY (20) YEAR LONG TERM TAX ABATEMENT TO SUMMER AVENUE APARTMENTS URBAN RENEWAL, LLC, 4 LIBELLA COURT, NEWARK, NEW JERSEY 07105, FOR A PROJECT LOCATED IN THE NORTH WARD AT 828-832 SUMMER AVENUE, NEWARK, NEW JERSEY 07104 AND IDENTIFIED ON THE CITY'S TAX MAP AS BLOCK 815, LOT 12 (THE \"PROPERTY\"), TO CONSTRUCT A NEW FIVE (5) STORY MULTIFAMILY RESIDENTIAL BUILDING CONTAINING TWENTY-NINE (29) RESIDENTIAL RENTAL UNITS, CONSISTING OF TWENTY-THREE (23) MARKET-RATE UNITS AND SIX (6) INCOME-RESTRICTED UNITS, TOGETHER WITH SEVENTEEN (17) RENTAL PARKING SPACES, BICYCLE STORAGE FOR APPROXIMATELY THIRTY-TWO (32) BICYCLES, A FITNESS ROOM, A COMMUNITY ROOM/LOUNGE, AND A ROOFTOP DECK INCORPORATING A GREEN ROOF SYSTEM (THE \"PROJECT\") (NORTH WARD).\nMatter status reported by the source: Public Hearing, Second Reading and Final Passage.\n\nAn agenda listing is not evidence of final passage. This limited import does not include voting histories, full legislation, attachments or minutes.",
+          "url": "https://newark.legistar.com/MeetingDetail.aspx?LEGID=302232&GID=7&G=76B7E664-B393-4911-9914-3B4B31917701",
+          "fetched_at": "2026-11-10T18:43:01.128530+00:00",
+          "source_updated_at": "2026-11-06T16:40:42.54",
+          "metadata": {
+            "api_url": "https://webapi.legistar.com/v1/newark/events/302232/eventitems?%24top=100",
+            "body": "Municipal Council",
+            "event_id": 302232,
+            "event_item_id": 517475,
+            "kind": "agenda_item",
+            "matter_file": "26-0816",
+            "matter_id": 1611808,
+            "matter_status": "Public Hearing, Second Reading and Final Passage",
+            "matter_type": "Ordinance",
+            "meeting_date": "2026-11-05",
+            "publisher": "City of Newark / Legistar",
+            "response_sha256": "79bae6c75f62195aebfb1d86a47072ccc77758b8e72393778c6b2f7e0895d657",
+            "source_access": "Public official API metadata; attribution retained.",
+            "timezone": "America/New_York"
+          },
+          "content_hash": "d5a6621ecc71c73c9d7ef5775f24c7002996a4eb841997cf72eaf5640b28b081",
+          "source_hash": "a7a8e3ce81720ebd3902851847a5856575fe6a8ed4da7831b22e9079c08750bc",
+          "version": 1,
+          "score": 0.015873015873015872
+        }
+      ],
+      "completed_at_utc": "2026-11-10T18:56:53.069883+00:00",
+      "actual_answer": {
+        "answer": "The meeting is scheduled for 12:30 PM (America/New_York) at the Council Chamber.",
+        "citation_ids": [
+          "newark-meeting-302232-v1-001"
+        ],
+        "insufficient_evidence": false,
+        "model": "gpt-5-mini"
+      },
+      "mechanical_checks": {
+        "citations_within_supplied_context": true,
+        "all_expected_sources_cited": true,
+        "unanswerable_refusal_and_no_citations": null,
+        "support_judgment": "AI evidence review completed; see support_review, including wording limits."
+      },
+      "support_review": {
+        "reviewer": "AI implementation agent; not a human peer",
+        "reviewed_at_utc": "2026-11-10T18:58:10.699006+00:00",
+        "status": "supported_with_wording_note",
+        "reason": "The cited November 5 record lists 12:30 PM America/New_York and Council Chamber, matching the answer. Present-tense wording could sound upcoming; prefer “the record lists” because the question concerns a past dated record.",
+        "method": "Read the actual answer and its cited imported source excerpts; no second model judge was called."
+      }
+    },
+    {
+      "id": "Q2",
+      "status": "completed",
+      "keyword": {
+        "ranked_chunks": [
+          {
+            "rank": 1,
+            "chunk_id": "newark-meeting-302232-v1-001",
+            "source_id": "newark-meeting-302232",
+            "score": 1.0
+          },
+          {
+            "rank": 2,
+            "chunk_id": "newark-agenda-517479-v1-001",
+            "source_id": "newark-agenda-517479",
+            "score": 2.0
+          },
+          {
+            "rank": 3,
+            "chunk_id": "newark-agenda-517475-v1-001",
+            "source_id": "newark-agenda-517475",
+            "score": 3.0
+          },
+          {
+            "rank": 4,
+            "chunk_id": "newark-meeting-302231-v1-001",
+            "source_id": "newark-meeting-302231",
+            "score": 4.0
+          },
+          {
+            "rank": 5,
+            "chunk_id": "newark-meeting-302230-v1-001",
+            "source_id": "newark-meeting-302230",
+            "score": 5.0
+          }
+        ],
+        "expected_source_coverage_at_5": 1.0,
+        "all_expected_sources_present": true
+      },
+      "vector": {
+        "ranked_chunks": [
+          {
+            "rank": 1,
+            "chunk_id": "newark-meeting-302232-v1-001",
+            "source_id": "newark-meeting-302232",
+            "score": 0.5355657339096069,
+            "vector_distance": 0.46443426609039307
+          },
+          {
+            "rank": 2,
+            "chunk_id": "newark-meeting-302230-v1-001",
+            "source_id": "newark-meeting-302230",
+            "score": 0.5059222280979156,
+            "vector_distance": 0.49407777190208435
+          },
+          {
+            "rank": 3,
+            "chunk_id": "newark-meeting-302228-v1-001",
+            "source_id": "newark-meeting-302228",
+            "score": 0.5009690821170807,
+            "vector_distance": 0.4990309178829193
+          },
+          {
+            "rank": 4,
+            "chunk_id": "newark-meeting-302227-v1-001",
+            "source_id": "newark-meeting-302227",
+            "score": 0.5009110271930695,
+            "vector_distance": 0.49908897280693054
+          },
+          {
+            "rank": 5,
+            "chunk_id": "newark-meeting-302231-v1-001",
+            "source_id": "newark-meeting-302231",
+            "score": 0.497062623500824,
+            "vector_distance": 0.502937376499176
+          }
+        ],
+        "expected_source_coverage_at_5": 1.0,
+        "all_expected_sources_present": true
+      },
+      "hybrid_rrf_60": {
+        "ranked_chunks": [
+          {
+            "rank": 1,
+            "chunk_id": "newark-meeting-302232-v1-001",
+            "source_id": "newark-meeting-302232",
+            "score": 0.03278688524590164,
+            "vector_distance": 0.46443426609039307
+          },
+          {
+            "rank": 2,
+            "chunk_id": "newark-meeting-302230-v1-001",
+            "source_id": "newark-meeting-302230",
+            "score": 0.0315136476426799,
+            "vector_distance": 0.49407777190208435
+          },
+          {
+            "rank": 3,
+            "chunk_id": "newark-meeting-302231-v1-001",
+            "source_id": "newark-meeting-302231",
+            "score": 0.031009615384615385,
+            "vector_distance": 0.502937376499176
+          },
+          {
+            "rank": 4,
+            "chunk_id": "newark-agenda-517479-v1-001",
+            "source_id": "newark-agenda-517479",
+            "score": 0.016129032258064516
+          },
+          {
+            "rank": 5,
+            "chunk_id": "newark-agenda-517475-v1-001",
+            "source_id": "newark-agenda-517475",
+            "score": 0.015873015873015872
+          }
+        ],
+        "expected_source_coverage_at_5": 1.0,
+        "all_expected_sources_present": true
+      },
+      "generation_context": [
+        {
+          "chunk_id": "newark-meeting-302232-v1-001",
+          "source_id": "newark-meeting-302232",
+          "heading": "Meeting schedule and official agenda record",
+          "text": "Newark Municipal Council meeting — November 5, 2026\nMeeting date: 2026-11-05 (November 5, 2026).\nScheduled time: 12:30 PM, America/New_York.\nLocation: Council Chamber.\nAgenda publication status: Final.\n\nThis is an imported public meeting record. A scheduled meeting or final agenda does not establish that a meeting occurred or an item passed. Consult the linked official record for current details and minutes.",
+          "content_hash": "27b51d7b7f8648004072954539c01fcea14f358341e91a3c1825b7c11ebe538b",
+          "version": 1,
+          "title": "Newark Municipal Council meeting — November 5, 2026",
+          "url": "https://newark.legistar.com/MeetingDetail.aspx?LEGID=302232&GID=7&G=76B7E664-B393-4911-9914-3B4B31917701",
+          "fetched_at": "2026-11-10T18:43:01.128530+00:00",
+          "source_updated_at": "2026-10-30T18:47:56.233",
+          "metadata": {
+            "agenda_status": "Final",
+            "api_url": "https://webapi.legistar.com/v1/newark/events?%24filter=EventDate+lt+datetime%272026-11-11T00%3A00%3A00%27+and+EventBodyName+eq+%27Municipal+Council%27&%24orderby=EventDate+desc%2CEventId+desc&%24top=5",
+            "body": "Municipal Council",
+            "city_clerk_url": "https://www.newarknj.gov/166/Office-of-the-City-Clerk",
+            "event_id": 302232,
+            "kind": "meeting",
+            "location": "Council Chamber",
+            "meeting_date": "2026-11-05",
+            "meeting_date_display": "November 5, 2026",
+            "meeting_starts_at": "2026-11-05T12:30:00-05:00",
+            "meeting_time": "12:30 PM",
+            "publisher": "City of Newark / Legistar",
+            "response_sha256": "57e33b22bd70cd078c852df8e59fe43f6aee19008224d6a007be9800f820924d",
+            "source_access": "Public official API metadata; attribution retained.",
+            "timezone": "America/New_York"
+          },
+          "source_hash": "7c5ffe2e51e0b60ba233cabc4298d675383632b24abbca50a571d47cc695489d",
+          "vector_distance": 0.46443426609039307,
+          "score": 0.03278688524590164
+        },
+        {
+          "chunk_id": "newark-meeting-302230-v1-001",
+          "source_id": "newark-meeting-302230",
+          "heading": "Meeting schedule and official agenda record",
+          "text": "Newark Municipal Council meeting — October 13, 2026\nMeeting date: 2026-10-13 (October 13, 2026).\nScheduled time: 10:00 AM, America/New_York.\nLocation: Council Chamber.\nAgenda publication status: Final.\n\nThis is an imported public meeting record. A scheduled meeting or final agenda does not establish that a meeting occurred or an item passed. Consult the linked official record for current details and minutes.",
+          "content_hash": "0da6bf9113ca6a2064339a66df35bab45674d18f63c8f39c9e6ced7e6825d674",
+          "version": 1,
+          "title": "Newark Municipal Council meeting — October 13, 2026",
+          "url": "https://newark.legistar.com/MeetingDetail.aspx?LEGID=302230&GID=7&G=76B7E664-B393-4911-9914-3B4B31917701",
+          "fetched_at": "2026-11-10T18:43:01.128530+00:00",
+          "source_updated_at": "2026-10-09T12:12:47.69",
+          "metadata": {
+            "agenda_status": "Final",
+            "api_url": "https://webapi.legistar.com/v1/newark/events?%24filter=EventDate+lt+datetime%272026-11-11T00%3A00%3A00%27+and+EventBodyName+eq+%27Municipal+Council%27&%24orderby=EventDate+desc%2CEventId+desc&%24top=5",
+            "body": "Municipal Council",
+            "city_clerk_url": "https://www.newarknj.gov/166/Office-of-the-City-Clerk",
+            "event_id": 302230,
+            "kind": "meeting",
+            "location": "Council Chamber",
+            "meeting_date": "2026-10-13",
+            "meeting_date_display": "October 13, 2026",
+            "meeting_starts_at": "2026-10-13T10:00:00-04:00",
+            "meeting_time": "10:00 AM",
+            "publisher": "City of Newark / Legistar",
+            "response_sha256": "57e33b22bd70cd078c852df8e59fe43f6aee19008224d6a007be9800f820924d",
+            "source_access": "Public official API metadata; attribution retained.",
+            "timezone": "America/New_York"
+          },
+          "source_hash": "799b45fa0fec0fde8eb6285438ad7801c655a273a2a4e9e52f4a841ac60d04ac",
+          "vector_distance": 0.49407777190208435,
+          "score": 0.0315136476426799
+        },
+        {
+          "chunk_id": "newark-meeting-302231-v1-001",
+          "source_id": "newark-meeting-302231",
+          "heading": "Meeting schedule and official agenda record",
+          "text": "Newark Municipal Council meeting — October 21, 2026\nMeeting date: 2026-10-21 (October 21, 2026).\nScheduled time: 6:30 PM, America/New_York.\nLocation: Council Chamber.\nAgenda publication status: Final.\n\nThis is an imported public meeting record. A scheduled meeting or final agenda does not establish that a meeting occurred or an item passed. Consult the linked official record for current details and minutes.",
+          "content_hash": "5ba5312fc88da626408f243ec5cf1a6b1452632f0c92c6f8af83b1266534df79",
+          "version": 1,
+          "title": "Newark Municipal Council meeting — October 21, 2026",
+          "url": "https://newark.legistar.com/MeetingDetail.aspx?LEGID=302231&GID=7&G=76B7E664-B393-4911-9914-3B4B31917701",
+          "fetched_at": "2026-11-10T18:43:01.128530+00:00",
+          "source_updated_at": "2026-10-16T19:27:07.717",
+          "metadata": {
+            "agenda_status": "Final",
+            "api_url": "https://webapi.legistar.com/v1/newark/events?%24filter=EventDate+lt+datetime%272026-11-11T00%3A00%3A00%27+and+EventBodyName+eq+%27Municipal+Council%27&%24orderby=EventDate+desc%2CEventId+desc&%24top=5",
+            "body": "Municipal Council",
+            "city_clerk_url": "https://www.newarknj.gov/166/Office-of-the-City-Clerk",
+            "event_id": 302231,
+            "kind": "meeting",
+            "location": "Council Chamber",
+            "meeting_date": "2026-10-21",
+            "meeting_date_display": "October 21, 2026",
+            "meeting_starts_at": "2026-10-21T18:30:00-04:00",
+            "meeting_time": "6:30 PM",
+            "publisher": "City of Newark / Legistar",
+            "response_sha256": "57e33b22bd70cd078c852df8e59fe43f6aee19008224d6a007be9800f820924d",
+            "source_access": "Public official API metadata; attribution retained.",
+            "timezone": "America/New_York"
+          },
+          "source_hash": "4269b2b7f631c5fcc5fbad9558ecbf29096e527294443b13a3cb7ebd493eebef",
+          "vector_distance": 0.502937376499176,
+          "score": 0.031009615384615385
+        },
+        {
+          "chunk_id": "newark-agenda-517479-v1-001",
+          "source_id": "newark-agenda-517479",
+          "title": "26-1056 · AN ORDINANCE GRANTING A TWENTY-FIVE (25) YEAR LONG TERM TAX ABATEMENT TO CLINTON HEIGHTS RESIDENCE URBAN RENEWAL, LLC, 275-277 16th AVENUE, UNIT C, NEWARK, NEW JERSEY 07103, FOR A",
+          "heading": "Ordinance agenda item 26-1056",
+          "text": "Newark Municipal Council agenda item 26-1056.\nMeeting date: 2026-11-05.\nRecord type: Ordinance.\nTitle: AN ORDINANCE GRANTING A TWENTY-FIVE (25) YEAR LONG TERM TAX ABATEMENT TO CLINTON HEIGHTS RESIDENCE URBAN RENEWAL, LLC, 275-277 16th AVENUE, UNIT C, NEWARK, NEW JERSEY 07103, FOR A PROJECT LOCATED IN THE SOUTH WARD AT 722-728 CLINTON AVENUE, NEWARK, NEW JERSEY 07108, AND IDENTIFIED ON THE CITY’S TAX MAP AS BLOCK 3043, LOT 87 (FORMERLY KNOWN AS LOTS 87 and 88) (THE “PROPERTY”), TO CONSTRUCT A NEW FIVE (5)-STORY MIXED USE BUILDING CONTAINING (I) FOUR HUNDRED FORTY-SIX (446) SQUARE FEET OF COMMERCIAL/RETAIL SPACE ON THE GROUND FLOOR; (II) FORTY (40) RESIDENTIAL RENTAL UNITS ON FLOORS TWO (2) THROUGH FIVE (5), CONSISTING OF TWENTY (20) MARKET-RATE RESIDENTIAL RENTAL UNITS, INCLUDING TWO (2) STUDIO UNITS, TEN (10) ONE-BEDROOM UNITS, AND EIGHT (8) TWO-BEDROOM UNITS, (III) TWENTY (20) AFFORDABLE RESIDENTIAL RENTAL UNITS, INCLUDING OF EIGHT (8) UNITS RESTRICTED TO TENANTS EARNING UP TO 20% OF THE AREA MEDIAN INCOME (“AMI”), CONSISTING OF TWO (2) STUDIOS, TWO (2) ONE-BEDROOM UNITS, AND FOUR (4) TWO-BEDROOM UNITS; FOUR (4) UNITS RESTRICTED TO TENANTS AT 50% OF AMI, CONSISTING OF TWO (2) TWO-BEDROOM UNITS AND TWO (2) THREE BEDROOM UNITS; SIX (6) UNITS RESTRICTED TO TENANTS AT 65% OF AMI, CONSISTING OF FOUR (4) TWO-BEDROOM UNITS AND TWO (2) THREE-BEDROOM UNITS; AND TWO (2) THREE BEDROOM UNITS; AND TWO (2) UNITS RESTRICTED TO TENANTS AT 80% OF AMI, BOTH OF WHICH ARE TWO-BEDROOM UNITS, (IV) A FITNESS AREA, 212 SQUARE FOOT TENANT AMENITY LOUNGE, BICYCLE STORAGE, AND ROOFTOP; AND (V)",
+          "url": "https://newark.legistar.com/MeetingDetail.aspx?LEGID=302232&GID=7&G=76B7E664-B393-4911-9914-3B4B31917701",
+          "fetched_at": "2026-11-10T18:43:01.128530+00:00",
+          "source_updated_at": "2026-11-06T16:02:38.62",
+          "metadata": {
+            "api_url": "https://webapi.legistar.com/v1/newark/events/302232/eventitems?%24top=100",
+            "body": "Municipal Council",
+            "event_id": 302232,
+            "event_item_id": 517479,
+            "kind": "agenda_item",
+            "matter_file": "26-1056",
+            "matter_id": 1612048,
+            "matter_status": "Adopted",
+            "matter_type": "Ordinance",
+            "meeting_date": "2026-11-05",
+            "publisher": "City of Newark / Legistar",
+            "response_sha256": "79bae6c75f62195aebfb1d86a47072ccc77758b8e72393778c6b2f7e0895d657",
+            "source_access": "Public official API metadata; attribution retained.",
+            "timezone": "America/New_York"
+          },
+          "content_hash": "4c5881923cef039c7f8b1f4d21c0384256b94c7ae7879b4eec5335c620b4ce80",
+          "source_hash": "18ad0022b84f8f5234c95ac79d0a2f92c13d0318ff3a7b2d3692d2f6b1a55a7f",
+          "version": 1,
+          "score": 0.016129032258064516
+        },
+        {
+          "chunk_id": "newark-agenda-517475-v1-001",
+          "source_id": "newark-agenda-517475",
+          "title": "26-0816 · AN ORDINANCE GRANTING A TWENTY (20) YEAR LONG TERM TAX ABATEMENT TO SUMMER AVENUE APARTMENTS URBAN RENEWAL, LLC, 4 LIBELLA COURT, NEWARK, NEW JERSEY 07105, FOR A PROJECT LOCATED IN",
+          "heading": "Ordinance agenda item 26-0816",
+          "text": "Newark Municipal Council agenda item 26-0816.\nMeeting date: 2026-11-05.\nRecord type: Ordinance.\nTitle: AN ORDINANCE GRANTING A TWENTY (20) YEAR LONG TERM TAX ABATEMENT TO SUMMER AVENUE APARTMENTS URBAN RENEWAL, LLC, 4 LIBELLA COURT, NEWARK, NEW JERSEY 07105, FOR A PROJECT LOCATED IN THE NORTH WARD AT 828-832 SUMMER AVENUE, NEWARK, NEW JERSEY 07104 AND IDENTIFIED ON THE CITY'S TAX MAP AS BLOCK 815, LOT 12 (THE \"PROPERTY\"), TO CONSTRUCT A NEW FIVE (5) STORY MULTIFAMILY RESIDENTIAL BUILDING CONTAINING TWENTY-NINE (29) RESIDENTIAL RENTAL UNITS, CONSISTING OF TWENTY-THREE (23) MARKET-RATE UNITS AND SIX (6) INCOME-RESTRICTED UNITS, TOGETHER WITH SEVENTEEN (17) RENTAL PARKING SPACES, BICYCLE STORAGE FOR APPROXIMATELY THIRTY-TWO (32) BICYCLES, A FITNESS ROOM, A COMMUNITY ROOM/LOUNGE, AND A ROOFTOP DECK INCORPORATING A GREEN ROOF SYSTEM (THE \"PROJECT\") (NORTH WARD).\nMatter status reported by the source: Public Hearing, Second Reading and Final Passage.\n\nAn agenda listing is not evidence of final passage. This limited import does not include voting histories, full legislation, attachments or minutes.",
+          "url": "https://newark.legistar.com/MeetingDetail.aspx?LEGID=302232&GID=7&G=76B7E664-B393-4911-9914-3B4B31917701",
+          "fetched_at": "2026-11-10T18:43:01.128530+00:00",
+          "source_updated_at": "2026-11-06T16:40:42.54",
+          "metadata": {
+            "api_url": "https://webapi.legistar.com/v1/newark/events/302232/eventitems?%24top=100",
+            "body": "Municipal Council",
+            "event_id": 302232,
+            "event_item_id": 517475,
+            "kind": "agenda_item",
+            "matter_file": "26-0816",
+            "matter_id": 1611808,
+            "matter_status": "Public Hearing, Second Reading and Final Passage",
+            "matter_type": "Ordinance",
+            "meeting_date": "2026-11-05",
+            "publisher": "City of Newark / Legistar",
+            "response_sha256": "79bae6c75f62195aebfb1d86a47072ccc77758b8e72393778c6b2f7e0895d657",
+            "source_access": "Public official API metadata; attribution retained.",
+            "timezone": "America/New_York"
+          },
+          "content_hash": "d5a6621ecc71c73c9d7ef5775f24c7002996a4eb841997cf72eaf5640b28b081",
+          "source_hash": "a7a8e3ce81720ebd3902851847a5856575fe6a8ed4da7831b22e9079c08750bc",
+          "version": 1,
+          "score": 0.015873015873015872
+        }
+      ],
+      "completed_at_utc": "2026-11-10T18:56:56.407180+00:00",
+      "actual_answer": {
+        "answer": "Residents were directed to the Council Chamber. The listed local time was 12:30 PM (America/New_York).",
+        "citation_ids": [
+          "newark-meeting-302232-v1-001"
+        ],
+        "insufficient_evidence": false,
+        "model": "gpt-5-mini"
+      },
+      "mechanical_checks": {
+        "citations_within_supplied_context": true,
+        "all_expected_sources_cited": true,
+        "unanswerable_refusal_and_no_citations": null,
+        "support_judgment": "AI evidence review completed; see support_review, including wording limits."
+      },
+      "support_review": {
+        "reviewer": "AI implementation agent; not a human peer",
+        "reviewed_at_utc": "2026-11-10T18:58:10.699296+00:00",
+        "status": "supported_with_wording_note",
+        "reason": "The location and clock time match the cited record. “Residents were directed” is stronger than the stored location field; prefer “the record lists Council Chamber.” No attendance or occurrence claim was verified.",
+        "method": "Read the actual answer and its cited imported source excerpts; no second model judge was called."
+      }
+    },
+    {
+      "id": "Q3",
+      "status": "completed",
+      "keyword": {
+        "ranked_chunks": [
+          {
+            "rank": 1,
+            "chunk_id": "newark-agenda-517475-v1-001",
+            "source_id": "newark-agenda-517475",
+            "score": 1.0
+          },
+          {
+            "rank": 2,
+            "chunk_id": "newark-agenda-517479-v1-001",
+            "source_id": "newark-agenda-517479",
+            "score": 2.0
+          },
+          {
+            "rank": 3,
+            "chunk_id": "newark-agenda-517479-v1-002",
+            "source_id": "newark-agenda-517479",
+            "score": 3.0
+          },
+          {
+            "rank": 4,
+            "chunk_id": "newark-meeting-302232-v1-001",
+            "source_id": "newark-meeting-302232",
+            "score": 4.0
+          },
+          {
+            "rank": 5,
+            "chunk_id": "newark-meeting-302231-v1-001",
+            "source_id": "newark-meeting-302231",
+            "score": 5.0
+          }
+        ],
+        "expected_source_coverage_at_5": 1.0,
+        "all_expected_sources_present": true
+      },
+      "vector": {
+        "ranked_chunks": [
+          {
+            "rank": 1,
+            "chunk_id": "newark-meeting-302230-v1-001",
+            "source_id": "newark-meeting-302230",
+            "score": 0.576282799243927,
+            "vector_distance": 0.423717200756073
+          },
+          {
+            "rank": 2,
+            "chunk_id": "newark-meeting-302227-v1-001",
+            "source_id": "newark-meeting-302227",
+            "score": 0.5730351805686951,
+            "vector_distance": 0.42696481943130493
+          },
+          {
+            "rank": 3,
+            "chunk_id": "newark-meeting-302232-v1-001",
+            "source_id": "newark-meeting-302232",
+            "score": 0.571710854768753,
+            "vector_distance": 0.42828914523124695
+          },
+          {
+            "rank": 4,
+            "chunk_id": "newark-meeting-302231-v1-001",
+            "source_id": "newark-meeting-302231",
+            "score": 0.5716674029827118,
+            "vector_distance": 0.4283325970172882
+          },
+          {
+            "rank": 5,
+            "chunk_id": "newark-meeting-302228-v1-001",
+            "source_id": "newark-meeting-302228",
+            "score": 0.5696695148944855,
+            "vector_distance": 0.4303304851055145
+          }
+        ],
+        "expected_source_coverage_at_5": 0.5,
+        "all_expected_sources_present": false
+      },
+      "hybrid_rrf_60": {
+        "ranked_chunks": [
+          {
+            "rank": 1,
+            "chunk_id": "newark-meeting-302232-v1-001",
+            "source_id": "newark-meeting-302232",
+            "score": 0.03149801587301587,
+            "vector_distance": 0.42828914523124695
+          },
+          {
+            "rank": 2,
+            "chunk_id": "newark-meeting-302231-v1-001",
+            "source_id": "newark-meeting-302231",
+            "score": 0.031009615384615385,
+            "vector_distance": 0.4283325970172882
+          },
+          {
+            "rank": 3,
+            "chunk_id": "newark-agenda-517475-v1-001",
+            "source_id": "newark-agenda-517475",
+            "score": 0.01639344262295082
+          },
+          {
+            "rank": 4,
+            "chunk_id": "newark-meeting-302230-v1-001",
+            "source_id": "newark-meeting-302230",
+            "score": 0.01639344262295082,
+            "vector_distance": 0.423717200756073
+          },
+          {
+            "rank": 5,
+            "chunk_id": "newark-agenda-517479-v1-001",
+            "source_id": "newark-agenda-517479",
+            "score": 0.016129032258064516
+          }
+        ],
+        "expected_source_coverage_at_5": 1.0,
+        "all_expected_sources_present": true
+      },
+      "generation_context": [
+        {
+          "chunk_id": "newark-meeting-302232-v1-001",
+          "source_id": "newark-meeting-302232",
+          "heading": "Meeting schedule and official agenda record",
+          "text": "Newark Municipal Council meeting — November 5, 2026\nMeeting date: 2026-11-05 (November 5, 2026).\nScheduled time: 12:30 PM, America/New_York.\nLocation: Council Chamber.\nAgenda publication status: Final.\n\nThis is an imported public meeting record. A scheduled meeting or final agenda does not establish that a meeting occurred or an item passed. Consult the linked official record for current details and minutes.",
+          "content_hash": "27b51d7b7f8648004072954539c01fcea14f358341e91a3c1825b7c11ebe538b",
+          "version": 1,
+          "title": "Newark Municipal Council meeting — November 5, 2026",
+          "url": "https://newark.legistar.com/MeetingDetail.aspx?LEGID=302232&GID=7&G=76B7E664-B393-4911-9914-3B4B31917701",
+          "fetched_at": "2026-11-10T18:43:01.128530+00:00",
+          "source_updated_at": "2026-10-30T18:47:56.233",
+          "metadata": {
+            "agenda_status": "Final",
+            "api_url": "https://webapi.legistar.com/v1/newark/events?%24filter=EventDate+lt+datetime%272026-11-11T00%3A00%3A00%27+and+EventBodyName+eq+%27Municipal+Council%27&%24orderby=EventDate+desc%2CEventId+desc&%24top=5",
+            "body": "Municipal Council",
+            "city_clerk_url": "https://www.newarknj.gov/166/Office-of-the-City-Clerk",
+            "event_id": 302232,
+            "kind": "meeting",
+            "location": "Council Chamber",
+            "meeting_date": "2026-11-05",
+            "meeting_date_display": "November 5, 2026",
+            "meeting_starts_at": "2026-11-05T12:30:00-05:00",
+            "meeting_time": "12:30 PM",
+            "publisher": "City of Newark / Legistar",
+            "response_sha256": "57e33b22bd70cd078c852df8e59fe43f6aee19008224d6a007be9800f820924d",
+            "source_access": "Public official API metadata; attribution retained.",
+            "timezone": "America/New_York"
+          },
+          "source_hash": "7c5ffe2e51e0b60ba233cabc4298d675383632b24abbca50a571d47cc695489d",
+          "vector_distance": 0.42828914523124695,
+          "score": 0.03149801587301587
+        },
+        {
+          "chunk_id": "newark-meeting-302231-v1-001",
+          "source_id": "newark-meeting-302231",
+          "heading": "Meeting schedule and official agenda record",
+          "text": "Newark Municipal Council meeting — October 21, 2026\nMeeting date: 2026-10-21 (October 21, 2026).\nScheduled time: 6:30 PM, America/New_York.\nLocation: Council Chamber.\nAgenda publication status: Final.\n\nThis is an imported public meeting record. A scheduled meeting or final agenda does not establish that a meeting occurred or an item passed. Consult the linked official record for current details and minutes.",
+          "content_hash": "5ba5312fc88da626408f243ec5cf1a6b1452632f0c92c6f8af83b1266534df79",
+          "version": 1,
+          "title": "Newark Municipal Council meeting — October 21, 2026",
+          "url": "https://newark.legistar.com/MeetingDetail.aspx?LEGID=302231&GID=7&G=76B7E664-B393-4911-9914-3B4B31917701",
+          "fetched_at": "2026-11-10T18:43:01.128530+00:00",
+          "source_updated_at": "2026-10-16T19:27:07.717",
+          "metadata": {
+            "agenda_status": "Final",
+            "api_url": "https://webapi.legistar.com/v1/newark/events?%24filter=EventDate+lt+datetime%272026-11-11T00%3A00%3A00%27+and+EventBodyName+eq+%27Municipal+Council%27&%24orderby=EventDate+desc%2CEventId+desc&%24top=5",
+            "body": "Municipal Council",
+            "city_clerk_url": "https://www.newarknj.gov/166/Office-of-the-City-Clerk",
+            "event_id": 302231,
+            "kind": "meeting",
+            "location": "Council Chamber",
+            "meeting_date": "2026-10-21",
+            "meeting_date_display": "October 21, 2026",
+            "meeting_starts_at": "2026-10-21T18:30:00-04:00",
+            "meeting_time": "6:30 PM",
+            "publisher": "City of Newark / Legistar",
+            "response_sha256": "57e33b22bd70cd078c852df8e59fe43f6aee19008224d6a007be9800f820924d",
+            "source_access": "Public official API metadata; attribution retained.",
+            "timezone": "America/New_York"
+          },
+          "source_hash": "4269b2b7f631c5fcc5fbad9558ecbf29096e527294443b13a3cb7ebd493eebef",
+          "vector_distance": 0.4283325970172882,
+          "score": 0.031009615384615385
+        },
+        {
+          "chunk_id": "newark-agenda-517475-v1-001",
+          "source_id": "newark-agenda-517475",
+          "title": "26-0816 · AN ORDINANCE GRANTING A TWENTY (20) YEAR LONG TERM TAX ABATEMENT TO SUMMER AVENUE APARTMENTS URBAN RENEWAL, LLC, 4 LIBELLA COURT, NEWARK, NEW JERSEY 07105, FOR A PROJECT LOCATED IN",
+          "heading": "Ordinance agenda item 26-0816",
+          "text": "Newark Municipal Council agenda item 26-0816.\nMeeting date: 2026-11-05.\nRecord type: Ordinance.\nTitle: AN ORDINANCE GRANTING A TWENTY (20) YEAR LONG TERM TAX ABATEMENT TO SUMMER AVENUE APARTMENTS URBAN RENEWAL, LLC, 4 LIBELLA COURT, NEWARK, NEW JERSEY 07105, FOR A PROJECT LOCATED IN THE NORTH WARD AT 828-832 SUMMER AVENUE, NEWARK, NEW JERSEY 07104 AND IDENTIFIED ON THE CITY'S TAX MAP AS BLOCK 815, LOT 12 (THE \"PROPERTY\"), TO CONSTRUCT A NEW FIVE (5) STORY MULTIFAMILY RESIDENTIAL BUILDING CONTAINING TWENTY-NINE (29) RESIDENTIAL RENTAL UNITS, CONSISTING OF TWENTY-THREE (23) MARKET-RATE UNITS AND SIX (6) INCOME-RESTRICTED UNITS, TOGETHER WITH SEVENTEEN (17) RENTAL PARKING SPACES, BICYCLE STORAGE FOR APPROXIMATELY THIRTY-TWO (32) BICYCLES, A FITNESS ROOM, A COMMUNITY ROOM/LOUNGE, AND A ROOFTOP DECK INCORPORATING A GREEN ROOF SYSTEM (THE \"PROJECT\") (NORTH WARD).\nMatter status reported by the source: Public Hearing, Second Reading and Final Passage.\n\nAn agenda listing is not evidence of final passage. This limited import does not include voting histories, full legislation, attachments or minutes.",
+          "url": "https://newark.legistar.com/MeetingDetail.aspx?LEGID=302232&GID=7&G=76B7E664-B393-4911-9914-3B4B31917701",
+          "fetched_at": "2026-11-10T18:43:01.128530+00:00",
+          "source_updated_at": "2026-11-06T16:40:42.54",
+          "metadata": {
+            "api_url": "https://webapi.legistar.com/v1/newark/events/302232/eventitems?%24top=100",
+            "body": "Municipal Council",
+            "event_id": 302232,
+            "event_item_id": 517475,
+            "kind": "agenda_item",
+            "matter_file": "26-0816",
+            "matter_id": 1611808,
+            "matter_status": "Public Hearing, Second Reading and Final Passage",
+            "matter_type": "Ordinance",
+            "meeting_date": "2026-11-05",
+            "publisher": "City of Newark / Legistar",
+            "response_sha256": "79bae6c75f62195aebfb1d86a47072ccc77758b8e72393778c6b2f7e0895d657",
+            "source_access": "Public official API metadata; attribution retained.",
+            "timezone": "America/New_York"
+          },
+          "content_hash": "d5a6621ecc71c73c9d7ef5775f24c7002996a4eb841997cf72eaf5640b28b081",
+          "source_hash": "a7a8e3ce81720ebd3902851847a5856575fe6a8ed4da7831b22e9079c08750bc",
+          "version": 1,
+          "score": 0.01639344262295082
+        },
+        {
+          "chunk_id": "newark-meeting-302230-v1-001",
+          "source_id": "newark-meeting-302230",
+          "heading": "Meeting schedule and official agenda record",
+          "text": "Newark Municipal Council meeting — October 13, 2026\nMeeting date: 2026-10-13 (October 13, 2026).\nScheduled time: 10:00 AM, America/New_York.\nLocation: Council Chamber.\nAgenda publication status: Final.\n\nThis is an imported public meeting record. A scheduled meeting or final agenda does not establish that a meeting occurred or an item passed. Consult the linked official record for current details and minutes.",
+          "content_hash": "0da6bf9113ca6a2064339a66df35bab45674d18f63c8f39c9e6ced7e6825d674",
+          "version": 1,
+          "title": "Newark Municipal Council meeting — October 13, 2026",
+          "url": "https://newark.legistar.com/MeetingDetail.aspx?LEGID=302230&GID=7&G=76B7E664-B393-4911-9914-3B4B31917701",
+          "fetched_at": "2026-11-10T18:43:01.128530+00:00",
+          "source_updated_at": "2026-10-09T12:12:47.69",
+          "metadata": {
+            "agenda_status": "Final",
+            "api_url": "https://webapi.legistar.com/v1/newark/events?%24filter=EventDate+lt+datetime%272026-11-11T00%3A00%3A00%27+and+EventBodyName+eq+%27Municipal+Council%27&%24orderby=EventDate+desc%2CEventId+desc&%24top=5",
+            "body": "Municipal Council",
+            "city_clerk_url": "https://www.newarknj.gov/166/Office-of-the-City-Clerk",
+            "event_id": 302230,
+            "kind": "meeting",
+            "location": "Council Chamber",
+            "meeting_date": "2026-10-13",
+            "meeting_date_display": "October 13, 2026",
+            "meeting_starts_at": "2026-10-13T10:00:00-04:00",
+            "meeting_time": "10:00 AM",
+            "publisher": "City of Newark / Legistar",
+            "response_sha256": "57e33b22bd70cd078c852df8e59fe43f6aee19008224d6a007be9800f820924d",
+            "source_access": "Public official API metadata; attribution retained.",
+            "timezone": "America/New_York"
+          },
+          "source_hash": "799b45fa0fec0fde8eb6285438ad7801c655a273a2a4e9e52f4a841ac60d04ac",
+          "vector_distance": 0.423717200756073,
+          "score": 0.01639344262295082
+        },
+        {
+          "chunk_id": "newark-agenda-517479-v1-001",
+          "source_id": "newark-agenda-517479",
+          "title": "26-1056 · AN ORDINANCE GRANTING A TWENTY-FIVE (25) YEAR LONG TERM TAX ABATEMENT TO CLINTON HEIGHTS RESIDENCE URBAN RENEWAL, LLC, 275-277 16th AVENUE, UNIT C, NEWARK, NEW JERSEY 07103, FOR A",
+          "heading": "Ordinance agenda item 26-1056",
+          "text": "Newark Municipal Council agenda item 26-1056.\nMeeting date: 2026-11-05.\nRecord type: Ordinance.\nTitle: AN ORDINANCE GRANTING A TWENTY-FIVE (25) YEAR LONG TERM TAX ABATEMENT TO CLINTON HEIGHTS RESIDENCE URBAN RENEWAL, LLC, 275-277 16th AVENUE, UNIT C, NEWARK, NEW JERSEY 07103, FOR A PROJECT LOCATED IN THE SOUTH WARD AT 722-728 CLINTON AVENUE, NEWARK, NEW JERSEY 07108, AND IDENTIFIED ON THE CITY’S TAX MAP AS BLOCK 3043, LOT 87 (FORMERLY KNOWN AS LOTS 87 and 88) (THE “PROPERTY”), TO CONSTRUCT A NEW FIVE (5)-STORY MIXED USE BUILDING CONTAINING (I) FOUR HUNDRED FORTY-SIX (446) SQUARE FEET OF COMMERCIAL/RETAIL SPACE ON THE GROUND FLOOR; (II) FORTY (40) RESIDENTIAL RENTAL UNITS ON FLOORS TWO (2) THROUGH FIVE (5), CONSISTING OF TWENTY (20) MARKET-RATE RESIDENTIAL RENTAL UNITS, INCLUDING TWO (2) STUDIO UNITS, TEN (10) ONE-BEDROOM UNITS, AND EIGHT (8) TWO-BEDROOM UNITS, (III) TWENTY (20) AFFORDABLE RESIDENTIAL RENTAL UNITS, INCLUDING OF EIGHT (8) UNITS RESTRICTED TO TENANTS EARNING UP TO 20% OF THE AREA MEDIAN INCOME (“AMI”), CONSISTING OF TWO (2) STUDIOS, TWO (2) ONE-BEDROOM UNITS, AND FOUR (4) TWO-BEDROOM UNITS; FOUR (4) UNITS RESTRICTED TO TENANTS AT 50% OF AMI, CONSISTING OF TWO (2) TWO-BEDROOM UNITS AND TWO (2) THREE BEDROOM UNITS; SIX (6) UNITS RESTRICTED TO TENANTS AT 65% OF AMI, CONSISTING OF FOUR (4) TWO-BEDROOM UNITS AND TWO (2) THREE-BEDROOM UNITS; AND TWO (2) THREE BEDROOM UNITS; AND TWO (2) UNITS RESTRICTED TO TENANTS AT 80% OF AMI, BOTH OF WHICH ARE TWO-BEDROOM UNITS, (IV) A FITNESS AREA, 212 SQUARE FOOT TENANT AMENITY LOUNGE, BICYCLE STORAGE, AND ROOFTOP; AND (V)",
+          "url": "https://newark.legistar.com/MeetingDetail.aspx?LEGID=302232&GID=7&G=76B7E664-B393-4911-9914-3B4B31917701",
+          "fetched_at": "2026-11-10T18:43:01.128530+00:00",
+          "source_updated_at": "2026-11-06T16:02:38.62",
+          "metadata": {
+            "api_url": "https://webapi.legistar.com/v1/newark/events/302232/eventitems?%24top=100",
+            "body": "Municipal Council",
+            "event_id": 302232,
+            "event_item_id": 517479,
+            "kind": "agenda_item",
+            "matter_file": "26-1056",
+            "matter_id": 1612048,
+            "matter_status": "Adopted",
+            "matter_type": "Ordinance",
+            "meeting_date": "2026-11-05",
+            "publisher": "City of Newark / Legistar",
+            "response_sha256": "79bae6c75f62195aebfb1d86a47072ccc77758b8e72393778c6b2f7e0895d657",
+            "source_access": "Public official API metadata; attribution retained.",
+            "timezone": "America/New_York"
+          },
+          "content_hash": "4c5881923cef039c7f8b1f4d21c0384256b94c7ae7879b4eec5335c620b4ce80",
+          "source_hash": "18ad0022b84f8f5234c95ac79d0a2f92c13d0318ff3a7b2d3692d2f6b1a55a7f",
+          "version": 1,
+          "score": 0.016129032258064516
+        }
+      ],
+      "completed_at_utc": "2026-11-10T18:56:59.867077+00:00",
+      "actual_answer": {
+        "answer": "Ordinance 26-0816 was listed on the Newark Municipal Council meeting of 2026-11-05, which was scheduled to start at 12:30 PM (America/New_York).",
+        "citation_ids": [
+          "newark-agenda-517475-v1-001",
+          "newark-meeting-302232-v1-001"
+        ],
+        "insufficient_evidence": false,
+        "model": "gpt-5-mini"
+      },
+      "mechanical_checks": {
+        "citations_within_supplied_context": true,
+        "all_expected_sources_cited": true,
+        "unanswerable_refusal_and_no_citations": null,
+        "support_judgment": "AI evidence review completed; see support_review, including wording limits."
+      },
+      "support_review": {
+        "reviewer": "AI implementation agent; not a human peer",
+        "reviewed_at_utc": "2026-11-10T18:58:10.699303+00:00",
+        "status": "supported",
+        "reason": "The item record links ordinance 26-0816 to November 5 and the meeting record lists 12:30 PM. Both required records are cited; the answer describes listing/scheduling without inferring a vote or passage.",
+        "method": "Read the actual answer and its cited imported source excerpts; no second model judge was called."
+      }
+    },
+    {
+      "id": "Q4",
+      "status": "completed",
+      "keyword": {
+        "ranked_chunks": [
+          {
+            "rank": 1,
+            "chunk_id": "newark-meeting-302232-v1-001",
+            "source_id": "newark-meeting-302232",
+            "score": 1.0
+          },
+          {
+            "rank": 2,
+            "chunk_id": "newark-meeting-302231-v1-001",
+            "source_id": "newark-meeting-302231",
+            "score": 2.0
+          },
+          {
+            "rank": 3,
+            "chunk_id": "newark-agenda-517479-v1-001",
+            "source_id": "newark-agenda-517479",
+            "score": 3.0
+          },
+          {
+            "rank": 4,
+            "chunk_id": "newark-agenda-517475-v1-001",
+            "source_id": "newark-agenda-517475",
+            "score": 4.0
+          },
+          {
+            "rank": 5,
+            "chunk_id": "newark-meeting-302230-v1-001",
+            "source_id": "newark-meeting-302230",
+            "score": 5.0
+          }
+        ],
+        "expected_source_coverage_at_5": 1.0,
+        "all_expected_sources_present": true
+      },
+      "vector": {
+        "ranked_chunks": [
+          {
+            "rank": 1,
+            "chunk_id": "newark-meeting-302232-v1-001",
+            "source_id": "newark-meeting-302232",
+            "score": 0.7125747203826904,
+            "vector_distance": 0.28742527961730957
+          },
+          {
+            "rank": 2,
+            "chunk_id": "newark-meeting-302231-v1-001",
+            "source_id": "newark-meeting-302231",
+            "score": 0.7060045301914215,
+            "vector_distance": 0.2939954698085785
+          },
+          {
+            "rank": 3,
+            "chunk_id": "newark-meeting-302230-v1-001",
+            "source_id": "newark-meeting-302230",
+            "score": 0.6917091310024261,
+            "vector_distance": 0.30829086899757385
+          },
+          {
+            "rank": 4,
+            "chunk_id": "newark-meeting-302228-v1-001",
+            "source_id": "newark-meeting-302228",
+            "score": 0.6912937164306641,
+            "vector_distance": 0.30870628356933594
+          },
+          {
+            "rank": 5,
+            "chunk_id": "newark-meeting-302227-v1-001",
+            "source_id": "newark-meeting-302227",
+            "score": 0.6896179616451263,
+            "vector_distance": 0.31038203835487366
+          }
+        ],
+        "expected_source_coverage_at_5": 1.0,
+        "all_expected_sources_present": true
+      },
+      "hybrid_rrf_60": {
+        "ranked_chunks": [
+          {
+            "rank": 1,
+            "chunk_id": "newark-meeting-302232-v1-001",
+            "source_id": "newark-meeting-302232",
+            "score": 0.03278688524590164,
+            "vector_distance": 0.28742527961730957
+          },
+          {
+            "rank": 2,
+            "chunk_id": "newark-meeting-302231-v1-001",
+            "source_id": "newark-meeting-302231",
+            "score": 0.03225806451612903,
+            "vector_distance": 0.2939954698085785
+          },
+          {
+            "rank": 3,
+            "chunk_id": "newark-meeting-302230-v1-001",
+            "source_id": "newark-meeting-302230",
+            "score": 0.03125763125763126,
+            "vector_distance": 0.30829086899757385
+          },
+          {
+            "rank": 4,
+            "chunk_id": "newark-agenda-517479-v1-001",
+            "source_id": "newark-agenda-517479",
+            "score": 0.015873015873015872
+          },
+          {
+            "rank": 5,
+            "chunk_id": "newark-agenda-517475-v1-001",
+            "source_id": "newark-agenda-517475",
+            "score": 0.015625
+          }
+        ],
+        "expected_source_coverage_at_5": 1.0,
+        "all_expected_sources_present": true
+      },
+      "generation_context": [
+        {
+          "chunk_id": "newark-meeting-302232-v1-001",
+          "source_id": "newark-meeting-302232",
+          "heading": "Meeting schedule and official agenda record",
+          "text": "Newark Municipal Council meeting — November 5, 2026\nMeeting date: 2026-11-05 (November 5, 2026).\nScheduled time: 12:30 PM, America/New_York.\nLocation: Council Chamber.\nAgenda publication status: Final.\n\nThis is an imported public meeting record. A scheduled meeting or final agenda does not establish that a meeting occurred or an item passed. Consult the linked official record for current details and minutes.",
+          "content_hash": "27b51d7b7f8648004072954539c01fcea14f358341e91a3c1825b7c11ebe538b",
+          "version": 1,
+          "title": "Newark Municipal Council meeting — November 5, 2026",
+          "url": "https://newark.legistar.com/MeetingDetail.aspx?LEGID=302232&GID=7&G=76B7E664-B393-4911-9914-3B4B31917701",
+          "fetched_at": "2026-11-10T18:43:01.128530+00:00",
+          "source_updated_at": "2026-10-30T18:47:56.233",
+          "metadata": {
+            "agenda_status": "Final",
+            "api_url": "https://webapi.legistar.com/v1/newark/events?%24filter=EventDate+lt+datetime%272026-11-11T00%3A00%3A00%27+and+EventBodyName+eq+%27Municipal+Council%27&%24orderby=EventDate+desc%2CEventId+desc&%24top=5",
+            "body": "Municipal Council",
+            "city_clerk_url": "https://www.newarknj.gov/166/Office-of-the-City-Clerk",
+            "event_id": 302232,
+            "kind": "meeting",
+            "location": "Council Chamber",
+            "meeting_date": "2026-11-05",
+            "meeting_date_display": "November 5, 2026",
+            "meeting_starts_at": "2026-11-05T12:30:00-05:00",
+            "meeting_time": "12:30 PM",
+            "publisher": "City of Newark / Legistar",
+            "response_sha256": "57e33b22bd70cd078c852df8e59fe43f6aee19008224d6a007be9800f820924d",
+            "source_access": "Public official API metadata; attribution retained.",
+            "timezone": "America/New_York"
+          },
+          "source_hash": "7c5ffe2e51e0b60ba233cabc4298d675383632b24abbca50a571d47cc695489d",
+          "vector_distance": 0.28742527961730957,
+          "score": 0.03278688524590164
+        },
+        {
+          "chunk_id": "newark-meeting-302231-v1-001",
+          "source_id": "newark-meeting-302231",
+          "heading": "Meeting schedule and official agenda record",
+          "text": "Newark Municipal Council meeting — October 21, 2026\nMeeting date: 2026-10-21 (October 21, 2026).\nScheduled time: 6:30 PM, America/New_York.\nLocation: Council Chamber.\nAgenda publication status: Final.\n\nThis is an imported public meeting record. A scheduled meeting or final agenda does not establish that a meeting occurred or an item passed. Consult the linked official record for current details and minutes.",
+          "content_hash": "5ba5312fc88da626408f243ec5cf1a6b1452632f0c92c6f8af83b1266534df79",
+          "version": 1,
+          "title": "Newark Municipal Council meeting — October 21, 2026",
+          "url": "https://newark.legistar.com/MeetingDetail.aspx?LEGID=302231&GID=7&G=76B7E664-B393-4911-9914-3B4B31917701",
+          "fetched_at": "2026-11-10T18:43:01.128530+00:00",
+          "source_updated_at": "2026-10-16T19:27:07.717",
+          "metadata": {
+            "agenda_status": "Final",
+            "api_url": "https://webapi.legistar.com/v1/newark/events?%24filter=EventDate+lt+datetime%272026-11-11T00%3A00%3A00%27+and+EventBodyName+eq+%27Municipal+Council%27&%24orderby=EventDate+desc%2CEventId+desc&%24top=5",
+            "body": "Municipal Council",
+            "city_clerk_url": "https://www.newarknj.gov/166/Office-of-the-City-Clerk",
+            "event_id": 302231,
+            "kind": "meeting",
+            "location": "Council Chamber",
+            "meeting_date": "2026-10-21",
+            "meeting_date_display": "October 21, 2026",
+            "meeting_starts_at": "2026-10-21T18:30:00-04:00",
+            "meeting_time": "6:30 PM",
+            "publisher": "City of Newark / Legistar",
+            "response_sha256": "57e33b22bd70cd078c852df8e59fe43f6aee19008224d6a007be9800f820924d",
+            "source_access": "Public official API metadata; attribution retained.",
+            "timezone": "America/New_York"
+          },
+          "source_hash": "4269b2b7f631c5fcc5fbad9558ecbf29096e527294443b13a3cb7ebd493eebef",
+          "vector_distance": 0.2939954698085785,
+          "score": 0.03225806451612903
+        },
+        {
+          "chunk_id": "newark-meeting-302230-v1-001",
+          "source_id": "newark-meeting-302230",
+          "heading": "Meeting schedule and official agenda record",
+          "text": "Newark Municipal Council meeting — October 13, 2026\nMeeting date: 2026-10-13 (October 13, 2026).\nScheduled time: 10:00 AM, America/New_York.\nLocation: Council Chamber.\nAgenda publication status: Final.\n\nThis is an imported public meeting record. A scheduled meeting or final agenda does not establish that a meeting occurred or an item passed. Consult the linked official record for current details and minutes.",
+          "content_hash": "0da6bf9113ca6a2064339a66df35bab45674d18f63c8f39c9e6ced7e6825d674",
+          "version": 1,
+          "title": "Newark Municipal Council meeting — October 13, 2026",
+          "url": "https://newark.legistar.com/MeetingDetail.aspx?LEGID=302230&GID=7&G=76B7E664-B393-4911-9914-3B4B31917701",
+          "fetched_at": "2026-11-10T18:43:01.128530+00:00",
+          "source_updated_at": "2026-10-09T12:12:47.69",
+          "metadata": {
+            "agenda_status": "Final",
+            "api_url": "https://webapi.legistar.com/v1/newark/events?%24filter=EventDate+lt+datetime%272026-11-11T00%3A00%3A00%27+and+EventBodyName+eq+%27Municipal+Council%27&%24orderby=EventDate+desc%2CEventId+desc&%24top=5",
+            "body": "Municipal Council",
+            "city_clerk_url": "https://www.newarknj.gov/166/Office-of-the-City-Clerk",
+            "event_id": 302230,
+            "kind": "meeting",
+            "location": "Council Chamber",
+            "meeting_date": "2026-10-13",
+            "meeting_date_display": "October 13, 2026",
+            "meeting_starts_at": "2026-10-13T10:00:00-04:00",
+            "meeting_time": "10:00 AM",
+            "publisher": "City of Newark / Legistar",
+            "response_sha256": "57e33b22bd70cd078c852df8e59fe43f6aee19008224d6a007be9800f820924d",
+            "source_access": "Public official API metadata; attribution retained.",
+            "timezone": "America/New_York"
+          },
+          "source_hash": "799b45fa0fec0fde8eb6285438ad7801c655a273a2a4e9e52f4a841ac60d04ac",
+          "vector_distance": 0.30829086899757385,
+          "score": 0.03125763125763126
+        },
+        {
+          "chunk_id": "newark-agenda-517479-v1-001",
+          "source_id": "newark-agenda-517479",
+          "title": "26-1056 · AN ORDINANCE GRANTING A TWENTY-FIVE (25) YEAR LONG TERM TAX ABATEMENT TO CLINTON HEIGHTS RESIDENCE URBAN RENEWAL, LLC, 275-277 16th AVENUE, UNIT C, NEWARK, NEW JERSEY 07103, FOR A",
+          "heading": "Ordinance agenda item 26-1056",
+          "text": "Newark Municipal Council agenda item 26-1056.\nMeeting date: 2026-11-05.\nRecord type: Ordinance.\nTitle: AN ORDINANCE GRANTING A TWENTY-FIVE (25) YEAR LONG TERM TAX ABATEMENT TO CLINTON HEIGHTS RESIDENCE URBAN RENEWAL, LLC, 275-277 16th AVENUE, UNIT C, NEWARK, NEW JERSEY 07103, FOR A PROJECT LOCATED IN THE SOUTH WARD AT 722-728 CLINTON AVENUE, NEWARK, NEW JERSEY 07108, AND IDENTIFIED ON THE CITY’S TAX MAP AS BLOCK 3043, LOT 87 (FORMERLY KNOWN AS LOTS 87 and 88) (THE “PROPERTY”), TO CONSTRUCT A NEW FIVE (5)-STORY MIXED USE BUILDING CONTAINING (I) FOUR HUNDRED FORTY-SIX (446) SQUARE FEET OF COMMERCIAL/RETAIL SPACE ON THE GROUND FLOOR; (II) FORTY (40) RESIDENTIAL RENTAL UNITS ON FLOORS TWO (2) THROUGH FIVE (5), CONSISTING OF TWENTY (20) MARKET-RATE RESIDENTIAL RENTAL UNITS, INCLUDING TWO (2) STUDIO UNITS, TEN (10) ONE-BEDROOM UNITS, AND EIGHT (8) TWO-BEDROOM UNITS, (III) TWENTY (20) AFFORDABLE RESIDENTIAL RENTAL UNITS, INCLUDING OF EIGHT (8) UNITS RESTRICTED TO TENANTS EARNING UP TO 20% OF THE AREA MEDIAN INCOME (“AMI”), CONSISTING OF TWO (2) STUDIOS, TWO (2) ONE-BEDROOM UNITS, AND FOUR (4) TWO-BEDROOM UNITS; FOUR (4) UNITS RESTRICTED TO TENANTS AT 50% OF AMI, CONSISTING OF TWO (2) TWO-BEDROOM UNITS AND TWO (2) THREE BEDROOM UNITS; SIX (6) UNITS RESTRICTED TO TENANTS AT 65% OF AMI, CONSISTING OF FOUR (4) TWO-BEDROOM UNITS AND TWO (2) THREE-BEDROOM UNITS; AND TWO (2) THREE BEDROOM UNITS; AND TWO (2) UNITS RESTRICTED TO TENANTS AT 80% OF AMI, BOTH OF WHICH ARE TWO-BEDROOM UNITS, (IV) A FITNESS AREA, 212 SQUARE FOOT TENANT AMENITY LOUNGE, BICYCLE STORAGE, AND ROOFTOP; AND (V)",
+          "url": "https://newark.legistar.com/MeetingDetail.aspx?LEGID=302232&GID=7&G=76B7E664-B393-4911-9914-3B4B31917701",
+          "fetched_at": "2026-11-10T18:43:01.128530+00:00",
+          "source_updated_at": "2026-11-06T16:02:38.62",
+          "metadata": {
+            "api_url": "https://webapi.legistar.com/v1/newark/events/302232/eventitems?%24top=100",
+            "body": "Municipal Council",
+            "event_id": 302232,
+            "event_item_id": 517479,
+            "kind": "agenda_item",
+            "matter_file": "26-1056",
+            "matter_id": 1612048,
+            "matter_status": "Adopted",
+            "matter_type": "Ordinance",
+            "meeting_date": "2026-11-05",
+            "publisher": "City of Newark / Legistar",
+            "response_sha256": "79bae6c75f62195aebfb1d86a47072ccc77758b8e72393778c6b2f7e0895d657",
+            "source_access": "Public official API metadata; attribution retained.",
+            "timezone": "America/New_York"
+          },
+          "content_hash": "4c5881923cef039c7f8b1f4d21c0384256b94c7ae7879b4eec5335c620b4ce80",
+          "source_hash": "18ad0022b84f8f5234c95ac79d0a2f92c13d0318ff3a7b2d3692d2f6b1a55a7f",
+          "version": 1,
+          "score": 0.015873015873015872
+        },
+        {
+          "chunk_id": "newark-agenda-517475-v1-001",
+          "source_id": "newark-agenda-517475",
+          "title": "26-0816 · AN ORDINANCE GRANTING A TWENTY (20) YEAR LONG TERM TAX ABATEMENT TO SUMMER AVENUE APARTMENTS URBAN RENEWAL, LLC, 4 LIBELLA COURT, NEWARK, NEW JERSEY 07105, FOR A PROJECT LOCATED IN",
+          "heading": "Ordinance agenda item 26-0816",
+          "text": "Newark Municipal Council agenda item 26-0816.\nMeeting date: 2026-11-05.\nRecord type: Ordinance.\nTitle: AN ORDINANCE GRANTING A TWENTY (20) YEAR LONG TERM TAX ABATEMENT TO SUMMER AVENUE APARTMENTS URBAN RENEWAL, LLC, 4 LIBELLA COURT, NEWARK, NEW JERSEY 07105, FOR A PROJECT LOCATED IN THE NORTH WARD AT 828-832 SUMMER AVENUE, NEWARK, NEW JERSEY 07104 AND IDENTIFIED ON THE CITY'S TAX MAP AS BLOCK 815, LOT 12 (THE \"PROPERTY\"), TO CONSTRUCT A NEW FIVE (5) STORY MULTIFAMILY RESIDENTIAL BUILDING CONTAINING TWENTY-NINE (29) RESIDENTIAL RENTAL UNITS, CONSISTING OF TWENTY-THREE (23) MARKET-RATE UNITS AND SIX (6) INCOME-RESTRICTED UNITS, TOGETHER WITH SEVENTEEN (17) RENTAL PARKING SPACES, BICYCLE STORAGE FOR APPROXIMATELY THIRTY-TWO (32) BICYCLES, A FITNESS ROOM, A COMMUNITY ROOM/LOUNGE, AND A ROOFTOP DECK INCORPORATING A GREEN ROOF SYSTEM (THE \"PROJECT\") (NORTH WARD).\nMatter status reported by the source: Public Hearing, Second Reading and Final Passage.\n\nAn agenda listing is not evidence of final passage. This limited import does not include voting histories, full legislation, attachments or minutes.",
+          "url": "https://newark.legistar.com/MeetingDetail.aspx?LEGID=302232&GID=7&G=76B7E664-B393-4911-9914-3B4B31917701",
+          "fetched_at": "2026-11-10T18:43:01.128530+00:00",
+          "source_updated_at": "2026-11-06T16:40:42.54",
+          "metadata": {
+            "api_url": "https://webapi.legistar.com/v1/newark/events/302232/eventitems?%24top=100",
+            "body": "Municipal Council",
+            "event_id": 302232,
+            "event_item_id": 517475,
+            "kind": "agenda_item",
+            "matter_file": "26-0816",
+            "matter_id": 1611808,
+            "matter_status": "Public Hearing, Second Reading and Final Passage",
+            "matter_type": "Ordinance",
+            "meeting_date": "2026-11-05",
+            "publisher": "City of Newark / Legistar",
+            "response_sha256": "79bae6c75f62195aebfb1d86a47072ccc77758b8e72393778c6b2f7e0895d657",
+            "source_access": "Public official API metadata; attribution retained.",
+            "timezone": "America/New_York"
+          },
+          "content_hash": "d5a6621ecc71c73c9d7ef5775f24c7002996a4eb841997cf72eaf5640b28b081",
+          "source_hash": "a7a8e3ce81720ebd3902851847a5856575fe6a8ed4da7831b22e9079c08750bc",
+          "version": 1,
+          "score": 0.015625
+        }
+      ],
+      "completed_at_utc": "2026-11-10T18:57:01.903409+00:00",
+      "actual_answer": {
+        "answer": "No. The November 5, 2026 session was scheduled for 12:30 PM America/New_York; the October 21, 2026 session was scheduled for 6:30 PM America/New_York.",
+        "citation_ids": [
+          "newark-meeting-302232-v1-001",
+          "newark-meeting-302231-v1-001"
+        ],
+        "insufficient_evidence": false,
+        "model": "gpt-5-mini"
+      },
+      "mechanical_checks": {
+        "citations_within_supplied_context": true,
+        "all_expected_sources_cited": true,
+        "unanswerable_refusal_and_no_citations": null,
+        "support_judgment": "AI evidence review completed; see support_review, including wording limits."
+      },
+      "support_review": {
+        "reviewer": "AI implementation agent; not a human peer",
+        "reviewed_at_utc": "2026-11-10T18:58:10.699305+00:00",
+        "status": "supported",
+        "reason": "The cited November 5 and October 21 records list 12:30 PM and 6:30 PM respectively. The answer preserves the dates, identifies the difference and labels local scheduled times.",
+        "method": "Read the actual answer and its cited imported source excerpts; no second model judge was called."
+      }
+    },
+    {
+      "id": "Q5",
+      "status": "completed",
+      "keyword": {
+        "ranked_chunks": [
+          {
+            "rank": 1,
+            "chunk_id": "newark-meeting-302232-v1-001",
+            "source_id": "newark-meeting-302232",
+            "score": 1.0
+          },
+          {
+            "rank": 2,
+            "chunk_id": "newark-meeting-302231-v1-001",
+            "source_id": "newark-meeting-302231",
+            "score": 2.0
+          },
+          {
+            "rank": 3,
+            "chunk_id": "newark-meeting-302230-v1-001",
+            "source_id": "newark-meeting-302230",
+            "score": 3.0
+          },
+          {
+            "rank": 4,
+            "chunk_id": "newark-meeting-302227-v1-001",
+            "source_id": "newark-meeting-302227",
+            "score": 4.0
+          },
+          {
+            "rank": 5,
+            "chunk_id": "newark-meeting-302228-v1-001",
+            "source_id": "newark-meeting-302228",
+            "score": 5.0
+          }
+        ],
+        "expected_source_coverage_at_5": null,
+        "all_expected_sources_present": null
+      },
+      "vector": {
+        "ranked_chunks": [
+          {
+            "rank": 1,
+            "chunk_id": "newark-meeting-302231-v1-001",
+            "source_id": "newark-meeting-302231",
+            "score": 0.5559162497520447,
+            "vector_distance": 0.4440837502479553
+          },
+          {
+            "rank": 2,
+            "chunk_id": "newark-meeting-302232-v1-001",
+            "source_id": "newark-meeting-302232",
+            "score": 0.548870861530304,
+            "vector_distance": 0.45112913846969604
+          },
+          {
+            "rank": 3,
+            "chunk_id": "newark-meeting-302230-v1-001",
+            "source_id": "newark-meeting-302230",
+            "score": 0.5457550883293152,
+            "vector_distance": 0.4542449116706848
+          },
+          {
+            "rank": 4,
+            "chunk_id": "newark-meeting-302227-v1-001",
+            "source_id": "newark-meeting-302227",
+            "score": 0.5421195030212402,
+            "vector_distance": 0.45788049697875977
+          },
+          {
+            "rank": 5,
+            "chunk_id": "newark-meeting-302228-v1-001",
+            "source_id": "newark-meeting-302228",
+            "score": 0.5380745530128479,
+            "vector_distance": 0.4619254469871521
+          }
+        ],
+        "expected_source_coverage_at_5": null,
+        "all_expected_sources_present": null
+      },
+      "hybrid_rrf_60": {
+        "ranked_chunks": [
+          {
+            "rank": 1,
+            "chunk_id": "newark-meeting-302231-v1-001",
+            "source_id": "newark-meeting-302231",
+            "score": 0.03252247488101534,
+            "vector_distance": 0.4440837502479553
+          },
+          {
+            "rank": 2,
+            "chunk_id": "newark-meeting-302232-v1-001",
+            "source_id": "newark-meeting-302232",
+            "score": 0.03252247488101534,
+            "vector_distance": 0.45112913846969604
+          },
+          {
+            "rank": 3,
+            "chunk_id": "newark-meeting-302230-v1-001",
+            "source_id": "newark-meeting-302230",
+            "score": 0.031746031746031744,
+            "vector_distance": 0.4542449116706848
+          },
+          {
+            "rank": 4,
+            "chunk_id": "newark-meeting-302227-v1-001",
+            "source_id": "newark-meeting-302227",
+            "score": 0.03125,
+            "vector_distance": 0.45788049697875977
+          },
+          {
+            "rank": 5,
+            "chunk_id": "newark-meeting-302228-v1-001",
+            "source_id": "newark-meeting-302228",
+            "score": 0.03076923076923077,
+            "vector_distance": 0.4619254469871521
+          }
+        ],
+        "expected_source_coverage_at_5": null,
+        "all_expected_sources_present": null
+      },
+      "generation_context": [
+        {
+          "chunk_id": "newark-meeting-302231-v1-001",
+          "source_id": "newark-meeting-302231",
+          "heading": "Meeting schedule and official agenda record",
+          "text": "Newark Municipal Council meeting — October 21, 2026\nMeeting date: 2026-10-21 (October 21, 2026).\nScheduled time: 6:30 PM, America/New_York.\nLocation: Council Chamber.\nAgenda publication status: Final.\n\nThis is an imported public meeting record. A scheduled meeting or final agenda does not establish that a meeting occurred or an item passed. Consult the linked official record for current details and minutes.",
+          "content_hash": "5ba5312fc88da626408f243ec5cf1a6b1452632f0c92c6f8af83b1266534df79",
+          "version": 1,
+          "title": "Newark Municipal Council meeting — October 21, 2026",
+          "url": "https://newark.legistar.com/MeetingDetail.aspx?LEGID=302231&GID=7&G=76B7E664-B393-4911-9914-3B4B31917701",
+          "fetched_at": "2026-11-10T18:43:01.128530+00:00",
+          "source_updated_at": "2026-10-16T19:27:07.717",
+          "metadata": {
+            "agenda_status": "Final",
+            "api_url": "https://webapi.legistar.com/v1/newark/events?%24filter=EventDate+lt+datetime%272026-11-11T00%3A00%3A00%27+and+EventBodyName+eq+%27Municipal+Council%27&%24orderby=EventDate+desc%2CEventId+desc&%24top=5",
+            "body": "Municipal Council",
+            "city_clerk_url": "https://www.newarknj.gov/166/Office-of-the-City-Clerk",
+            "event_id": 302231,
+            "kind": "meeting",
+            "location": "Council Chamber",
+            "meeting_date": "2026-10-21",
+            "meeting_date_display": "October 21, 2026",
+            "meeting_starts_at": "2026-10-21T18:30:00-04:00",
+            "meeting_time": "6:30 PM",
+            "publisher": "City of Newark / Legistar",
+            "response_sha256": "57e33b22bd70cd078c852df8e59fe43f6aee19008224d6a007be9800f820924d",
+            "source_access": "Public official API metadata; attribution retained.",
+            "timezone": "America/New_York"
+          },
+          "source_hash": "4269b2b7f631c5fcc5fbad9558ecbf29096e527294443b13a3cb7ebd493eebef",
+          "vector_distance": 0.4440837502479553,
+          "score": 0.03252247488101534
+        },
+        {
+          "chunk_id": "newark-meeting-302232-v1-001",
+          "source_id": "newark-meeting-302232",
+          "heading": "Meeting schedule and official agenda record",
+          "text": "Newark Municipal Council meeting — November 5, 2026\nMeeting date: 2026-11-05 (November 5, 2026).\nScheduled time: 12:30 PM, America/New_York.\nLocation: Council Chamber.\nAgenda publication status: Final.\n\nThis is an imported public meeting record. A scheduled meeting or final agenda does not establish that a meeting occurred or an item passed. Consult the linked official record for current details and minutes.",
+          "content_hash": "27b51d7b7f8648004072954539c01fcea14f358341e91a3c1825b7c11ebe538b",
+          "version": 1,
+          "title": "Newark Municipal Council meeting — November 5, 2026",
+          "url": "https://newark.legistar.com/MeetingDetail.aspx?LEGID=302232&GID=7&G=76B7E664-B393-4911-9914-3B4B31917701",
+          "fetched_at": "2026-11-10T18:43:01.128530+00:00",
+          "source_updated_at": "2026-10-30T18:47:56.233",
+          "metadata": {
+            "agenda_status": "Final",
+            "api_url": "https://webapi.legistar.com/v1/newark/events?%24filter=EventDate+lt+datetime%272026-11-11T00%3A00%3A00%27+and+EventBodyName+eq+%27Municipal+Council%27&%24orderby=EventDate+desc%2CEventId+desc&%24top=5",
+            "body": "Municipal Council",
+            "city_clerk_url": "https://www.newarknj.gov/166/Office-of-the-City-Clerk",
+            "event_id": 302232,
+            "kind": "meeting",
+            "location": "Council Chamber",
+            "meeting_date": "2026-11-05",
+            "meeting_date_display": "November 5, 2026",
+            "meeting_starts_at": "2026-11-05T12:30:00-05:00",
+            "meeting_time": "12:30 PM",
+            "publisher": "City of Newark / Legistar",
+            "response_sha256": "57e33b22bd70cd078c852df8e59fe43f6aee19008224d6a007be9800f820924d",
+            "source_access": "Public official API metadata; attribution retained.",
+            "timezone": "America/New_York"
+          },
+          "source_hash": "7c5ffe2e51e0b60ba233cabc4298d675383632b24abbca50a571d47cc695489d",
+          "vector_distance": 0.45112913846969604,
+          "score": 0.03252247488101534
+        },
+        {
+          "chunk_id": "newark-meeting-302230-v1-001",
+          "source_id": "newark-meeting-302230",
+          "heading": "Meeting schedule and official agenda record",
+          "text": "Newark Municipal Council meeting — October 13, 2026\nMeeting date: 2026-10-13 (October 13, 2026).\nScheduled time: 10:00 AM, America/New_York.\nLocation: Council Chamber.\nAgenda publication status: Final.\n\nThis is an imported public meeting record. A scheduled meeting or final agenda does not establish that a meeting occurred or an item passed. Consult the linked official record for current details and minutes.",
+          "content_hash": "0da6bf9113ca6a2064339a66df35bab45674d18f63c8f39c9e6ced7e6825d674",
+          "version": 1,
+          "title": "Newark Municipal Council meeting — October 13, 2026",
+          "url": "https://newark.legistar.com/MeetingDetail.aspx?LEGID=302230&GID=7&G=76B7E664-B393-4911-9914-3B4B31917701",
+          "fetched_at": "2026-11-10T18:43:01.128530+00:00",
+          "source_updated_at": "2026-10-09T12:12:47.69",
+          "metadata": {
+            "agenda_status": "Final",
+            "api_url": "https://webapi.legistar.com/v1/newark/events?%24filter=EventDate+lt+datetime%272026-11-11T00%3A00%3A00%27+and+EventBodyName+eq+%27Municipal+Council%27&%24orderby=EventDate+desc%2CEventId+desc&%24top=5",
+            "body": "Municipal Council",
+            "city_clerk_url": "https://www.newarknj.gov/166/Office-of-the-City-Clerk",
+            "event_id": 302230,
+            "kind": "meeting",
+            "location": "Council Chamber",
+            "meeting_date": "2026-10-13",
+            "meeting_date_display": "October 13, 2026",
+            "meeting_starts_at": "2026-10-13T10:00:00-04:00",
+            "meeting_time": "10:00 AM",
+            "publisher": "City of Newark / Legistar",
+            "response_sha256": "57e33b22bd70cd078c852df8e59fe43f6aee19008224d6a007be9800f820924d",
+            "source_access": "Public official API metadata; attribution retained.",
+            "timezone": "America/New_York"
+          },
+          "source_hash": "799b45fa0fec0fde8eb6285438ad7801c655a273a2a4e9e52f4a841ac60d04ac",
+          "vector_distance": 0.4542449116706848,
+          "score": 0.031746031746031744
+        },
+        {
+          "chunk_id": "newark-meeting-302227-v1-001",
+          "source_id": "newark-meeting-302227",
+          "heading": "Meeting schedule and official agenda record",
+          "text": "Newark Municipal Council meeting — October 7, 2026\nMeeting date: 2026-10-07 (October 7, 2026).\nScheduled time: 12:30 PM, America/New_York.\nLocation: Council Chamber.\nAgenda publication status: Final.\n\nThis is an imported public meeting record. A scheduled meeting or final agenda does not establish that a meeting occurred or an item passed. Consult the linked official record for current details and minutes.",
+          "content_hash": "b625aa7236e8b01efc10004530c3fd505cd89c428c24ba38de9b2206aab4be00",
+          "version": 1,
+          "title": "Newark Municipal Council meeting — October 7, 2026",
+          "url": "https://newark.legistar.com/MeetingDetail.aspx?LEGID=302227&GID=7&G=76B7E664-B393-4911-9914-3B4B31917701",
+          "fetched_at": "2026-11-10T18:43:01.128530+00:00",
+          "source_updated_at": "2026-10-02T18:38:36.03",
+          "metadata": {
+            "agenda_status": "Final",
+            "api_url": "https://webapi.legistar.com/v1/newark/events?%24filter=EventDate+lt+datetime%272026-11-11T00%3A00%3A00%27+and+EventBodyName+eq+%27Municipal+Council%27&%24orderby=EventDate+desc%2CEventId+desc&%24top=5",
+            "body": "Municipal Council",
+            "city_clerk_url": "https://www.newarknj.gov/166/Office-of-the-City-Clerk",
+            "event_id": 302227,
+            "kind": "meeting",
+            "location": "Council Chamber",
+            "meeting_date": "2026-10-07",
+            "meeting_date_display": "October 7, 2026",
+            "meeting_starts_at": "2026-10-07T12:30:00-04:00",
+            "meeting_time": "12:30 PM",
+            "publisher": "City of Newark / Legistar",
+            "response_sha256": "57e33b22bd70cd078c852df8e59fe43f6aee19008224d6a007be9800f820924d",
+            "source_access": "Public official API metadata; attribution retained.",
+            "timezone": "America/New_York"
+          },
+          "source_hash": "8d45b3ac9fae69e9affd137848767bc8e13b36c1cfa38af726f4767741b5144c",
+          "vector_distance": 0.45788049697875977,
+          "score": 0.03125
+        },
+        {
+          "chunk_id": "newark-meeting-302228-v1-001",
+          "source_id": "newark-meeting-302228",
+          "heading": "Meeting schedule and official agenda record",
+          "text": "Newark Municipal Council meeting — October 6, 2026\nMeeting date: 2026-10-06 (October 6, 2026).\nScheduled time: 10:00 AM, America/New_York.\nLocation: Council Chamber.\nAgenda publication status: Final.\n\nThis is an imported public meeting record. A scheduled meeting or final agenda does not establish that a meeting occurred or an item passed. Consult the linked official record for current details and minutes.",
+          "content_hash": "240f506fc3da9788db60b301d17314d3b88c6d88a61c714bf200b70b07868ee0",
+          "version": 1,
+          "title": "Newark Municipal Council meeting — October 6, 2026",
+          "url": "https://newark.legistar.com/MeetingDetail.aspx?LEGID=302228&GID=7&G=76B7E664-B393-4911-9914-3B4B31917701",
+          "fetched_at": "2026-11-10T18:43:01.128530+00:00",
+          "source_updated_at": "2026-10-08T15:03:47.723",
+          "metadata": {
+            "agenda_status": "Final",
+            "api_url": "https://webapi.legistar.com/v1/newark/events?%24filter=EventDate+lt+datetime%272026-11-11T00%3A00%3A00%27+and+EventBodyName+eq+%27Municipal+Council%27&%24orderby=EventDate+desc%2CEventId+desc&%24top=5",
+            "body": "Municipal Council",
+            "city_clerk_url": "https://www.newarknj.gov/166/Office-of-the-City-Clerk",
+            "event_id": 302228,
+            "kind": "meeting",
+            "location": "Council Chamber",
+            "meeting_date": "2026-10-06",
+            "meeting_date_display": "October 6, 2026",
+            "meeting_starts_at": "2026-10-06T10:00:00-04:00",
+            "meeting_time": "10:00 AM",
+            "publisher": "City of Newark / Legistar",
+            "response_sha256": "57e33b22bd70cd078c852df8e59fe43f6aee19008224d6a007be9800f820924d",
+            "source_access": "Public official API metadata; attribution retained.",
+            "timezone": "America/New_York"
+          },
+          "source_hash": "eb0be5f1c414c9720adb3b9b9e6833ab0cefaf118d1242504422c2c6db848c9c",
+          "vector_distance": 0.4619254469871521,
+          "score": 0.03076923076923077
+        }
+      ],
+      "completed_at_utc": "2026-11-10T18:57:04.217905+00:00",
+      "actual_answer": {
+        "answer": "I cannot find the City of Newark’s approved 2026 budget amount in the supplied records. The imported items are meeting agendas/dates and do not state a total budget figure.",
+        "citation_ids": [],
+        "insufficient_evidence": true,
+        "model": "gpt-5-mini"
+      },
+      "mechanical_checks": {
+        "citations_within_supplied_context": true,
+        "all_expected_sources_cited": null,
+        "unanswerable_refusal_and_no_citations": true,
+        "support_judgment": "AI evidence review completed; see support_review, including wording limits."
+      },
+      "support_review": {
+        "reviewer": "AI implementation agent; not a human peer",
+        "reviewed_at_utc": "2026-11-10T18:58:10.699307+00:00",
+        "status": "adequate_insufficient_evidence",
+        "reason": "No total approved 2026 budget amount appears in the supplied context. The model returns insufficient_evidence=true, no invented dollar amount and no citation IDs; this establishes nothing about the actual city budget.",
+        "method": "Read the actual answer and its cited imported source excerpts; no second model judge was called."
+      }
+    }
+  ],
+  "chunk_boundary_experiment": {
+    "units": "Unicode characters, not model tokens",
+    "maximum_characters": 1600,
+    "overlap_characters": 0,
+    "comparison": "Actual heading/paragraph chunks versus fixed 1600-character windows",
+    "records": [
+      {
+        "source_id": "newark-meeting-302232",
+        "source_hash": "7c5ffe2e51e0b60ba233cabc4298d675383632b24abbca50a571d47cc695489d",
+        "input_characters": 411,
+        "paragraph_chunks": 1,
+        "fixed_chunks": 1,
+        "schedule_span": "Meeting date: 2026-11-05 (November 5, 2026).\nScheduled time: 12:30 PM, America/New_York.\nLocation: Council Chamber.",
+        "paragraph_schedule_together": true,
+        "fixed_schedule_together": true
+      },
+      {
+        "source_id": "newark-agenda-517475",
+        "source_hash": "a7a8e3ce81720ebd3902851847a5856575fe6a8ed4da7831b22e9079c08750bc",
+        "input_characters": 1107,
+        "paragraph_chunks": 1,
+        "fixed_chunks": 1,
+        "schedule_span": null,
+        "paragraph_schedule_together": null,
+        "fixed_schedule_together": null
+      },
+      {
+        "source_id": "newark-agenda-517479",
+        "source_hash": "18ad0022b84f8f5234c95ac79d0a2f92c13d0318ff3a7b2d3692d2f6b1a55a7f",
+        "input_characters": 1900,
+        "paragraph_chunks": 2,
+        "fixed_chunks": 2,
+        "schedule_span": null,
+        "paragraph_schedule_together": null,
+        "fixed_schedule_together": null
+      },
+      {
+        "source_id": "newark-meeting-302231",
+        "source_hash": "4269b2b7f631c5fcc5fbad9558ecbf29096e527294443b13a3cb7ebd493eebef",
+        "input_characters": 410,
+        "paragraph_chunks": 1,
+        "fixed_chunks": 1,
+        "schedule_span": "Meeting date: 2026-10-21 (October 21, 2026).\nScheduled time: 6:30 PM, America/New_York.\nLocation: Council Chamber.",
+        "paragraph_schedule_together": true,
+        "fixed_schedule_together": true
+      },
+      {
+        "source_id": "newark-meeting-302230",
+        "source_hash": "799b45fa0fec0fde8eb6285438ad7801c655a273a2a4e9e52f4a841ac60d04ac",
+        "input_characters": 411,
+        "paragraph_chunks": 1,
+        "fixed_chunks": 1,
+        "schedule_span": "Meeting date: 2026-10-13 (October 13, 2026).\nScheduled time: 10:00 AM, America/New_York.\nLocation: Council Chamber.",
+        "paragraph_schedule_together": true,
+        "fixed_schedule_together": true
+      },
+      {
+        "source_id": "newark-meeting-302227",
+        "source_hash": "8d45b3ac9fae69e9affd137848767bc8e13b36c1cfa38af726f4767741b5144c",
+        "input_characters": 409,
+        "paragraph_chunks": 1,
+        "fixed_chunks": 1,
+        "schedule_span": "Meeting date: 2026-10-07 (October 7, 2026).\nScheduled time: 12:30 PM, America/New_York.\nLocation: Council Chamber.",
+        "paragraph_schedule_together": true,
+        "fixed_schedule_together": true
+      },
+      {
+        "source_id": "newark-meeting-302228",
+        "source_hash": "eb0be5f1c414c9720adb3b9b9e6833ab0cefaf118d1242504422c2c6db848c9c",
+        "input_characters": 409,
+        "paragraph_chunks": 1,
+        "fixed_chunks": 1,
+        "schedule_span": "Meeting date: 2026-10-06 (October 6, 2026).\nScheduled time: 10:00 AM, America/New_York.\nLocation: Council Chamber.",
+        "paragraph_schedule_together": true,
+        "fixed_schedule_together": true
+      }
+    ],
+    "limitation": "Boundary inspection only; no answer-quality advantage is inferred."
+  },
+  "source_link_checks": [
+    {
+      "url": "https://newark.legistar.com/MeetingDetail.aspx?LEGID=302232&GID=7&G=76B7E664-B393-4911-9914-3B4B31917701",
+      "checked_at_utc": "2026-11-10T18:57:04.227711+00:00",
+      "status": 200,
+      "redirect": null
+    },
+    {
+      "url": "https://newark.legistar.com/MeetingDetail.aspx?LEGID=302227&GID=7&G=76B7E664-B393-4911-9914-3B4B31917701",
+      "checked_at_utc": "2026-11-10T18:57:04.550824+00:00",
+      "status": 200,
+      "redirect": null
+    },
+    {
+      "url": "https://newark.legistar.com/MeetingDetail.aspx?LEGID=302228&GID=7&G=76B7E664-B393-4911-9914-3B4B31917701",
+      "checked_at_utc": "2026-11-10T18:57:04.756312+00:00",
+      "status": 410,
+      "redirect": null
+    },
+    {
+      "url": "https://newark.legistar.com/MeetingDetail.aspx?LEGID=302230&GID=7&G=76B7E664-B393-4911-9914-3B4B31917701",
+      "checked_at_utc": "2026-11-10T18:57:04.939842+00:00",
+      "status": 410,
+      "redirect": null
+    },
+    {
+      "url": "https://newark.legistar.com/MeetingDetail.aspx?LEGID=302231&GID=7&G=76B7E664-B393-4911-9914-3B4B31917701",
+      "checked_at_utc": "2026-11-10T18:57:05.040826+00:00",
+      "status": 200,
+      "redirect": null
+    }
+  ],
+  "completed_at_utc": "2026-11-10T18:57:05.231450+00:00",
+  "summary": {
+    "question_count": 5,
+    "answerable_questions": 4,
+    "keyword_mean_required_source_coverage_at_5": 1.0,
+    "vector_mean_required_source_coverage_at_5": 0.875,
+    "hybrid_mean_required_source_coverage_at_5": 1.0,
+    "keyword_complete_required_source_sets": 4,
+    "vector_complete_required_source_sets": 3,
+    "hybrid_complete_required_source_sets": 4,
+    "unanswerable_refusal_observed": true,
+    "answer_fact_reviews": "Four supported fact answers; two have wording notes. Fifth correctly declined missing evidence. AI judgment only.",
+    "imported_source_links_http200": 3,
+    "imported_source_links_checked": 5,
+    "all_actual_citation_urls_http200": true,
+    "generalization_limit": "Five questions over seven sources/eight chunks. Hybrid restored Q3 coverage missed by vector-only search, but did not outperform keyword source coverage in this set."
+  }
+}

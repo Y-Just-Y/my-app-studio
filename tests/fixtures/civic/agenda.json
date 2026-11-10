@@ -1,0 +1,18 @@
+[
+  {
+    "EventItemId": 517467,
+    "EventItemTitle": "CALL TO ORDER",
+    "EventItemMatterType": null,
+    "EventItemMatterId": null
+  },
+  {
+    "EventItemId": 517475,
+    "EventItemTitle": "AN ORDINANCE GRANTING A LONG TERM TAX ABATEMENT TO A HOUSING PROJECT",
+    "EventItemMatterName": "Housing project ordinance",
+    "EventItemMatterFile": "26-0816",
+    "EventItemMatterType": "Ordinance",
+    "EventItemMatterStatus": "Pending",
+    "EventItemMatterId": 1611808,
+    "EventItemLastModifiedUtc": "2026-10-30T18:47:56.233"
+  }
+]

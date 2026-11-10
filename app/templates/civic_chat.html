@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Ask Newark · {{ brand.name }}{% endblock %}
+{% block content %}
+<section class="ask-heading">
+  <div><p class="eyebrow">The record, in context</p><h1>Ask Newark.</h1><p class="lede">Start with a question. Follow the evidence.</p></div>
+  <p class="ask-disclosure">Independent student project. Answers use a saved snapshot of official council records. This is not an official city service or a complete, live meeting calendar.</p>
+</section>
+<div class="ask-layout" data-civic-chat>
+  <section class="chat-panel" aria-labelledby="chat-title">
+    <div class="card-top"><h2 id="chat-title">Your civic question</h2><span class="badge">{{ 'AI connected' if civic.provider.enabled else 'Source search ready' }}</span></div>
+    <p class="muted">Try a dated question about the imported records. Keep personal information out of your question.</p>
+    <div class="question-examples" aria-label="Example questions">
+      <button type="button" data-question="When was the latest meeting in the imported Newark council records?">Latest imported meeting</button>
+      <button type="button" data-question="Where was the Municipal Council meeting?">Meeting location</button>
+      <button type="button" data-question="What budget items appear on the imported agenda?">Budget agenda items</button>
+    </div>
+    <ol class="chat-transcript" aria-label="Conversation" aria-live="polite" aria-relevant="additions" data-transcript></ol>
+    <form class="question-form" data-question-form>
+      <label for="civic-question">What would you like to know?</label>
+      <textarea id="civic-question" name="question" rows="3" minlength="3" maxlength="1000" required placeholder="Ask about the imported council meetings…"></textarea>
+      <div class="question-options"><label for="answer-mode">Answer mode</label><select id="answer-mode" name="mode"><option value="search">Find source passages · no AI call</option><option value="ai" {% if not civic.provider.enabled %}disabled{% endif %}>AI answer with citations</option></select></div>
+      {% if not civic.provider.enabled %}<p class="field-help">AI generation is not connected yet. You can test source search now; it makes no model requests.</p>{% endif %}
+      <p class="field-help">Questions are not saved. In AI mode, your question and selected public passages are sent to OpenAI.</p>
+      <div class="question-submit"><span data-chat-status role="status"></span><button class="button" type="submit">Ask the records <span aria-hidden="true">↗</span></button></div>
+    </form>
+  </section>
+  <aside class="evidence-panel" aria-labelledby="evidence-title">
+    <p class="eyebrow">Know what’s in the collection</p><h2 id="evidence-title">{{ civic.sources }} source records.<br>{{ civic.chunks }} searchable passages.</h2>
+    <dl class="snapshot-facts"><dt>Last successful fetch</dt><dd>{{ civic.last_fetched_at or 'No import yet' }}</dd><dt>Coverage</dt><dd>Recent council meetings and selected agenda items. Missing records do not mean no meetings or decisions exist.</dd><dt>Search method</dt><dd>{{ 'Keyword + vector index available' if civic.vectors.indexed_chunks else 'Keyword baseline; vector indexing pending' }}</dd></dl>
+    <h3>From source to answer</h3><ol class="etl-steps"><li><strong>Extract</strong><span>Fetch the city’s public council feed.</span></li><li><strong>Transform</strong><span>Keep dates, source links and meaningful record boundaries.</span></li><li><strong>Load</strong><span>Save versioned records and passages in SQLite.</span></li><li><strong>Retrieve, then answer</strong><span>Show matching evidence; connect AI only when configured.</span></li></ol>
+    <a class="text-link" href="https://www.newarknj.gov/166/Office-of-the-City-Clerk" target="_blank" rel="noopener noreferrer">Check the City Clerk’s official page ↗</a>
+  </aside>
+</div>
+<section class="source-catalog"><div class="section-heading"><h2>Inside this snapshot</h2><span class="section-note">Fetched records, with original links</span></div><div class="record-grid">{% for record in civic.documents %}<article class="record-card"><span class="badge">{{ 'Meeting record' if record.metadata.kind == 'meeting' else 'Agenda item' }}</span><h3>{{ record.title }}</h3><p>{{ record.text[:280] }}{% if record.text|length > 280 %}…{% endif %}</p><a href="{{ record.url }}" target="_blank" rel="noopener noreferrer">Open original record ↗</a><p class="source-line">Retrieved {{ record.fetched_at }}</p></article>{% else %}<p>No records have been imported yet.</p>{% endfor %}</div></section>
+<script src="/static/civic.js" defer></script>
+{% endblock %}

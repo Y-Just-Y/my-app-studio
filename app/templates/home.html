@@ -1,9 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="edition"><span>NEWARK, NEW JERSEY</span><span>Independent student project</span><strong>DESIGN PREVIEW · NO LIVE DATA</strong></div>
+<div class="edition"><span>NEWARK, NEW JERSEY</span><span>Independent student project</span><strong>{% if civic.sources %}COUNCIL RECORD SNAPSHOT · OTHER SECTIONS PREVIEW{% else %}DESIGN PREVIEW · NO LIVE DATA{% endif %}</strong></div>
 <section class="hero" aria-labelledby="hero-title">
   <div><p class="eyebrow">The civic briefing</p><h1 id="hero-title">{{ brand.headline }}</h1></div>
   <div class="hero-intro"><p class="lede">{{ brand.summary }}</p><a class="button" href="#idea">Explore the civic preview <span aria-hidden="true">↓</span></a></div>
+</section>
+<section class="civic-snapshot" aria-labelledby="snapshot-title">
+  <div><p class="eyebrow">New · From the public record</p><h2 id="snapshot-title">Real records.<br>Questions worth asking.</h2><p>Explore {{ civic.sources }} imported council records, with dates and links to the original sources. The collection is a saved snapshot, not a complete live calendar.</p><a class="button" href="/ask">Ask Newark <span aria-hidden="true">↗</span></a></div>
+  <div class="snapshot-records">{% for record in civic.documents %}<article><span class="badge">{{ 'Meeting' if record.metadata.kind == 'meeting' else 'Agenda item' }}</span><h3><a href="{{ record.url }}" target="_blank" rel="noopener noreferrer">{{ record.title }}</a></h3><p>{% if record.metadata.meeting_date_display %}{{ record.metadata.meeting_date_display }}{% endif %}{% if record.metadata.meeting_time %} · {{ record.metadata.meeting_time }} America/New_York{% endif %}</p></article>{% else %}<p>First official record import pending.</p>{% endfor %}<p class="source-line">Last successful fetch: {{ civic.last_fetched_at or 'Not yet imported' }}. Agenda listings do not establish adoption.</p></div>
 </section>
 <section id="idea" class="overview" aria-labelledby="overview-title">
   <div class="section-heading"><h2 id="overview-title">The local picture</h2><span class="section-note">Your decisions. Your deadlines. Your public money.</span></div>

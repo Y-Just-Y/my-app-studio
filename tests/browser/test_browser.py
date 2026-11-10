@@ -15,6 +15,8 @@ import uuid
 import pytest
 from playwright.sync_api import expect
 
+from app import civic_store
+
 ROOT = Path(__file__).resolve().parents[2]
 LEVEL = int(os.getenv("APP_TEST_LESSON", "0"))
 pytestmark = pytest.mark.e2e
@@ -43,6 +45,9 @@ def server(tmp_path_factory):
         APP_DATABASE=str(directory / "browser.sqlite3"),
         APP_SECRET="disposable-browser-test-key-" + uuid.uuid4().hex,
         STUDIO_LIVE_RELOAD="0",
+        CIVIC_DATABASE=str(directory / "civic.sqlite3"),
+        CIVIC_AI_ENABLED="0",
+        OPENAI_API_KEY="",
     )
     with (directory / "server.log").open("w") as output:
         process = subprocess.Popen(
@@ -97,12 +102,10 @@ def test_homepage_keyboard_and_mobile_layout(page, server):
     expect(page.locator("#main")).to_be_focused()
     page.set_viewport_size({"width": 390, "height": 844})
     assert page.evaluate("document.documentElement.scrollWidth <= window.innerWidth")
-    assert (
-        page.locator(".button").evaluate(
-            "element => element.getBoundingClientRect().height"
-        )
-        >= 44
+    heights = page.locator(".button").evaluate_all(
+        "elements => elements.map(element => element.getBoundingClientRect().height)"
     )
+    assert heights and min(heights) >= 44
     assert page.get_by_role("navigation", name="Main navigation").is_visible()
     if LEVEL >= 1:
         expect(page.get_by_text("Your Project", exact=True)).to_have_count(0)
@@ -152,6 +155,47 @@ def test_current_lesson_browser_journey(page, server):
     assert replay.status == 401
     page.goto(server.url + "/dashboard")
     expect(page.get_by_role("heading", name="Log in", exact=True)).to_be_visible()
+
+
+def test_civic_source_search_in_real_browser(page, server):
+    """Exercise real retrieval/citations without impersonating model generation."""
+    database = Path(server.environment["CIVIC_DATABASE"])
+    civic_store.upsert_documents(
+        database,
+        [
+            {
+                "source_id": "browser-fixture-council",
+                "title": "Synthetic council meeting · November 5, 2026",
+                "url": "https://newark.legistar.com/MeetingDetail.aspx?ID=123",
+                "heading": "Synthetic public meeting record",
+                "text": "Municipal Council met in the Council Chamber at 12:30 PM "
+                "on November 5, 2026. This is an isolated browser-test fixture.",
+                "fetched_at": "2026-11-10T12:00:00+00:00",
+                "metadata": {"kind": "meeting", "meeting_date": "2026-11-05"},
+            }
+        ],
+    )
+    page.goto(server.url + "/ask")
+    expect(page.get_by_role("heading", name="Ask Newark.", exact=True)).to_be_visible()
+    page.get_by_label("What would you like to know?").fill(
+        "What time was the November 5 council meeting?"
+    )
+    page.get_by_role("button", name="Ask the records").click()
+    expect(page.locator(".chat-transcript")).to_contain_text("12:30 PM")
+    expect(page.locator(".message-mode")).to_contain_text("no AI-generated answer")
+    citation = page.locator(".citation-list a").first
+    expect(citation).to_have_attribute(
+        "href", "https://newark.legistar.com/MeetingDetail.aspx?ID=123"
+    )
+    page.get_by_label("What would you like to know?").fill(
+        "What is my administrator password?"
+    )
+    page.get_by_role("button", name="Ask the records").click()
+    expect(page.locator(".chat-transcript")).to_contain_text(
+        "could not find supporting information"
+    )
+    page.set_viewport_size({"width": 390, "height": 844})
+    assert page.evaluate("document.documentElement.scrollWidth <= window.innerWidth")
 
 
 def _check_role_boundary(page, server, username):

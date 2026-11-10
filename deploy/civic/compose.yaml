@@ -1,0 +1,109 @@
+name: civic-pulse
+
+x-app-build: &app-build
+  context: ../..
+  dockerfile_inline: |
+    FROM python:3.12-slim-bookworm@sha256:935c3c5b12357a7e10caa9c1e6ca5692344d97cf229832ef584be2cec9fc03df
+    ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1
+    WORKDIR /app
+    COPY requirements.txt ./
+    RUN pip install --no-cache-dir -r requirements.txt \
+        && useradd --uid 10001 --create-home app \
+        && install -d -o 10001 -g 10001 -m 0700 /app/runtime
+    COPY app/ app/
+    COPY studio_tools/ studio_tools/
+    COPY civic_import.py civic_embed.py ./
+    USER 10001:10001
+    CMD ["python", "-m", "uvicorn", "app.main:create_app", "--factory", "--host", "0.0.0.0", "--port", "8000", "--no-access-log", "--proxy-headers", "--forwarded-allow-ips", "*"]
+
+services:
+  runtime-init:
+    image: newark-civic-pulse:local
+    build: *app-build
+    user: "0:0"
+    command:
+      - python
+      - -c
+      - "import os; p='/app/runtime'; os.makedirs(p, mode=0o700, exist_ok=True); os.chmod(p, 0o700); os.chown(p, 10001, 10001)"
+    volumes:
+      - runtime:/app/runtime
+    network_mode: none
+    read_only: true
+    cap_drop: [ALL]
+    cap_add: [CHOWN, FOWNER]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 96m
+    restart: "no"
+
+  app:
+    image: newark-civic-pulse:local
+    build: *app-build
+    depends_on:
+      runtime-init:
+        condition: service_completed_successfully
+    environment:
+      APP_MODE: production
+      APP_ORIGIN: https://civic.lwdgyasteri.com
+      APP_DATABASE: /app/runtime/studio.sqlite3
+      CIVIC_DATABASE: /app/runtime/civic.sqlite3
+      APP_SECRET: ${APP_SECRET:?Set APP_SECRET in the private deployment env file}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_CHAT_MODEL: ${OPENAI_CHAT_MODEL:-gpt-5-mini}
+      OPENAI_EMBEDDING_MODEL: ${OPENAI_EMBEDDING_MODEL:-text-embedding-3-small}
+      CIVIC_AI_ENABLED: ${CIVIC_AI_ENABLED:-0}
+      STUDIO_LIVE_RELOAD: "0"
+    expose: ["8000"]
+    volumes:
+      - runtime:/app/runtime
+    networks: [civic]
+    read_only: true
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,size=64m
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 512m
+    cpus: 0.75
+    pids_limit: 128
+    restart: unless-stopped
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - "import json, urllib.request; r=urllib.request.Request('http://127.0.0.1:8000/health', headers={'Host':'civic.lwdgyasteri.com'}); d=json.load(urllib.request.urlopen(r, timeout=4)); assert d == {'status':'ok', 'mode':'production'}"
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+
+  caddy:
+    image: caddy:2-alpine@sha256:78bd35025c7ba85961dd149ae670315129954e77abe2383ac47c89106b35ade9
+    depends_on:
+      app:
+        condition: service_healthy
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+      - caddy-config:/config
+    networks: [civic]
+    read_only: true
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,size=16m
+    cap_drop: [ALL]
+    cap_add: [NET_BIND_SERVICE]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 128m
+    cpus: 0.25
+    pids_limit: 128
+    restart: unless-stopped
+
+networks:
+  civic:
+
+volumes:
+  runtime:
+  caddy-data:
+  caddy-config:
