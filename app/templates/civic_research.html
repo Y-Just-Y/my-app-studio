@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+{% block title %}Research &amp; methods · {{ brand.name }}{% endblock %}
+{% block content %}
+<div class="research-page">
+  <header class="ask-heading">
+    <div>
+      <p class="eyebrow">The methods behind the civic briefing</p>
+      <h1>How Ask Newark works.</h1>
+      <p class="lede">From an official record to a searchable passage to an answer you can check.</p>
+    </div>
+    <p class="ask-disclosure">This is an independent student research project. The methods and results below are AI-authored and AI-reviewed, with primary sources linked. Human verification and peer feedback remain separate, unfinished work.</p>
+  </header>
+
+  <section class="civic-snapshot" aria-labelledby="research-snapshot-title">
+    <div>
+      <p class="eyebrow">The current collection</p>
+      <h2 id="research-snapshot-title">{{ civic.sources }} source records.<br>{{ civic.chunks }} searchable passages.</h2>
+      <p>A small snapshot of recent Newark council meetings and selected agenda items. It does not cover every meeting, decision, city service or budget figure.</p>
+      <a class="button" href="/ask">Try Ask Newark <span aria-hidden="true">↗</span></a>
+    </div>
+    <div class="snapshot-records">
+      <article><span class="badge">Live collection status</span><h3>Evidence with a date and a source.</h3><p>Last successful source fetch: {{ civic.last_fetched_at or 'No import recorded yet' }}.</p><p>{{ civic.vectors.indexed_chunks }} current vector embeddings{% if civic.vectors.dimensions %}, {{ civic.vectors.dimensions }} dimensions{% endif %}. {{ 'AI answers are configured.' if civic.provider.enabled else 'Source search is available; AI answers need configuration.' }}</p></article>
+      <article><h3>Keep the research and the app together.</h3><p><a href="https://y-just-y.github.io/is373_ci_cd/#heading-11" target="_blank" rel="noopener noreferrer">Open the combined individual record</a> for the portfolio, original Plan and source/comparison/decision index.</p></article>
+    </div>
+  </section>
+
+  <nav class="research-nav" aria-label="Research sections">
+    <a href="#research-etl">ETL &amp; sources</a>
+    <a href="#research-chunking">Chunking</a>
+    <a href="#research-retrieval">Search &amp; storage</a>
+    <a href="#research-papers">Primary research</a>
+    <a href="#research-results">Executed checks</a>
+    <a href="#research-limits">Limits &amp; next work</a>
+  </nav>
+
+  <section id="research-etl" class="research-section" aria-labelledby="research-etl-title">
+    <div class="section-heading"><h2 id="research-etl-title">01 / Get the source right.</h2><span class="section-note">Extract → transform → load</span></div>
+    <p>The research question is small: can a resident ask about imported council records, inspect the relevant evidence and receive an answer that stays within it? The corpus comes from official source records displayed by this site. Account forms, navigation and design-preview copy are excluded from retrieval.</p>
+    <div class="record-grid">
+      <article class="record-card"><span class="badge">Extract</span><h3>Read the public feed.</h3><p>The <a href="https://www.newarknj.gov/166/Office-of-the-City-Clerk" target="_blank" rel="noopener noreferrer">Newark City Clerk</a> links to the city's Legistar agenda service. The importer requests a bounded set of public meeting and agenda metadata from that official API.</p><p>An anonymous read succeeded for this source. <a href="https://webapi.legistar.com/Home/Examples" target="_blank" rel="noopener noreferrer">Legistar's API documentation</a> says token rules vary by client; this observation does not promise permanent access or authorize reuse of unrelated attachments and assets.</p></article>
+      <article class="record-card"><span class="badge">Transform</span><h3>Keep meaning and provenance.</h3><p>Validate record IDs and dates, normalize text, preserve the local meeting timezone, and retain the original URL, fetch time, source update time and content hash.</p><p>Build readable meeting or agenda-item text, then split only when needed. An agenda's publication status does not establish that an item passed, and a listed schedule does not prove a meeting occurred.</p></article>
+      <article class="record-card"><span class="badge">Load</span><h3>Save a consistent version.</h3><p>Commit sources and their dependent chunks in one SQLite transaction. Unchanged imports reuse stable identities; changed sources replace their old searchable passages together.</p><p>Refresh compatible embeddings for changed chunks. Failed or incomplete imports preserve the last successful snapshot. A source change during answer preparation returns a retryable conflict instead of mixing revisions.</p></article>
+    </div>
+    <p class="research-note"><strong>Executed import:</strong> the November 10 research snapshot contains five recent meeting records and two selected agenda items: seven sources and eight chunks. After source-link repairs, a repeat import reported all seven unchanged. These are observed bounded-import results, not a complete Newark calendar.</p>
+  </section>
+
+  <section id="research-chunking" class="research-section" aria-labelledby="research-chunking-title">
+    <div class="section-heading"><h2 id="research-chunking-title">02 / Make useful pieces.</h2><span class="section-note">A chunk is a passage with its context attached.</span></div>
+    <div class="member-grid">
+      <article class="panel"><p class="eyebrow">Current method</p><h3>Keep a short civic record together.</h3><p>One short meeting record becomes one passage containing its date, scheduled time, place and source. A longer agenda item is split at paragraph or word boundaries while retaining its heading and source version.</p><p>The present cap is <strong>1,600 Unicode characters, with zero overlap</strong>. Characters are not model tokens; this boundary experiment does not establish an optimal tokenizer setting.</p><p>For the November 5, 2026 record, preserving <strong>12:30 PM, America/New_York, Council Chamber</strong> together makes its schedule easier to inspect. The date must remain attached so a past record does not appear to describe an upcoming meeting.</p></article>
+      <aside class="evidence-panel"><p class="eyebrow">The comparison we actually ran</p><h3>Paragraphs versus fixed windows.</h3><dl class="snapshot-facts"><dt>Same inputs and size cap</dt><dd>Seven source records; 1,600 characters; zero overlap.</dd><dt>Paragraph-based result</dt><dd>Eight chunks. The full date/time/location span stayed together in all five meeting records.</dd><dt>Fixed-window result</dt><dd>Eight chunks. The same span stayed together in all five meeting records.</dd><dt>What this establishes</dt><dd>No advantage was observed on that boundary check. Short records made both methods sufficient for the tested span. Broader retrieval and answer-quality experiments remain open.</dd></dl></aside>
+    </div>
+  </section>
+
+  <section id="research-retrieval" class="research-section" aria-labelledby="research-retrieval-title">
+    <div class="section-heading"><h2 id="research-retrieval-title">03 / Search, then answer.</h2><span class="section-note">Different rankings answer different questions.</span></div>
+    <div class="record-grid">
+      <article class="record-card"><span class="badge">Lexical baseline</span><h3>FTS5 + BM25</h3><p><a href="https://sqlite.org/fts5.html" target="_blank" rel="noopener noreferrer">SQLite FTS5</a> searches the imported text. BM25 ranks word matches using factors such as term frequency and document length. This is useful for dates, ordinance numbers and exact names.</p><p>Exact words can still miss a differently phrased question. Retrieval is evaluated separately from the generated answer.</p></article>
+      <article class="record-card"><span class="badge">Semantic retrieval</span><h3>Embeddings + cosine distance</h3><p>OpenAI's <code>text-embedding-3-small</code> represents each passage and question as a numeric vector. The evaluated index uses 1,536 dimensions. <a href="https://alexgarcia.xyz/sqlite-vec/python.html" target="_blank" rel="noopener noreferrer">sqlite-vec</a> retrieves nearby vectors using cosine distance.</p><p>Nearby text can be irrelevant or incomplete. Similarity does not establish truth, correct dates or support for every answer claim.</p></article>
+      <article class="record-card"><span class="badge">Bounded combination</span><h3>Reciprocal rank fusion</h3><p>The hybrid path combines lexical and vector rankings by adding <code>1 / (60 + rank)</code> for each appearance, then selects up to five passages.</p><p>RRF combines ranks without treating BM25 scores and vector distances as the same scale. Our small evaluation did not show a source-coverage advantage over keyword search.</p></article>
+    </div>
+    <div class="member-grid">
+      <article class="panel"><p class="eyebrow">Generation</p><h3>An answer must point back to evidence.</h3><p>The bounded retrieved passages are supplied to <code>gpt-5-mini</code>. The model is instructed to use that evidence, preserve dates and uncertainty, ignore instructions within source text, and report insufficient evidence when necessary.</p><p>The application accepts only references to retrieved current chunk IDs and adds the source links itself. Citation validity is a useful mechanical check; claim-level support still needs inspection.</p><a class="text-link" href="/ask">Inspect passages in Ask Newark ↗</a></article>
+      <aside class="evidence-panel"><p class="eyebrow">Storage choice</p><h3>A small, separate civic database.</h3><dl class="snapshot-facts"><dt>Source records</dt><dd>Official IDs, title, text, dates, URLs, versions, hashes and link-check provenance.</dd><dt>Chunks and vectors</dt><dd>Passage text, heading, parent source/version, embedding model and compatible vector configuration.</dd><dt>Private account data</dt><dd>Accounts and sessions use separate storage. They are not a RAG corpus. API keys stay server-side, and questions are not saved by the application.</dd><dt>Graph alternative</dt><dd><code>AgendaItem → LISTED_AT → Meeting</code> is a useful relationship sketch. Native graph storage and automatic extraction are deferred until a bounded test shows a missing capability. A listing does not imply approval.</dd></dl></aside>
+    </div>
+  </section>
+
+  <section id="research-papers" class="research-section" aria-labelledby="research-papers-title">
+    <div class="section-heading"><h2 id="research-papers-title">04 / What informed the decisions.</h2><span class="section-note">Five primary research papers</span></div>
+    <p>These papers inform design choices. Their reported benchmark results do not become results for Newark Civic Pulse.</p>
+    <ol class="research-sources">
+      <li><h3><a href="https://arxiv.org/html/2005.11401v4" target="_blank" rel="noopener noreferrer">Lewis et al. (2020) · Retrieval-Augmented Generation</a></h3><p><strong>Finding used:</strong> external retrieved passages can supply evidence to a generator. <strong>Decision:</strong> retrieve current civic chunks before generating an answer and retain the trace. <strong>Limit:</strong> this API-based application does not reproduce the paper's trained retriever–generator system. Sections 2–2.2 informed the review.</p></li>
+      <li><h3><a href="https://arxiv.org/html/2004.04906v3" target="_blank" rel="noopener noreferrer">Karpukhin et al. (2020) · Dense Passage Retrieval</a></h3><p><strong>Finding used:</strong> dense passage/query representations support retrieval, which can be assessed separately from generation. <strong>Decision:</strong> compare required-source coverage at a fixed top-five budget against the lexical baseline. <strong>Limit:</strong> its benchmark gains do not establish gains for our corpus or OpenAI embeddings. Sections 3 and 5 informed the review.</p></li>
+      <li><h3><a href="https://arxiv.org/html/2407.01219v1" target="_blank" rel="noopener noreferrer">Wang et al. (2024) · RAG pipeline and chunking choices</a></h3><p><strong>Finding used:</strong> chunk boundaries, metadata and retrieval combinations introduce quality/efficiency tradeoffs. <strong>Decision:</strong> retain meaningful civic-record boundaries and compare paragraph splitting with fixed windows. <strong>Limit:</strong> the paper's models, sizes and preferred pipeline require local evidence before adoption. Sections 3.2, 3.4 and 5.1 informed the review.</p></li>
+      <li><h3><a href="https://arxiv.org/html/2309.15217v1" target="_blank" rel="noopener noreferrer">Es et al. (2023) · RAGAS</a></h3><p><strong>Finding used:</strong> faithfulness, answer relevance and context relevance are different evaluation dimensions. <strong>Decision:</strong> review retrieved evidence separately from whether the answer's claims follow from it. <strong>Limit:</strong> no RAGAS score or automated-judge result is claimed here. Section 3 informed the review.</p></li>
+      <li><h3><a href="https://arxiv.org/html/2307.03172v3" target="_blank" rel="noopener noreferrer">Liu et al. (2023) · Lost in the Middle</a></h3><p><strong>Finding used:</strong> evidence placement and distracting long context affected the models/tasks studied. <strong>Decision:</strong> supply a small ranked context rather than the whole site. <strong>Limit:</strong> a position effect has not been measured for this application's current model. Section 2.3 informed the review.</p></li>
+    </ol>
+    <aside class="evidence-panel"><p class="eyebrow">The professor's reference</p><h3>Useful contracts, with an explicit implementation boundary.</h3><p>The reviewed <a href="https://github.com/kaw393939/is373-rag/tree/242fd57ecde387c98ff904cbe3dd2911aa46e2b0" target="_blank" rel="noopener noreferrer">is373-rag revision <code>242fd57</code></a> provides documentation, synthetic labs and a static scaffold. Its <a href="https://github.com/kaw393939/is373-rag/blob/242fd57ecde387c98ff904cbe3dd2911aa46e2b0/docs/status.md" target="_blank" rel="noopener noreferrer">status record</a> identifies the research backend as planned.</p><p>We adopted the ideas of versioned evidence, dependent-artifact readiness and bounded retrieval. Its receipts do not establish this project's results. The current implementation uses a direct Python importer; Rust/NATS remain a later experiment, and native graph publication is deferred.</p></aside>
+  </section>
+
+  <section id="research-results" class="research-section" aria-labelledby="research-results-title">
+    <div class="section-heading"><h2 id="research-results-title">05 / What was actually checked.</h2><span class="section-note">Frozen local evaluation · November 10, 2026</span></div>
+    <p>Five questions and expected sources were fixed before five real question-embedding requests and five real model-answer requests. The saved evaluation used seven sources/eight chunks, hybrid context, <code>text-embedding-3-small</code> and <code>gpt-5-mini</code>. There were no automatic retries.</p>
+    <div class="research-table-wrap" role="region" aria-label="Five-question retrieval evaluation" tabindex="0">
+      <table class="research-table">
+        <caption>Required-source coverage among the first five retrieved passages. Scroll sideways on a narrow screen to compare all columns.</caption>
+        <thead><tr><th scope="col">Question and expected evidence</th><th scope="col">Keyword</th><th scope="col">Vector</th><th scope="col">Hybrid</th><th scope="col">Answer evidence review</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Q1 · Exact term<br>November 5 meeting: listed time and location.</th><td>1/1 sources</td><td>1/1</td><td>1/1</td><td>Supported: 12:30 PM, Council Chamber. Prefer “the record lists” to wording that sounds upcoming.</td></tr>
+          <tr><th scope="row">Q2 · Paraphrase<br>The same session's place and local clock time.</th><td>1/1</td><td>1/1</td><td>1/1</td><td>Source fields match. “Residents were directed” is stronger than the stored location field; use the record's limited wording.</td></tr>
+          <tr><th scope="row">Q3 · Relationship<br>Ordinance 26-0816's agenda item plus its meeting's start time.</th><td>2/2</td><td>1/2</td><td>2/2</td><td>Supported by both records. Vector-only retrieval missed one required source; hybrid restored coverage.</td></tr>
+          <tr><th scope="row">Q4 · Comparison<br>November 5 and October 21 scheduled local times.</th><td>2/2</td><td>2/2</td><td>2/2</td><td>Supported: 12:30 PM versus 6:30 PM, retaining the dates and timezone.</td></tr>
+          <tr><th scope="row">Q5 · Unanswerable<br>Total approved 2026 Newark budget in dollars.</th><td>Not applicable</td><td>Not applicable</td><td>Not applicable</td><td>Appropriately reported insufficient evidence, with no invented amount or citation.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="research-note"><strong>Result:</strong> keyword and hybrid each found every required source set on <strong>4/4</strong> answerable questions; vector did so on <strong>3/4</strong>. This is source coverage, not precision or proof of general superiority. Generated-answer quality was reviewed using hybrid context; it was not compared across all three retrievers.</p>
+    <p><a href="https://github.com/Y-Just-Y/my-app-studio/blob/codex/newark-civic-rag/docs/research/newark-results.md" target="_blank" rel="noopener noreferrer">Read the complete answer/evidence review</a> and <a href="https://github.com/Y-Just-Y/my-app-studio/blob/codex/newark-civic-rag/docs/research/newark-results.json" target="_blank" rel="noopener noreferrer">frozen machine-readable receipt</a> for the exact questions, ranked IDs and model outputs.</p>
+    <aside class="evidence-panel"><p class="eyebrow">A failed link is evidence too.</p><h3>Two original links returned 410.</h3><p>The original October 6 and October 13 meeting-page URLs returned HTTP 410. They were not cited by the five evaluated answers. The importer preserved their failed-link provenance and, after verifying matching record identities and dates, used <a href="https://webapi.legistar.com/v1/newark/events/302228" target="_blank" rel="noopener noreferrer">Event 302228</a> and <a href="https://webapi.legistar.com/v1/newark/events/302230" target="_blank" rel="noopener noreferrer">Event 302230</a> in the official API as current citation targets.</p><p>Every URL actually cited in Q1–Q4 returned 200. The repair changed two source versions, refreshed their embeddings and left the next import unchanged. The frozen answer trial remains the original trial; the repair is not a newly executed answer-quality comparison.</p></aside>
+  </section>
+
+  <section id="research-limits" class="research-section" aria-labelledby="research-limits-title">
+    <div class="section-heading"><h2 id="research-limits-title">06 / Keep the limits visible.</h2><span class="section-note">Evidence supports a bounded claim.</span></div>
+    <div class="record-grid">
+      <article class="record-card"><span class="badge">What the corpus can establish</span><h3>Listed facts, with dates.</h3><p>Imported meeting dates, scheduled times, locations and selected agenda listings can support limited questions. The collection cannot establish the next city meeting, a total budget, a vote or final passage without the relevant evidence.</p></article>
+      <article class="record-card"><span class="badge">What remains to test</span><h3>A broader, human-reviewed sample.</h3><p>More source families, questions, tokenizer-aware boundaries, citation support and useful peer feedback need checking. Dollar spend and latency were not measured in the frozen evaluation. A small success is not a general accuracy or security certification.</p></article>
+      <article class="record-card"><span class="badge">The individual assignment</span><h3>Keep authorship and review honest.</h3><p>The portfolio foundation, learner claim verification, real peer feedback and the resulting change/retest remain pending. Private career reflection belongs in Canvas. This research page does not submit the assignment or complete the individual PowerPoint.</p></article>
+    </div>
+    <div class="membership"><div><p class="eyebrow">Follow the evidence yourself</p><h2>Ask a small question.<br>Check its sources.</h2><p>Start with a dated question about the imported council records. Inspect the returned passages and distinguish a scheduled event from a verified outcome.</p></div><div class="account-preview"><a class="button" href="/ask">Try the bot <span aria-hidden="true">↗</span></a><p><a href="https://y-just-y.github.io/is373_ci_cd/" target="_blank" rel="noopener noreferrer">Open the combined individual record</a></p><p class="source-line">Research and evaluation snapshot: November 10, 2026. Collection counts above reflect the current app database.</p></div></div>
+  </section>
+</div>
+{% endblock %}

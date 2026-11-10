@@ -1,4 +1,77 @@
-# IS373 App Studio
+# Newark Civic Pulse
+
+A small Newark council-record assistant built on IS373 App Studio. The original
+homepage, account and role lessons are retained below. The current extension adds
+official public records, ETL, a searchable SQLite database, real embeddings and
+source-cited OpenAI answers.
+
+## Current project
+
+- [Live Newark chatbot](https://civic.lwdgyasteri.com/ask) · choose **AI answer with citations**
+- [Live research and methods](https://civic.lwdgyasteri.com/research)
+- [Combined portfolio and RAG research record](https://y-just-y.github.io/is373_ci_cd/)
+- [Research and professor-repository ideas](docs/research/newark-rag.md)
+- [Actual five-question results](docs/research/newark-results.md)
+- [Assignment requirements and remaining work](docs/research/newark-requirements.md)
+- [Separate-host setup](deploy/civic/README.md)
+
+The public app runs on a separate $6/month DigitalOcean host with HTTPS. A real
+public AI request returned the November 5 meeting's scheduled time/place and
+correct source citation. Records and embeddings survived restart and a separate
+backup/restore check. [Hosted evidence](docs/research/newark-hosted-check.json)
+and [recovery evidence](docs/research/newark-recovery-check.json) retain the scope.
+The chatbot answers Newark-data questions; project research is published on the
+research page. API usage is separate from server cost.
+
+The November 10, 2026 snapshot contains **seven official sources, eight chunks
+and eight compatible 1,536-dimensional embeddings**. It covers five recent
+Municipal Council meeting records and two selected agenda items. It is a small
+saved snapshot; it cannot establish the next meeting, a complete city budget or
+whether an ordinance was adopted.
+
+## Try the local bot
+
+From this checkout, after the original `python3 studio.py setup`:
+
+1. Run `./.venv/bin/python civic_import.py --limit 5`. This extracts public
+   Legistar JSON without a key, transforms it into normalized, versioned records
+   and paragraph chunks, then loads `runtime/civic.sqlite3`. Repeating unchanged
+   data reuses the existing records.
+2. For AI answers, run `./.venv/bin/python civic_setup.py` and enter your OpenAI
+   key at the hidden prompt. The private `.env` is ignored by Git. Set
+   `CIVIC_AI_ENABLED=1` in that private file when enabling paid answers. API
+   credits are separate from a ChatGPT subscription.
+3. Run `./.venv/bin/python civic_embed.py --confirm-api-usage` only when you
+   intend to incur embedding usage. It indexes at most 100 current chunks and
+   reuses unchanged content/model mappings. Importing new versions makes old
+   vectors ineligible until this step is repeated.
+4. Run `python3 studio.py run` and open
+   [Ask Newark](http://127.0.0.1:8000/ask). Choose **AI answer** for generation,
+   or use **Source search** to inspect exact matching passages without a model
+   call. Try: “What time and where was the November 5, 2026 council meeting
+   scheduled?” Open its source citation and compare the fields yourself.
+
+Questions use keyword BM25 and existing vector cosine rankings, combined by
+reciprocal rank fusion (`1/(60+rank)`), before sending a bounded context to
+`gpt-5-mini`. Source search is a separate, clearly labeled lexical baseline.
+The answer must cite retrieved chunk IDs or report insufficient evidence. A
+source change during an answer returns a conflict instead of citing stale text.
+
+Only public source records are indexed. Account/session data stays in a separate
+database. Questions are not saved; AI mode sends the question and public passages
+to OpenAI. The server keeps the key private, limits question/body size, requires
+CSRF, restricts web imports to current admins and persists usage limits of five
+requests per client per five minutes and thirty total per day. These are small
+test-site controls, not an OpenAI billing hard cap.
+
+Run `python3 studio.py check` for the full suite. On November 10, Black and
+Pylint passed, along with **196 unit/integration tests, 18 lesson contracts and
+3 actual Chromium journeys**. The saved five-question experiment found complete
+required-source coverage for keyword and hybrid on 4/4 supported questions;
+vector alone covered 3/4. The unsupported budget question was declined. These
+small results do not establish general answer accuracy or human peer approval.
+
+## Original App Studio guide
 
 **Build a small web application with an AI coach—and understand why it works.**
 Start with a working, neutral FastAPI page. Give it a brand, add accounts, then

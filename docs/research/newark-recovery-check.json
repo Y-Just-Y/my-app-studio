@@ -1,0 +1,31 @@
+{
+  "checked_at": "2026-11-10T19:19:30.366213+00:00",
+  "method": "Read transaction on live civic DB; sqlite3.Connection.backup to private snapshot; Connection.backup snapshot to separate temporary DB; integrity/source+chunk+version/vector-byte comparison; restored-copy index_status verification",
+  "account_database_opened": false,
+  "live_database_replaced": false,
+  "live_equals_backup_equals_restored": true,
+  "metrics": {
+    "chunks": 8,
+    "dimensions": 1536,
+    "integrity_check": "ok",
+    "model": "text-embedding-3-small",
+    "non_civic_tables": [],
+    "source_chunk_version_sha256": "ccc06010ed14e9c208d659beec5e470c1bd605a9d54768109e277936d7d2b3be",
+    "sources": 7,
+    "vector_bytes_sha256": "9db3273a1d0d307548860589f5cc16d12373724804e9381987716b3e954dfa68",
+    "vector_mapping_sha256": "71b53057fe45305ff81426dbac6f27cc1c6dac1950eae642bfcc3858cab9f445",
+    "vectors": 8
+  },
+  "restored_index_status": {
+    "available": true,
+    "compatible": true,
+    "complete": true,
+    "dimensions": 1536,
+    "indexed_chunks": 8,
+    "model": "text-embedding-3-small",
+    "total_chunks": 8
+  },
+  "restored_temporary_copy_removed": true,
+  "backup_retained_privately": true,
+  "scope": "Seven official Newark sources, eight chunks and eight embeddings; isolated restoration, not live database replacement."
+}

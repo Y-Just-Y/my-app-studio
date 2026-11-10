@@ -1,0 +1,89 @@
+{
+  "observed_at": "2026-11-10T19:20:23.686842+00:00",
+  "host": "https://civic.lwdgyasteri.com",
+  "deployed_app_commit": "65c0e4914d18",
+  "tls": "Normal system CA and hostname verification; no insecure option",
+  "dns_note": "Authoritative, Cloudflare and Google DNS resolved the correct IP. Initial probes used --resolve with normal TLS validation; a later ordinary curl on this Mac returned /research HTTP 200.",
+  "checks": {
+    "/health": 200,
+    "/": 200,
+    "/ask": 200,
+    "/research": 200,
+    "/api/civic/status": 200,
+    "anonymous_import": 401,
+    "missing_csrf_chat": 403,
+    "live_supported_answer": "Passed time/location and expected source ID"
+  },
+  "collection": {
+    "sources": 7,
+    "chunks": 8,
+    "vectors": {
+      "available": true,
+      "indexed_chunks": 8,
+      "total_chunks": 8,
+      "model": "text-embedding-3-small",
+      "dimensions": 1536,
+      "complete": true,
+      "compatible": true
+    }
+  },
+  "question": "According to the imported record, what time and where was Newark's November 5, 2026 Municipal Council meeting scheduled?",
+  "response": {
+    "answer": "The imported record shows the Newark Municipal Council meeting on November 5, 2026 was scheduled for 12:30 PM (America/New_York) in the Council Chamber.",
+    "citation_ids": [
+      "newark-meeting-302232-v1-001"
+    ],
+    "insufficient_evidence": false,
+    "model": "gpt-5-mini",
+    "mode": "ai",
+    "retrieval": "hybrid",
+    "sources": [
+      {
+        "chunk_id": "newark-meeting-302232-v1-001",
+        "source_id": "newark-meeting-302232",
+        "title": "Newark Municipal Council meeting \u2014 November 5, 2026",
+        "heading": "Meeting schedule and official agenda record",
+        "text": "Newark Municipal Council meeting \u2014 November 5, 2026\nMeeting date: 2026-11-05 (November 5, 2026).\nScheduled time: 12:30 PM, America/New_York.\nLocation: Council Chamber.\nAgenda publication status: Final.\n\nThis is an imported public meeting record. A scheduled meeting or final agenda does not establish that a meeting occurred or an item passed. Consult the linked official record for current details and minutes.",
+        "url": "https://newark.legistar.com/MeetingDetail.aspx?LEGID=302232&GID=7&G=76B7E664-B393-4911-9914-3B4B31917701",
+        "fetched_at": "2026-11-10T19:00:20.078116+00:00",
+        "source_updated_at": "2026-10-30T18:47:56.233",
+        "metadata": {
+          "agenda_status": "Final",
+          "api_url": "https://webapi.legistar.com/v1/newark/events?%24filter=EventDate+lt+datetime%272026-11-11T00%3A00%3A00%27+and+EventBodyName+eq+%27Municipal+Council%27&%24orderby=EventDate+desc%2CEventId+desc&%24top=5",
+          "body": "Municipal Council",
+          "city_clerk_url": "https://www.newarknj.gov/166/Office-of-the-City-Clerk",
+          "event_id": 302232,
+          "kind": "meeting",
+          "link_checked_at": "2026-11-10T19:00:20.078116+00:00",
+          "link_resolution": "verified_original_page",
+          "location": "Council Chamber",
+          "meeting_date": "2026-11-05",
+          "meeting_date_display": "November 5, 2026",
+          "meeting_starts_at": "2026-11-05T12:30:00-05:00",
+          "meeting_time": "12:30 PM",
+          "original_http_status": 200,
+          "original_page_url": "https://newark.legistar.com/MeetingDetail.aspx?LEGID=302232&GID=7&G=76B7E664-B393-4911-9914-3B4B31917701",
+          "publisher": "City of Newark / Legistar",
+          "response_sha256": "57e33b22bd70cd078c852df8e59fe43f6aee19008224d6a007be9800f820924d",
+          "source_access": "Public official API metadata; attribution retained.",
+          "timezone": "America/New_York"
+        },
+        "content_hash": "27b51d7b7f8648004072954539c01fcea14f358341e91a3c1825b7c11ebe538b",
+        "source_hash": "7c5ffe2e51e0b60ba233cabc4298d675383632b24abbca50a571d47cc695489d",
+        "version": 1,
+        "score": 0.0
+      }
+    ],
+    "checked_at": "2026-11-10T14:20:30.576804-05:00"
+  },
+  "paid_requests": {
+    "query_embedding": 1,
+    "generation": 1,
+    "automatic_retries": 0
+  },
+  "normal_resolver_https": {
+    "path": "/research",
+    "status": 200,
+    "observed_at": "2026-11-10T19:26:50.613128+00:00"
+  }
+}

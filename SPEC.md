@@ -6,14 +6,65 @@ actual evidence; pending is a valid state. Keep explanations/help in
 
 ## Current stage
 
-- **Current feature:** APP-003.
-- **Status:** APP-002 merged in PR #4, issue #3 closed, final evidence status passed. APP-003 implemented locally; learner interpretation, browser observations and keep reason recorded. Accuracy review approved; GitHub completion pending.
-- **Next step:** Commit/push approved APP-003 work, open its PR and verify CI before the learner merge decision.
+- **Current feature:** Newark Civic Pulse RAG extension.
+- **Status:** APP-003 is present in merged PR #6. The authorized extension has real Newark ETL, SQLite/FTS5, sqlite-vec embeddings, hybrid retrieval and an OpenAI chatbot. Local full checks passed November 10, 2026. Hosted verification and publication are recorded separately below.
+- **Next step:** Retain the published evidence and complete learner verification and human peer feedback without inventing either.
 - **Implementation marker:** 3 after explicit cumulative APP-003 checks passed; normal full check also passed.
 
-This repository owns application code. Server/proxy changes and production
-deployment are outside these three local-development lessons. Prepared helpers
-are reusable foundations, not evidence that unfinished routes are implemented.
+This repository owns application code. The original three lessons did not include
+deployment; the later explicit request authorizes a separate Civic host and
+subdomain. Existing Asteri deployment and root-domain records are outside that
+extension. Prepared helpers are not evidence that a feature works.
+
+## Newark RAG extension · November 10, 2026
+
+**Authorized scope:** replace the Docker-document corpus with public Newark
+records, explain and implement ETL/chunking/retrieval, add a testable AI bot,
+research primary arXiv papers and the professor's repository, and document actual
+results against the existing combined assignment record. A separate DigitalOcean
+host is authorized up to $6/month and initial OpenAI usage up to $5.
+
+**Implementation:** `civic_import.py` and `app/civic_etl.py` extract bounded
+Legistar JSON, normalize IDs/dates/URLs/metadata, preserve hashes and versions,
+split paragraphs at a 1,600-character cap and load `app/civic_store.py`'s separate
+SQLite/FTS5 store. `civic_embed.py` explicitly creates model/hash-bound embeddings
+through `app/civic_vectors.py`. `app/features/civic.py` combines keyword and
+vector rankings and exposes `/ask`, source search and protected ingestion.
+`app/civic_ai.py` supplies bounded structured OpenAI answers and validates citation
+IDs. Rust, NATS and native graph storage are deferred with reasons in the research.
+
+**Observed data:** seven sources/eight chunks, five recent meetings and two
+selected November 5 agenda items. Repeat import returned seven unchanged. Two
+expired original meeting pages were replaced by verified same-ID official API
+references, with original URL/status retained. All eight current chunks have real
+`text-embedding-3-small` vectors at 1,536 dimensions. No account data is imported.
+
+**Actual checks:** Black/Pylint and 196 unit/integration tests, 18 APP-003
+contracts and three Chromium journeys passed. The frozen five-question run saved
+actual retrieval ranks, context, model answers and citation support reviews.
+Keyword and hybrid each covered all expected source sets for 4/4 supported
+questions; vector alone did for 3/4. The budget question was refused. Paragraph
+and fixed 1,600-character boundaries both yielded eight chunks and preserved five
+schedule spans; no advantage was observed. See [results](docs/research/newark-results.md).
+
+**Boundary:** this is an anonymous public-record snapshot, not a complete calendar
+or proof of ordinance adoption. Fixture tests, AI inspection, real model results,
+hosted operation and Derrick's own explanation are distinct evidence. The
+[requirement map](docs/research/newark-requirements.md) keeps personal reflection,
+human peer feedback, portfolio implementation and Canvas submission pending.
+
+**Hosted result:** [chatbot](https://civic.lwdgyasteri.com/ask) and
+[research](https://civic.lwdgyasteri.com/research) are public over verified HTTPS
+on the separate $6/month host. Deployed application revision `65c0e4914d18`
+preserves seven sources/eight chunks/eight vectors after restart. One actual
+public AI question returned the correct listed time/location and source citation;
+anonymous ingestion returned 401 and missing-CSRF chat returned 403. A private
+SQLite backup and separate temporary restore matched integrity, source/version
+fingerprints and vector bytes. See the
+[public request receipt](docs/research/newark-hosted-check.json) and
+[recovery receipt](docs/research/newark-recovery-check.json). The user's latest
+scope keeps the chatbot focused on Newark data; research explanations remain on
+the research page. Existing Asteri services and DNS records were left intact.
 
 ## APP-001 · Branded homepage
 
@@ -67,7 +118,7 @@ permissions, including for an existing session after a role change.
 |---|---|
 | Intended admin-only result | Only current admins can open the protected overview at /admin and /api/admin. Anonymous HTML redirects to login, anonymous API returns 401, members receive 403. New signups remain members. |
 | Actual allowed/denied request evidence | Cumulative contracts verify anonymous 401, member 403, admin 200 and immediate role downgrade enforcement on existing sessions. |
-| Own issue / branch / PR | [Issue #5](https://github.com/Y-Just-Y/my-app-studio/issues/5), `codex/app-003-roles`; PR pending. |
+| Own issue / branch / PR | [Issue #5](https://github.com/Y-Just-Y/my-app-studio/issues/5), `codex/app-003-roles`; [merged PR #6](https://github.com/Y-Just-Y/my-app-studio/pull/6). |
 
 **Keep when:** a direct request cannot bypass the role boundary, role changes
 take effect as specified, new signup remains member-only, and full cumulative
@@ -83,7 +134,7 @@ customer research or claims that a timestamp proves learning.
 |---|---|---|---|
 | APP-001 | [Issue #1](https://github.com/Y-Just-Y/my-app-studio/issues/1); [brand](app/brand.json), [homepage](app/templates/home.html), [shared shell](app/templates/base.html), [styles](app/static/site.css), [logo](app/static/logo.svg) | Black/Pylint passed; 98 foundation/unit tests, 2 APP-001 contracts, 2 Chromium journeys passed. AI reviewed 1440px desktop and 390px mobile layouts; keyboard skip link and primary CTA passed. These checks passed again after the newsroom revision; desktop/mobile visual review also completed. Learner explained the CTA check limits and noticed source/date/no-live-data labels in the first design, then requested revision. Learner noticed the logo/orange first, found local decisions easier to find, and chose to keep the revision. | Kept; PR #2 merged, issue #1 closed, check/windows passed |
 | APP-002 | [Issue #3](https://github.com/Y-Just-Y/my-app-studio/issues/3); account routes and templates | Black/Pylint; 98 foundation tests, 14 cumulative contracts and 2 Chromium journeys passed. Desktop login and narrow signup visually reviewed. | Kept; PR #4 merged, issue #3 closed, final evidence status passed |
-| APP-003 | [Issue #5](https://github.com/Y-Just-Y/my-app-studio/issues/5); roles.py, admin.html, forbidden.html | Black/Pylint, 98 foundation tests, 18 cumulative contracts and 2 Chromium journeys passed. Isolated admin desktop/mobile and member forbidden page visually reviewed. | Learner chose keep and approved evidence; PR pending |
+| APP-003 | [Issue #5](https://github.com/Y-Just-Y/my-app-studio/issues/5); [PR #6](https://github.com/Y-Just-Y/my-app-studio/pull/6); roles.py, admin.html, forbidden.html | Black/Pylint, 98 foundation tests, 18 cumulative contracts and 2 Chromium journeys passed. Isolated admin desktop/mobile and member forbidden page visually reviewed. | Learner chose keep and approved evidence; merged PR #6 |
 
 The instructor's reference branches show possible implementations. They do not
 establish this repository's completion or the learner's own reasoning.

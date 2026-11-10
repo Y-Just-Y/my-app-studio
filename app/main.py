@@ -9,10 +9,11 @@ from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse, Response
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
+from dotenv import load_dotenv
 from starlette.middleware.trustedhost import TrustedHostMiddleware
 
-from app import branding, database, security
-from app.features import accounts, roles
+from app import branding, civic_store, database, security
+from app.features import accounts, civic, roles
 from app.settings import Settings
 from studio_tools.live import revision as current_revision
 
@@ -21,6 +22,9 @@ APP_ROOT = Path(__file__).resolve().parent
 
 def create_app(settings=None):
     """Create an isolated testable app; no test uses the learner's real database."""
+    explicit_settings = settings is not None
+    if not explicit_settings:
+        load_dotenv(APP_ROOT.parent / ".env", override=False)
     settings = settings or Settings.load()
     database.initialize(settings)
     application = FastAPI(title="IS373 App Studio", docs_url=None, redoc_url=None)
@@ -30,6 +34,19 @@ def create_app(settings=None):
         www_redirect=False,
     )
     application.state.settings = settings
+    application.state.civic_database = (
+        Path(
+            os.environ.get(
+                "CIVIC_DATABASE", str(settings.database.parent / "civic.sqlite3")
+            )
+        )
+        if not explicit_settings
+        else settings.database.parent / "civic.sqlite3"
+    )
+    application.state.civic_allow_ai = (
+        not explicit_settings and os.getenv("CIVIC_AI_ENABLED", "0") == "1"
+    )
+    civic_store.initialize(application.state.civic_database)
     application.state.current_user = security.authenticate
     application.state.brand = branding.load_brand
     application.state.templates = Jinja2Templates(directory=APP_ROOT / "templates")
@@ -38,6 +55,7 @@ def create_app(settings=None):
     )
     application.include_router(accounts.router)
     application.include_router(roles.router)
+    application.include_router(civic.router)
     application.state.feature_flags = lambda: {
         "accounts": any(route.path == "/api/me" for route in accounts.router.routes),
         "roles": any(route.path == "/api/admin" for route in roles.router.routes),
@@ -75,7 +93,11 @@ def create_app(settings=None):
     @application.get("/", include_in_schema=False)
     def home(request: Request):
         return application.state.templates.TemplateResponse(
-            request=request, name="home.html", context={}
+            request=request,
+            name="home.html",
+            context={
+                "civic": civic_store.snapshot(application.state.civic_database, limit=3)
+            },
         )
 
     @application.get("/docs", include_in_schema=False)
