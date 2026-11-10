@@ -8,7 +8,7 @@ actual evidence; pending is a valid state. Keep explanations/help in
 
 - **Current feature:** Newark Civic Pulse RAG extension.
 - **Status:** APP-003 is present in merged PR #6. The authorized extension has real Newark ETL, SQLite/FTS5, sqlite-vec embeddings, hybrid retrieval and an OpenAI chatbot. Local full checks passed November 10, 2026. Hosted verification and publication are recorded separately below.
-- **Next step:** Verify the separate public host, publish the technical record, and retain learner verification and human peer feedback as pending.
+- **Next step:** Retain the published evidence and complete learner verification and human peer feedback without inventing either.
 - **Implementation marker:** 3 after explicit cumulative APP-003 checks passed; normal full check also passed.
 
 This repository owns application code. The original three lessons did not include
@@ -52,6 +52,19 @@ or proof of ordinance adoption. Fixture tests, AI inspection, real model results
 hosted operation and Derrick's own explanation are distinct evidence. The
 [requirement map](docs/research/newark-requirements.md) keeps personal reflection,
 human peer feedback, portfolio implementation and Canvas submission pending.
+
+**Hosted result:** [chatbot](https://civic.lwdgyasteri.com/ask) and
+[research](https://civic.lwdgyasteri.com/research) are public over verified HTTPS
+on the separate $6/month host. Deployed application revision `65c0e4914d18`
+preserves seven sources/eight chunks/eight vectors after restart. One actual
+public AI question returned the correct listed time/location and source citation;
+anonymous ingestion returned 401 and missing-CSRF chat returned 403. A private
+SQLite backup and separate temporary restore matched integrity, source/version
+fingerprints and vector bytes. See the
+[public request receipt](docs/research/newark-hosted-check.json) and
+[recovery receipt](docs/research/newark-recovery-check.json). The user's latest
+scope keeps the chatbot focused on Newark data; research explanations remain on
+the research page. Existing Asteri services and DNS records were left intact.
 
 ## APP-001 · Branded homepage
 

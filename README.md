@@ -7,11 +7,21 @@ source-cited OpenAI answers.
 
 ## Current project
 
+- [Live Newark chatbot](https://civic.lwdgyasteri.com/ask) · choose **AI answer with citations**
+- [Live research and methods](https://civic.lwdgyasteri.com/research)
 - [Combined portfolio and RAG research record](https://y-just-y.github.io/is373_ci_cd/)
 - [Research and professor-repository ideas](docs/research/newark-rag.md)
 - [Actual five-question results](docs/research/newark-results.md)
 - [Assignment requirements and remaining work](docs/research/newark-requirements.md)
 - [Separate-host setup](deploy/civic/README.md)
+
+The public app runs on a separate $6/month DigitalOcean host with HTTPS. A real
+public AI request returned the November 5 meeting's scheduled time/place and
+correct source citation. Records and embeddings survived restart and a separate
+backup/restore check. [Hosted evidence](docs/research/newark-hosted-check.json)
+and [recovery evidence](docs/research/newark-recovery-check.json) retain the scope.
+The chatbot answers Newark-data questions; project research is published on the
+research page. API usage is separate from server cost.
 
 The November 10, 2026 snapshot contains **seven official sources, eight chunks
 and eight compatible 1,536-dimensional embeddings**. It covers five recent

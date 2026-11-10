@@ -109,6 +109,37 @@ recreation. Back them up privately before an upgrade. `docker compose down` keep
 them; `down --volumes` deletes them and must not be used as routine cleanup.
 Check actual import/retrieval persistence after an ordinary restart.
 
+## Verified deployment · November 10, 2026
+
+Application revision `65c0e4914d18` is running at
+[civic.lwdgyasteri.com](https://civic.lwdgyasteri.com/), with
+[chat](https://civic.lwdgyasteri.com/ask) and
+[research](https://civic.lwdgyasteri.com/research). The separate Droplet is
+`617873335`, IPv4 `143.110.239.142`, Ubuntu 24.04 in SFO3, at the approved
+$6/month plan. No paid backup service or extra volume was added. The key and
+application secret were transferred privately; no local accounts were copied.
+
+Observed: normal CA/hostname validation passed for TLS 1.3; health reports
+production; home/chat/research/status return 200. The live model returned the
+November 5 record's scheduled 12:30 PM/Council Chamber with its expected source.
+Anonymous import returns 401; chat without CSRF returns 403. See the
+[public request receipt](../../docs/research/newark-hosted-check.json).
+
+Seven sources/eight chunks/eight real embeddings survived an ordinary app
+restart and the final container recreation. A read transaction and SQLite
+`Connection.backup()` created a private snapshot, then restored it into a
+separate temporary database. Integrity, source/chunk/version fingerprints,
+vector mapping hashes and vector bytes matched; the restored index reported
+8/8 compatible 1536-dimensional embeddings. The temporary restore was removed;
+the private backup was retained. The live database and account database were
+not replaced during this check. See the
+[recovery receipt](../../docs/research/newark-recovery-check.json).
+
+The measured app used about 44 MiB and Caddy 13 MiB at idle. These are observed
+idle values, not a load test. A 1 GiB swap file uses the existing disk. Public
+listeners are TCP 22/80/443, with no published application/database port.
+The original Asteri host and existing root-domain records were not modified.
+
 ## Local validation boundary
 
 `docker compose config --quiet` can validate interpolation and Compose structure

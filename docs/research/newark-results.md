@@ -119,3 +119,21 @@ re-embedded, leaving **8 current compatible embeddings at 1536 dimensions**.
 Every URL actually cited by Q1–Q4 returned 200; those cited records did not need
 replacement. This note preserves the original five-question receipt and does
 not claim a newly executed answer-quality comparison after the repair.
+
+## Public pilot and persistence check
+
+The seven-source/eight-chunk/eight-vector app is now served over verified HTTPS
+at [Ask Newark](https://civic.lwdgyasteri.com/ask), with methods at
+[Research](https://civic.lwdgyasteri.com/research). One real public hybrid/model
+question returned the November 5 record's scheduled 12:30 PM, Council Chamber
+and expected citation. It is a separate hosted smoke check, not a rerun of this
+five-question comparison. [Request evidence](newark-hosted-check.json) retains
+the answer and boundary checks.
+
+An ordinary restart/container recreation preserved the corpus and vector index.
+A consistent SQLite backup, restored into a distinct temporary database,
+matched integrity, source/version fingerprints, mapping hashes and vector bytes;
+the live database was not replaced during the recovery test.
+[Recovery evidence](newark-recovery-check.json) retains the result. Human peer
+review and broader answer-quality testing remain pending. The chatbot's scope is
+Newark data only; research explanations remain on the research page.
