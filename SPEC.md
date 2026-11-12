@@ -6,15 +6,93 @@ actual evidence; pending is a valid state. Keep explanations/help in
 
 ## Current stage
 
-- **Current feature:** Newark Civic Pulse RAG extension.
+- **Current feature:** Individual professional portfolio foundation.
 - **Status:** APP-003 is present in merged PR #6. The authorized extension has real Newark ETL, SQLite/FTS5, sqlite-vec embeddings, hybrid retrieval and an OpenAI chatbot. Local full checks passed November 10, 2026. Hosted verification and publication are recorded separately below.
-- **Next step:** Retain the published evidence and complete learner verification and human peer feedback without inventing either.
+- **Next step:** Review the completed first ASTERI case-study version, then continue the portfolio evidence and learner verification.
 - **Implementation marker:** 3 after explicit cumulative APP-003 checks passed; normal full check also passed.
 
 This repository owns application code. The original three lessons did not include
 deployment; the later explicit request authorizes a separate Civic host and
 subdomain. Existing Asteri deployment and root-domain records are outside that
 extension. Prepared helpers are not evidence that a feature works.
+
+## Professional portfolio · Local draft, November 10, 2026
+
+**Scope:** prioritize the individual deliverables by adding a professional
+portfolio at `/portfolio` in the existing FastAPI app. Reuse the combined Plan's
+cloud/platform direction and Layout A, with projects and evidence first.
+The learner explicitly requested LWDGY ASTERI as another featured project,
+covering experience with RAG, CI/CD, Docker and server configuration.
+
+**Draft content:** introduction, Newark Civic Pulse and LWDGY ASTERI featured
+cards, Docker/server and account-permission coursework, skill-to-evidence links,
+about/profile links, and a clearly planned group-case-study placeholder. RAG/ETL
+evidence belongs to Newark. ASTERI supports Docker/server and signed release
+workflow evidence. Its private source repository is not offered as public proof.
+The current ASTERI gate documentation supersedes older Actions deployment prose.
+
+**Files:** `app/features/portfolio.py`, `app/templates/portfolio.html` and
+`app/static/portfolio.css`; router registration in `app/main.py`.
+
+**Review:** The learner confirmed that the proposed introduction accurately
+describes them and asked to keep it. That wording is approved. The learner subsequently identified design, server setup, Docker, testing and
+release decisions as their work, then clarified ownership of all project work.
+The ASTERI page records end-to-end ownership with AI assistance explicit.
+Preferred profile/contact links and resume/LinkedIn still need review.
+No graduation date, work history or unaided authorship is inferred. AI drafted
+the page and the summaries. No new learner explanation or browser observation is
+claimed; existing learning records remain unchanged. This approval establishes
+wording accuracy, not understanding or peer feedback.
+
+**Publication:** Review branch `codex/individual-portfolio`, based on the
+checked RAG branch. The portfolio preview remains local; these pages are not
+deployed to the live Civic host.
+
+**AI checks:** Black/Pylint, 196 unit/integration tests, 18 lesson contracts and
+three existing Chromium journeys passed. The new public page returned 200
+without an account. Its internal anchors resolved; desktop and 390px mobile
+layout were visually inspected with no horizontal overflow. Keyboard navigation
+focused the skip link and activated the main content target. These are AI checks;
+the learner's portfolio browser observation remains pending.
+
+### LWDGY ASTERI case-study draft
+
+The approved introduction remains unchanged. A new local page at
+`/portfolio/projects/asteri` covers the jewelry storefront and management
+workspace, React/TypeScript/Express/Firebase boundaries, Docker and proxy setup,
+and the signed build/test/release flow. The portfolio card links to this page.
+Shared layout moved into `app/templates/portfolio_base.html`; case content is in
+`app/templates/portfolio_asteri.html` and its page styles in `portfolio.css`.
+
+The evidence brief used the private application's cached November 3 main
+snapshot and the release gate's later documentation, rather than treating the
+older dirty application checkout's README as current. The October 9 cutover
+record documents unsigned-image rejection before state change and successful
+signed-image acceptance with matching HTTPS revisions. Counts of 31 host gates,
+13 application stages and 106 browser tests are explicitly dated historical
+results. A separate October 1 sandbox retry/expiry result is labeled sandbox.
+No ASTERI tests, releases or server operations were run to author the case study.
+
+The public-facing summary excludes private repository links, credentials,
+operational addresses, trust material and customer/test identifiers. It makes no
+claim about present server uptime, measured sales impact, live-payment readiness
+or unaided authorship. For the contribution statement, the learner reported handling design, server
+setup, Docker, testing and release decisions, then clarified “I did everything.”
+The page uses a concise paraphrase of that statement: end-to-end ownership,
+including development, with AI assistance acknowledged. This is learner-reported
+contribution, not an inference from commit authorship or a claim of unaided work.
+
+**Case-page verification:** The normal full check passed with Black/Pylint,
+196 unit/integration tests, 18 lesson contracts and three Chromium journeys.
+An earlier existing login journey timed out waiting for navigation after the
+server had returned its 303 and dashboard 200; the unchanged targeted journey
+and the subsequent complete run both passed. No assertions or timeouts were
+weakened. Anonymous portfolio/case requests returned 200 with the existing CSP;
+the approved introduction remained exact, anchors resolved, and rendered links
+contained no private source-repository URLs. Desktop and 390px mobile layouts
+were checked with no horizontal overflow, and the keyboard skip link reached
+main content. These are portfolio-page checks, not a rerun of ASTERI's historical
+release or sandbox acceptance.
 
 ## Newark RAG extension · November 10, 2026
 

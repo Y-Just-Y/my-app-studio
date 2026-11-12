@@ -1,0 +1,54 @@
+{% extends "portfolio_base.html" %}
+{% block content %}
+    <section class="hero container" aria-labelledby="intro-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="label-line" aria-hidden="true"></span> NJIT · IT student · Cloud &amp; platform direction</p>
+        <h1 id="intro-title">Cloud systems.<br><span>Practical projects.</span></h1>
+        <p class="intro">I’m Derrick, an IT student at NJIT focused on cloud systems, Linux and networking. I’m developing practical experience through projects in RAG, Docker, CI/CD and server configuration.</p>
+        <div class="hero-actions"><a class="button" href="#work">Explore my work <span aria-hidden="true">↓</span></a><a class="text-link" href="https://y-just-y.github.io/is373_ci_cd/" target="_blank" rel="noopener noreferrer">Read the project record <span aria-hidden="true">↗</span></a></div>
+      </div>
+      <aside class="field-note" aria-label="Portfolio focus">
+        <div class="note-top"><span>Field notes / 01</span><span class="note-mark" aria-hidden="true">DP</span></div>
+        <p class="note-heading">The work behind<br>the working page.</p>
+        <p class="note-description">Where the data comes from.<br>How the service runs.<br>What the checks establish.</p>
+        <div class="system-path" aria-label="Source to service to evidence"><span>Source</span><i aria-hidden="true">→</i><span>Service</span><i aria-hidden="true">→</i><span>Evidence</span></div>
+        <div class="note-bottom"><span>Learning through implementation</span><span aria-hidden="true">+ + +</span></div>
+      </aside>
+    </section>
+
+    <section id="work" class="work container" aria-labelledby="work-title">
+      <div class="section-heading"><div><p class="eyebrow">01 / Selected work</p><h2 id="work-title">Projects with something to show.</h2></div><p>Applications, infrastructure and the evidence behind them.</p></div>
+      <div class="featured-grid">
+        <article class="project civic-project">
+          <div class="project-visual civic-visual" aria-hidden="true"><div class="visual-label"><span>Applied AI / Public records</span><span>01</span></div><div class="civic-word">NEWARK<br>CIVIC PULSE<span class="orange-square"></span></div><div class="civic-pipeline"><span>Records</span><span>Passages</span><span>Answer + sources</span></div></div>
+          <div class="project-body"><div class="project-kicker"><span>Individual RAG project</span><span class="status">Hosted demo</span></div><h3>Newark Civic Pulse</h3><p>A source-grounded assistant for a small collection of Newark council records. An ETL pipeline turns official records into versioned passages; retrieval supplies evidence for answers with citations.</p><ul class="tags" aria-label="Newark project technologies"><li>RAG &amp; ETL</li><li>Python / FastAPI</li><li>SQLite</li><li>OpenAI</li></ul><div class="evidence-note"><strong>Inspect the work</strong><span>Source records, a five-question comparison, real generated answers and documented limits.</span></div><div class="project-links"><a href="/ask">Try the chatbot <span aria-hidden="true">↗</span></a><a href="/research">Methods &amp; results <span aria-hidden="true">↗</span></a><a href="https://github.com/Y-Just-Y/my-app-studio/pull/7" target="_blank" rel="noopener noreferrer">Code review <span aria-hidden="true">↗</span></a></div></div>
+        </article>
+        <article class="project asteri-project">
+          <div class="project-visual asteri-visual" aria-hidden="true"><div class="visual-label"><span>Product / Infrastructure</span><span>02</span></div><div class="asteri-word">LWDGY<br>ASTERI<span>Product meets operations.</span></div><div class="release-path"><span>Build</span><i>→</i><span>Check</span><i>→</i><span>Release</span></div></div>
+          <div class="project-body"><div class="project-kicker"><span>Personal project</span><span class="status neutral">Case study</span></div><h3>LWDGY ASTERI</h3><p>A storefront and administration project that connects application features with the infrastructure and release work needed to support them.</p><ul class="tags" aria-label="Asteri project areas"><li>Docker</li><li>Server configuration</li><li>Signed releases</li><li>Web application</li></ul><div class="evidence-note"><strong>The case-study focus</strong><span>Container configuration, proxy/DNS/TLS setup, automated checks and a signed build/test/release workflow.</span></div><div class="project-links"><a href="/portfolio/projects/asteri">Read the case study <span aria-hidden="true">↗</span></a></div></div>
+        </article>
+      </div>
+
+      <div class="supporting-grid">
+        <article class="supporting-project"><span class="project-number">03</span><div><p class="eyebrow">Coursework / Cloud foundations</p><h3>Docker &amp; server deployment</h3><p>A deployment learning project documenting containers, proxy routing, server setup and checks.</p><a class="text-link" href="https://github.com/Y-Just-Y/373_hosting_dfp" target="_blank" rel="noopener noreferrer">Repository &amp; setup evidence <span aria-hidden="true">↗</span></a></div></article>
+        <article class="supporting-project"><span class="project-number">04</span><div><p class="eyebrow">Coursework / Application security</p><h3>Accounts &amp; permissions</h3><p>FastAPI signup, sessions and server-enforced member/admin access, including checks for direct requests and changing permissions.</p><a class="text-link" href="https://github.com/Y-Just-Y/my-app-studio/pull/6" target="_blank" rel="noopener noreferrer">Inspect the role checks <span aria-hidden="true">↗</span></a></div></article>
+      </div>
+    </section>
+
+    <section id="practice" class="practice container" aria-labelledby="practice-title">
+      <div class="section-heading"><div><p class="eyebrow">02 / Skills &amp; evidence</p><h2 id="practice-title">Connect the skill to the work.</h2></div><p>Concrete examples from personal and learning projects.</p></div>
+      <dl class="skill-map">
+        <div><dt><span>01</span> RAG &amp; data pipelines</dt><dd>Official source import, chunking, embeddings, retrieval and cited answers in Newark Civic Pulse.<a href="/research#research-etl">Follow the pipeline <span aria-hidden="true">↗</span></a></dd></div>
+        <div><dt><span>02</span> CI/CD &amp; verification</dt><dd>Automated Linux/Windows checks in the Newark repository, alongside ASTERI’s signed build, test and release workflow.<a href="https://github.com/Y-Just-Y/my-app-studio/actions/runs/42886666804" target="_blank" rel="noopener noreferrer">See a checked revision <span aria-hidden="true">↗</span></a></dd></div>
+        <div><dt><span>03</span> Docker &amp; server configuration</dt><dd>Containerized applications, reverse-proxy routing and documented setup in the hosting project and ASTERI work.<a href="https://github.com/Y-Just-Y/373_hosting_dfp/blob/main/SPEC.md" target="_blank" rel="noopener noreferrer">Read the deployment record <span aria-hidden="true">↗</span></a></dd></div>
+        <div><dt><span>04</span> Access control</dt><dd>Separate public, member and administrator routes, enforced by current server-side permissions.<a href="https://github.com/Y-Just-Y/my-app-studio/pull/6" target="_blank" rel="noopener noreferrer">Review the implementation <span aria-hidden="true">↗</span></a></dd></div>
+      </dl>
+    </section>
+
+    <section id="about" class="about container" aria-labelledby="about-title">
+      <div><p class="eyebrow">03 / About the direction</p><h2 id="about-title">Cloud &amp; platform IT,<br>grounded in project work.</h2></div>
+      <div class="about-copy"><p>My current direction is cloud and platform IT. I’m using coursework and personal projects to develop practical skills in Linux, networking, application deployment and data-backed systems.</p><p id="asteri-scope">LWDGY ASTERI adds a product and infrastructure case study alongside Newark Civic Pulse’s RAG work. The ASTERI case study follows the application architecture, Docker/server decisions and documented signed-release checks.</p><p class="assistance-note">These are personal and learning projects. The project records disclose AI assistance, checked behavior and work that remains in progress.</p><a class="text-link" href="https://y-just-y.github.io/is373_ci_cd/#heading-2" target="_blank" rel="noopener noreferrer">Career research &amp; portfolio plan <span aria-hidden="true">↗</span></a></div>
+    </section>
+
+    <section class="next-work container" aria-labelledby="next-work-title"><div><p class="eyebrow">Still taking shape</p><h2 id="next-work-title">Group project case study</h2><p>A separate case study will be added when the shared system and my individual contribution are ready to show.</p></div><span class="status neutral">Planned</span></section>
+{% endblock %}

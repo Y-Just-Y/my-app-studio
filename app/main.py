@@ -13,7 +13,7 @@ from dotenv import load_dotenv
 from starlette.middleware.trustedhost import TrustedHostMiddleware
 
 from app import branding, civic_store, database, security
-from app.features import accounts, civic, roles
+from app.features import accounts, civic, portfolio, roles
 from app.settings import Settings
 from studio_tools.live import revision as current_revision
 
@@ -56,6 +56,7 @@ def create_app(settings=None):
     application.include_router(accounts.router)
     application.include_router(roles.router)
     application.include_router(civic.router)
+    application.include_router(portfolio.router)
     application.state.feature_flags = lambda: {
         "accounts": any(route.path == "/api/me" for route in accounts.router.routes),
         "roles": any(route.path == "/api/admin" for route in roles.router.routes),
