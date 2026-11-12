@@ -44,9 +44,11 @@ the page and the summaries. No new learner explanation or browser observation is
 claimed; existing learning records remain unchanged. This approval establishes
 wording accuracy, not understanding or peer feedback.
 
-**Publication:** Review branch `codex/individual-portfolio`, based on the
-checked RAG branch. The portfolio preview remains local; these pages are not
-deployed to the live Civic host.
+**Release record:** Review branch `codex/individual-portfolio` is based on the
+checked RAG branch. [Draft PR #8](https://github.com/Y-Just-Y/my-app-studio/pull/8)
+and the combined individual record track the current CI and hosted state.
+Local previews, repository publication and verified deployment are separate
+observations; a draft PR does not establish a merge or peer approval.
 
 **AI checks:** Black/Pylint, 196 unit/integration tests, 18 lesson contracts and
 three existing Chromium journeys passed. The new public page returned 200
