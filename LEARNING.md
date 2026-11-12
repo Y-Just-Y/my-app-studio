@@ -5,7 +5,7 @@ short words or labeled paraphrases; disclose help and leave missing responses
 pending. The learner reviews, corrects or removes new excerpts before commit/push.
 Accuracy approval is not proof of understanding. Label simulated trials explicitly.
 
-**Available conversation context:** October 27, 2026 local setup and APP-001 planning. APP-001 evidence was reviewed and approved by the learner for the public repository.
+**Available conversation context:** October 27, 2026 local setup and APP-001 planning, plus the November 11 portfolio review below. APP-001 evidence was reviewed and approved by the learner for the public repository.
 
 ## APP-001
 
@@ -36,3 +36,9 @@ Accuracy approval is not proof of understanding. Label simulated trials explicit
 - Review: Learner confirmed the APP-003 summary is accurate and authorized public inclusion, commit and push on October 27, 2026. This confirms record accuracy, not understanding.
 - Help/gaps: Learner approved dashboard access for members and admin-only page/API access. AI implemented both routes with the prepared current-database-role guard. AI tests verify direct requests and promotion/downgrade on an existing session. All 118 cumulative tests passed. AI visually reviewed admin desktop/mobile and member denial pages with a disposable isolated database, leaving the learner account unchanged. Member browser observation recorded; promotion and downgrade observations recorded; learner chose keep based on the access restrictions and same-session role updates. Accuracy review approved; publication, commit and push authorized.
 - Evidence links / next step: [Issue #5](https://github.com/Y-Just-Y/my-app-studio/issues/5); APP-003 evidence reviewed and approved for publication; PR and CI verification next.
+
+## Individual portfolio · November 11, 2026 Eastern
+
+- Browser observation: Learner: “I clicked the ASTERI case study and it clearly shows the work I did”.
+- Keep decision: The learner chose to keep the case study because it clearly shows their work, then requested the Newark group Plan with Juan.
+- Help/gaps: AI implemented the portfolio and drafted the public case study with assistance disclosed. The learner's own browser observation is now recorded. Juan's actual peer feedback and the learner's explanation of a check remain pending.

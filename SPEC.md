@@ -8,7 +8,7 @@ actual evidence; pending is a valid state. Keep explanations/help in
 
 - **Current feature:** Individual professional portfolio foundation.
 - **Status:** APP-003 is present in merged PR #6. The authorized extension has real Newark ETL, SQLite/FTS5, sqlite-vec embeddings, hybrid retrieval and an OpenAI chatbot. Local full checks passed November 10, 2026. Hosted verification and publication are recorded separately below.
-- **Next step:** Review the completed first ASTERI case-study version, then continue the portfolio evidence and learner verification.
+- **Next step:** Collect Juan's actual portfolio feedback and start a separate Newark group Plan with proposed scope and responsibilities.
 - **Implementation marker:** 3 after explicit cumulative APP-003 checks passed; normal full check also passed.
 
 This repository owns application code. The original three lessons did not include
@@ -40,9 +40,9 @@ release decisions as their work, then clarified ownership of all project work.
 The ASTERI page records end-to-end ownership with AI assistance explicit.
 Preferred profile/contact links and resume/LinkedIn still need review.
 No graduation date, work history or unaided authorship is inferred. AI drafted
-the page and the summaries. No new learner explanation or browser observation is
-claimed; existing learning records remain unchanged. This approval establishes
-wording accuracy, not understanding or peer feedback.
+the page and the summaries. The learner's November 11 browser observation and
+keep decision are recorded below; a check explanation and human peer feedback
+remain pending.
 
 **Release record:** Review branch `codex/individual-portfolio` is based on the
 checked RAG branch. [Draft PR #8](https://github.com/Y-Just-Y/my-app-studio/pull/8)
@@ -54,8 +54,12 @@ observations; a draft PR does not establish a merge or peer approval.
 three existing Chromium journeys passed. The new public page returned 200
 without an account. Its internal anchors resolved; desktop and 390px mobile
 layout were visually inspected with no horizontal overflow. Keyboard navigation
-focused the skip link and activated the main content target. These are AI checks;
-the learner's portfolio browser observation remains pending.
+focused the skip link and activated the main content target. These are AI checks.
+
+**Learner review, November 11, 2026 Eastern:** “I clicked the ASTERI case study
+and it clearly shows the work I did”. The learner chose to keep it and requested
+the Newark group Plan next. This records their own observation and decision;
+Juan's actual feedback and a learner explanation of a check remain pending.
 
 ### LWDGY ASTERI case-study draft
 
