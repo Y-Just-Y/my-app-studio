@@ -14,13 +14,15 @@ source-cited OpenAI answers.
 - [Combined portfolio and RAG research record](https://y-just-y.github.io/is373_ci_cd/)
 - [Research and professor-repository ideas](docs/research/newark-rag.md)
 - [Actual five-question results](docs/research/newark-results.md)
+- [Introduced-budget facts and refresh limits](docs/research/newark-budget.md)
 - [Assignment requirements and remaining work](docs/research/newark-requirements.md)
 - [Separate-host setup](deploy/civic/README.md)
 
 The public app runs on a separate $6/month DigitalOcean host with HTTPS. A real
 public AI request returned the November 5 meeting's scheduled time/place and
-correct source citation. Records and embeddings survived restart and a separate
-backup/restore check. [Hosted evidence](docs/research/newark-hosted-check.json)
+correct source citation. The November 10 records and embeddings survived restart
+and a separate backup/restore check.
+[Hosted evidence](docs/research/newark-hosted-check.json)
 and [recovery evidence](docs/research/newark-recovery-check.json) retain the scope.
 The chatbot answers Newark-data questions; project research is published on the
 research page. API usage is separate from server cost.
@@ -30,6 +32,39 @@ and eight compatible 1,536-dimensional embeddings**. It covers five recent
 Municipal Council meeting records and two selected agenda items. It is a small
 saved snapshot; it cannot establish the next meeting, a complete city budget or
 whether an ordinance was adopted.
+
+## Introduced budget and selected-source refresh · Verified November 16
+
+The November 16 extension adds two reviewed, page-aware passages from the
+official 105-page **2026 introduced budget**. They preserve the year, USD units,
+appropriation/reserve/taxation labels and source pages. No introduction date or
+budget adoption is established. See the [budget review](docs/research/newark-budget.md).
+
+An explicit local import verifies the complete reviewed PDF hash:
+
+```sh
+./.venv/bin/python civic_budget_import.py --pdf /path/to/official-budget.pdf
+```
+
+The extension was deployed at `69b7210`; Linux/Windows CI and the
+[hosted checks](docs/research/newark-budget-check.json) passed. The initial budget
+import preserved the existing corpus/accounts and reached nine sources/ten
+chunks. The first refresh was **partial**: council import inserted one document
+and retained four unchanged; the budget fetch failed and kept its reviewed facts.
+The current corpus has **ten sources/eleven chunks and eleven compatible
+1,536-dimensional vectors**, after an explicit embedding step indexed three
+chunks and reused eight.
+
+The nightly timer is installed, enabled and active for **03:15 America/New_York**
+with up to five minutes of jitter and one job at a time. It makes no model or
+embedding calls; future changed chunks still need an explicit indexing step.
+Direct budget requests returned HTTP 403 on Mac and server with normal TLS
+verification. Failures preserve prior facts; a changed scan requires review.
+One real public model answer cited the introduced total; an approved-total
+question was refused by the adoption-evidence guard with no model call.
+[Refresh operations](deploy/civic/refresh/README.md) describe operation and limits.
+A private backup and separate temporary restore also passed, without replacing
+the live database.
 
 ## Try the local bot
 

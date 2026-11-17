@@ -6,9 +6,9 @@ actual evidence; pending is a valid state. Keep explanations/help in
 
 ## Current stage
 
-- **Current feature:** Individual professional portfolio foundation.
+- **Current feature:** Reviewed Newark budget data and nightly selected-source ETL.
 - **Status:** APP-003 is present in merged PR #6. The authorized extension has real Newark ETL, SQLite/FTS5, sqlite-vec embeddings, hybrid retrieval and an OpenAI chatbot. Local full checks passed November 10, 2026. Hosted verification and publication are recorded separately below.
-- **Next step:** Collect Juan's actual portfolio feedback and start a separate Newark group Plan with proposed scope and responsibilities.
+- **Next step:** Keep source failures and embedding coverage visible, and collect Juan's actual feedback, detailed task agreement and own group submission. Both Plan entries were verified submitted November 16; the budget/refresh extension is deployed and checked below.
 - **Implementation marker:** 3 after explicit cumulative APP-003 checks passed; normal full check also passed.
 
 This repository owns application code. The original three lessons did not include
@@ -151,6 +151,54 @@ fingerprints and vector bytes. See the
 [recovery receipt](docs/research/newark-recovery-check.json). The user's latest
 scope keeps the chatbot focused on Newark data; research explanations remain on
 the research page. Existing Asteri services and DNS records were left intact.
+
+## Reviewed budget and automatic source checks · November 16, 2026
+
+**Scope:** the learner supplied Newark's official 2026 introduced-budget PDF and
+requested searchable budget data, populated website figures and automatic source
+checks. This extension uses the existing separate Civic host and public sources;
+it adds no paid infrastructure. AI assistance in extraction, code and checks is
+explicit. These changes are individual prototype work, not completed group work.
+
+**Representation:** the 105-page image scan has no selectable text. Local OCR and
+visual inspection produced a reviewed, SHA-256-bound extract covering selected
+facts on PDF pages 1, 3, 4 and 6. Two short passages keep year, introduced status,
+USD, distinct monetary definitions and page references together. Introduction
+date is unknown; blank certification templates do not establish adoption.
+The four summary figures are $880,149,264.94 excluding reserve, $20,351,000.00
+reserve, $900,500,264.94 including reserve and $288,267,071.55 municipal-budget
+taxation. The remaining budget pages are not indexed.
+
+**Refresh:** a separate server job checks at most five council records and the
+fixed budget URL around 3:15 a.m. America/New_York. A shared OS writer lock prevents
+overlap. Successful sources update versioned FTS5 passages; failed sources keep
+their prior records and verification dates. A changed budget scan requires a
+new reviewed extract. Nightly runs contain no API key and make no paid embedding
+or generation calls. Semantic coverage is shown independently and refreshed only
+by the explicit embedding command.
+
+**Current source-access limit:** normal TLS-verified requests to the PDF returned
+403 on both Mac and Civic host. The official PDF was saved through Safari and
+verified locally. This permits the initial checked import, not a claim that
+unattended PDF access works. The public refresh status must expose partial or
+failed checks without making the saved budget look newly verified.
+
+**Checks and release:** Black/Pylint, 268 unit/integration tests, 18 cumulative
+APP-003 contracts and three actual Chromium journeys passed November 16. The
+budget status checks include a false approved claim with a valid citation and
+the resolution-wording bypass found during independent AI review. Desktop and
+390px mobile review found no page overflow; source search returned the reviewed
+table passage. Application revision `69b7210` is deployed with both Linux/Windows checks passed.
+The initial two-source budget import preserved accounts and the original chunks.
+The enabled nightly job added one council record and reported a partial result
+for the blocked budget fetch. After one explicit embedding import, the live
+corpus has ten sources, eleven chunks and eleven compatible vectors. One actual
+introduced-total generation and one deterministic approved-total refusal passed;
+a separate backup/restore matched the new source/chunk versions and vector bytes.
+See [hosted extension receipt](docs/research/newark-budget-check.json).
+The original November 10 evaluation remains unchanged. See
+[budget methods and results](docs/research/newark-budget.md) for this separate
+corpus extension and its actual validation boundary.
 
 ## APP-001 · Branded homepage
 

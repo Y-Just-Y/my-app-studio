@@ -36,6 +36,11 @@ The application accepts forwarded client/protocol headers only on its unpublishe
 container port, reached through the dedicated Caddy network. Do not publish app
 port 8000 or attach untrusted services to that network.
 
+The optional [nightly source-refresh job](refresh/README.md) checks a fixed
+official-source manifest without model or embedding calls. Its timer is installed
+separately after reviewing the deployed CLI; configuration alone does not prove
+that a scheduled attempt ran.
+
 ## Prepare the new machine
 
 1. Create the approved separate Droplet with SSH-key access. Independently verify

@@ -1,0 +1,11 @@
+[Unit]
+Description=Nightly selected Newark source refresh
+
+[Timer]
+OnCalendar=*-*-* 03:15:00 America/New_York
+RandomizedDelaySec=5m
+Persistent=true
+Unit=civic-refresh.service
+
+[Install]
+WantedBy=timers.target

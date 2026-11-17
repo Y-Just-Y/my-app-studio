@@ -1,0 +1,260 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-11-17T03:15:27.732001+00:00",
+  "scope": "One real generated introduced-budget answer and one deterministic adoption-evidence refusal; no automatic retry.",
+  "deployment": {
+    "application_revision": "69b721007e0b6276a8f80f5fc8a81e7084ac9dbc",
+    "image_id": "sha256:6ffd4dca4bfa6203a658fde6115639be3229e88520d426aab0dfc285d052110d",
+    "ci_url": "https://github.com/Y-Just-Y/my-app-studio/actions/runs/44008090006",
+    "ci_check": "success",
+    "ci_windows": "success",
+    "production_health_verified": true,
+    "caddy_configuration_unchanged": true,
+    "existing_accounts_preserved": true,
+    "original_chunks_preserved_after_budget_import": true,
+    "new_cloud_resources": 0
+  },
+  "local_checks": {
+    "unit_integration": 268,
+    "lesson_contracts": 18,
+    "chromium_journeys": 3,
+    "black": "passed",
+    "pylint": "passed",
+    "mobile_width": 390,
+    "mobile_document_width": 390,
+    "automated_model_requests": 0
+  },
+  "source": {
+    "url": "https://www.newarknj.gov/DocumentCenter/View/3062/2026-City-of-Newark-Introduced--Legal-Line-Budget-",
+    "pdf_sha256": "dd9387451debf0b36c79d84e8d37fcc85466e823d4627bd5f0b04e82ab304474",
+    "pdf_pages": 105,
+    "indexed_review_pages": [
+      1,
+      3,
+      4,
+      6
+    ],
+    "status": "introduced",
+    "adoption_verified": false,
+    "introduced_date": null,
+    "initial_import_method": "Safari download; local file hash verified before incremental import",
+    "unattended_mac_http": 403,
+    "unattended_server_http": 403,
+    "tls_verification_enabled": true
+  },
+  "public_https": {
+    "home": 200,
+    "ask": 200,
+    "research": 200,
+    "status": 200,
+    "health": 200,
+    "portfolio": 200,
+    "asteri_case": 200,
+    "certificate_and_hostname_verification": true
+  },
+  "initial_incremental_import": {
+    "sources": 9,
+    "chunks": 10,
+    "inserted": 2,
+    "original_sources_preserved": true
+  },
+  "current_corpus": {
+    "sources": 10,
+    "chunks": 11,
+    "vectors": {
+      "available": true,
+      "indexed_chunks": 11,
+      "total_chunks": 11,
+      "model": "text-embedding-3-small",
+      "dimensions": 1536,
+      "complete": true,
+      "compatible": true
+    }
+  },
+  "nightly_timer": {
+    "enabled": true,
+    "active": true,
+    "calendar": "03:15 America/New_York",
+    "random_delay_max_minutes": 5,
+    "next_observed_utc": "2026-11-17T08:19:13+00:00",
+    "first_service_exit": 1,
+    "reason": "Council succeeded; budget check failed. A separate normal-TLS diagnostic of the fixed budget URL returned HTTP 403."
+  },
+  "manual_embedding_import": {
+    "indexed": 3,
+    "unchanged": 8,
+    "skipped_stale": 0,
+    "total_chunks": 11,
+    "model": "text-embedding-3-small",
+    "dimensions": 1536
+  },
+  "questions": [
+    {
+      "case": "introduced_total",
+      "question": "What total general appropriations, including the reserve for uncollected taxes, does Newark's introduced 2026 budget list?",
+      "http_status": 200,
+      "response": {
+        "answer": "The 2026 introduced municipal budget lists Total General Appropriations INCLUDING the Reserve for Uncollected Taxes as $900,500,264.94 USD (fiscal year 2026, introduced status).",
+        "citation_ids": [
+          "newark-budget-2026-introduced-summary-v1-001"
+        ],
+        "insufficient_evidence": false,
+        "model": "gpt-5-mini",
+        "mode": "ai",
+        "retrieval": "hybrid",
+        "sources": [
+          {
+            "chunk_id": "newark-budget-2026-introduced-summary-v1-001",
+            "source_id": "newark-budget-2026-introduced-summary",
+            "title": "Newark 2026 introduced municipal budget \u2014 2026 introduced budget amounts and municipal taxation (USD)",
+            "heading": "2026 introduced budget amounts and municipal taxation (USD)",
+            "text": "Newark 2026 INTRODUCED municipal budget: selected summary figures in USD.\nSource: PDF page 1 (unprinted computation sheet), corroborated by PDF page 6, printed Sheet 3, YEAR 2026 column.\nTotal General Appropriations EXCLUSIVE of Reserve for Uncollected Taxes: $880,149,264.94 USD.\nReserve for Uncollected Taxes: $20,351,000.00 USD.\nTotal General Appropriations INCLUDING that reserve: $900,500,264.94 USD.\nTotal Anticipated Revenues: $612,233,193.39 USD.\nAmount to Be Raised by Taxation in Municipal Budget: $288,267,071.55 USD.\nThe separate $516,705,236.55 total includes other taxes and is NOT the municipal-budget taxation amount.\nThese are introduced-budget figures, not an approved or adopted total. No introduction date or adoption evidence is established by this extract.",
+            "url": "https://www.newarknj.gov/DocumentCenter/View/3062/2026-City-of-Newark-Introduced--Legal-Line-Budget-#page=1",
+            "fetched_at": "2026-11-17T03:12:57.006275+00:00",
+            "source_updated_at": null,
+            "metadata": {
+              "adoption_date": null,
+              "adoption_verified": false,
+              "coverage": "Selected summary facts from PDF pages 1 and 6, with status limits from pages 3 and 4; the remaining pages are not indexed.",
+              "currency": "USD",
+              "introduced_date": null,
+              "kind": "budget",
+              "municipal_taxation": "288267071.55",
+              "pdf_page": 1,
+              "pdf_page_count": 105,
+              "printed_page_label": null,
+              "publisher": "City of Newark",
+              "raw_amounts": {
+                "municipal_taxation": "288,267,071.55",
+                "reserve": "20,351,000.00",
+                "total_general_exclusive": "880,149,264.94",
+                "total_general_including_reserve": "900,500,264.94"
+              },
+              "reserve": "20351000.00",
+              "review_method": "Apple Vision VNRecognizeTextRequest, accurate English OCR, language correction disabled; Poppler-rendered source pages checked visually",
+              "reviewed_at": "2026-11-17T02:54:54.912833+00:00",
+              "reviewer_type": "AI-assisted OCR and visual table verification; no human peer review claimed",
+              "source_sha256": "dd9387451debf0b36c79d84e8d37fcc85466e823d4627bd5f0b04e82ab304474",
+              "source_url": "https://www.newarknj.gov/DocumentCenter/View/3062/2026-City-of-Newark-Introduced--Legal-Line-Budget-",
+              "status": "introduced",
+              "status_pdf_pages": [
+                3,
+                4
+              ],
+              "supporting_pdf_pages": [
+                6
+              ],
+              "supporting_printed_page_labels": [
+                "Sheet 3"
+              ],
+              "total_general_exclusive": "880149264.94",
+              "total_general_including_reserve": "900500264.94",
+              "verification": "Exact PDF SHA-256 matches the reviewed public extract.",
+              "year": 2026
+            },
+            "content_hash": "7f6ea00172cf7d46164158c4870fd3916560d751d911f0f893dc998228af262c",
+            "source_hash": "3f98ea89f484fac25a183adb2b58c1adeb723082268c9ac2c63f352202188102",
+            "version": 1,
+            "score": 0.0
+          }
+        ],
+        "checked_at": "2026-11-16T22:15:26.979521-05:00"
+      },
+      "expectation_passed": true
+    },
+    {
+      "case": "approved_total",
+      "question": "What is Newark's total approved budget for 2026?",
+      "http_status": 200,
+      "response": {
+        "answer": "The indexed sources do not provide enough verified adoption evidence for this budget claim and fiscal year. I cannot establish an approved or adopted budget amount from this evidence.",
+        "citation_ids": [],
+        "insufficient_evidence": true,
+        "mode": "insufficient_evidence",
+        "retrieval": "hybrid",
+        "sources": [],
+        "model": null,
+        "status_guard": "budget_adoption",
+        "checked_at": "2026-11-16T22:15:27.693522-05:00"
+      },
+      "expectation_passed": true
+    }
+  ],
+  "security": {
+    "anonymous_import": 401,
+    "chat_without_csrf": 403
+  },
+  "limits": [
+    "Only selected summary/status facts from the scanned budget are indexed.",
+    "One generated budget answer and one deterministic refusal do not establish general accuracy.",
+    "The nightly job makes no provider requests; future semantic embedding updates require the explicit command.",
+    "The refresh receipt semantic counts are its completion snapshot before the manual embedding import. Current corpus vectors are reported separately.",
+    "These are AI checks; actual human peer review and Juan contributions remain separate pending work."
+  ],
+  "original_nov10_results_sha256": "e94eeb9fe2006d9121be0fa4aed4a81520b6de449051479ceb7d72b73486fd9e",
+  "recovery": {
+    "backup_integrity": "ok",
+    "separate_restore_integrity": "ok",
+    "source_chunk_version_and_vector_bytes_match": true,
+    "chunks": 11,
+    "indexed_chunks": 11,
+    "dimensions": 1536,
+    "live_database_replaced": false,
+    "temporary_restore_removed": true,
+    "private_backup_retained": true
+  },
+  "browser_source_search": {
+    "origin": "https://civic.lwdgyasteri.com",
+    "rendered_budget_card_verified": true,
+    "question_example_verified": true,
+    "returned_reviewed_summary_passage": true,
+    "pdf_page_citation": 1,
+    "paid_provider_requests": 0
+  },
+  "documentation_updated_at": "2026-11-17T03:22:16.585391+00:00",
+  "first_service_verification_run": {
+    "schema_version": 1,
+    "status": "partial",
+    "message": "Some sources could not be checked. Their saved records were kept.",
+    "started_at": "2026-11-17T03:13:47.790435+00:00",
+    "completed_at": "2026-11-17T03:13:53.037000+00:00",
+    "last_success_at": null,
+    "sources": {
+      "council": {
+        "url": "https://webapi.legistar.com/v1/newark",
+        "status": "ok",
+        "last_success_at": "2026-11-17T03:13:53.033827+00:00",
+        "documents": 5
+      },
+      "budget_2026_introduced": {
+        "url": "https://www.newarknj.gov/DocumentCenter/View/3062/2026-City-of-Newark-Introduced--Legal-Line-Budget-",
+        "status": "error",
+        "last_success_at": null,
+        "documents": 0
+      }
+    },
+    "load": {
+      "inserted": 1,
+      "updated": 0,
+      "unchanged": 4
+    },
+    "corpus": {
+      "sources": 10,
+      "chunks": 11
+    },
+    "semantic_index": {
+      "indexed_chunks": 8,
+      "total_chunks": 11,
+      "complete": false,
+      "mode": "manual",
+      "requests": 0
+    },
+    "schedule": {
+      "configured": true,
+      "time": "03:15",
+      "timezone": "America/New_York"
+    },
+    "trigger": "Manually started via systemctl to verify the configured nightly service; no calendar-triggered run has yet been observed."
+  },
+  "provider_usage_note": "The approved-total refusal skipped generation; hybrid retrieval still made a query-embedding request. Nightly ETL made no provider requests."
+}

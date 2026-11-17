@@ -1,0 +1,550 @@
+{
+  "schema_version": 1,
+  "source": {
+    "url": "https://www.newarknj.gov/DocumentCenter/View/3062/2026-City-of-Newark-Introduced--Legal-Line-Budget-",
+    "sha256": "dd9387451debf0b36c79d84e8d37fcc85466e823d4627bd5f0b04e82ab304474",
+    "bytes": 3161006,
+    "page_count": 105,
+    "publisher": "City of Newark",
+    "title": "Newark 2026 introduced municipal budget",
+    "year": 2026,
+    "status": "introduced",
+    "introduced_date": null,
+    "adoption_verified": false
+  },
+  "review": {
+    "reviewed_at": "2026-11-17T02:54:54.912833+00:00",
+    "reviewed_on": "2026-11-16",
+    "reviewer_type": "AI-assisted OCR and visual table verification; no human peer review claimed",
+    "method": "Apple Vision VNRecognizeTextRequest, accurate English OCR, language correction disabled; Poppler-rendered source pages checked visually",
+    "visual_review_pdf_pages": [
+      1,
+      3,
+      4,
+      6
+    ],
+    "coverage": "Selected summary facts from PDF pages 1 and 6, with status limits from pages 3 and 4; the remaining pages are not indexed.",
+    "limitations": [
+      "The source filename identifies an introduced budget. An adopted or approved 2026 total is not established.",
+      "Introduction and adoption date fields and the recorded vote on PDF pages 3 and 4 are blank. The introduction date is unknown.",
+      "The preprinted approved-budget heading on PDF page 6 is not adoption evidence.",
+      "OCR confidence scores are extraction metadata, not proof of correctness; selected monetary rows were also checked visually."
+    ]
+  },
+  "page_labels": {
+    "1": null,
+    "3": "Sheet 1",
+    "4": "Sheet 2",
+    "6": "Sheet 3"
+  },
+  "amounts": {
+    "total_general_exclusive": {
+      "value": "880149264.94",
+      "raw": "880,149,264.94",
+      "label": "Total General Appropriations exclusive of Reserve for Uncollected Taxes",
+      "year": 2026,
+      "currency": "USD",
+      "pdf_page": 1,
+      "printed_page_label": null
+    },
+    "reserve": {
+      "value": "20351000.00",
+      "raw": "20,351,000.00",
+      "label": "Reserve for Uncollected Taxes",
+      "year": 2026,
+      "currency": "USD",
+      "pdf_page": 1,
+      "printed_page_label": null
+    },
+    "total_general_including_reserve": {
+      "value": "900500264.94",
+      "raw": "900,500,264.94",
+      "label": "Total General Appropriations including Reserve for Uncollected Taxes",
+      "year": 2026,
+      "currency": "USD",
+      "pdf_page": 1,
+      "printed_page_label": null
+    },
+    "municipal_taxation": {
+      "value": "288267071.55",
+      "raw": "288,267,071.55",
+      "label": "Amount to Be Raised by Taxation in Municipal Budget",
+      "year": 2026,
+      "currency": "USD",
+      "pdf_page": 1,
+      "printed_page_label": null
+    }
+  },
+  "additional_rows": {
+    "anticipated_revenues": {
+      "value": "612233193.39",
+      "raw": "612,233,193.39",
+      "year": 2026,
+      "currency": "USD",
+      "label": "Total Anticipated Revenues",
+      "pdf_page": 1
+    },
+    "taxation_including_other_taxes": {
+      "value": "516705236.55",
+      "raw": "516,705,236.55",
+      "year": 2026,
+      "currency": "USD",
+      "label": "Total Amount to be Raised by Taxation including other taxes; not the municipal-budget taxation amount",
+      "pdf_page": 1
+    }
+  },
+  "ocr_evidence": [
+    {
+      "pdf_page": 1,
+      "pixel_width": 1335,
+      "pixel_height": 2200,
+      "coordinate_system": "normalized image coordinates, origin bottom-left",
+      "observations": [
+        {
+          "text": "RESERVE FOR UNCOLLECTED TAXES AND",
+          "confidence": 1,
+          "box": [
+            0.274881890254536,
+            0.945325385262553,
+            0.41436900064616855,
+            0.017122257406061325
+          ]
+        },
+        {
+          "text": "AMOUNT TO BE RAISED BY TAXATION",
+          "confidence": 1,
+          "box": [
+            0.29649475149373206,
+            0.9310631624623429,
+            0.3687449015543133,
+            0.01523842031305489
+          ]
+        },
+        {
+          "text": "YEAR 2026",
+          "confidence": 1,
+          "box": [
+            0.6196172254156417,
+            0.9011627906907906,
+            0.09808612298108865,
+            0.01308139540932407
+          ]
+        },
+        {
+          "text": "Total General Appropriations for 2026 Municipal Budget Statement Item",
+          "confidence": 1,
+          "box": [
+            0.06684033484658099,
+            0.8856246553173016,
+            0.5218614132818347,
+            0.01565862482244318
+          ]
+        },
+        {
+          "text": "1 8(L) (Exclusive of Reserve for Uncollected Taxes)",
+          "confidence": 1,
+          "box": [
+            0.051626004401180786,
+            0.8698247138241233,
+            0.3820390073125234,
+            0.025775479403409074
+          ]
+        },
+        {
+          "text": "9 Total General Appropriations & Other Taxes",
+          "confidence": 1,
+          "box": [
+            0.049944472947165766,
+            0.6562388179681751,
+            0.34020600918524274,
+            0.015578266490589465
+          ]
+        },
+        {
+          "text": "equals Amount to be Raised by Taxation (Percentage used must not",
+          "confidence": 1,
+          "box": [
+            0.06679496814696893,
+            0.5687338647674554,
+            0.495603595665115,
+            0.015460650704123724
+          ]
+        },
+        {
+          "text": "288,267,071.55",
+          "confidence": 1,
+          "box": [
+            0.4614748382407497,
+            0.4204014099103853,
+            0.11774087094975089,
+            0.01293539480729533
+          ]
+        },
+        {
+          "text": "516,705,236.55",
+          "confidence": 1,
+          "box": [
+            0.46166072632006233,
+            0.40676966867789344,
+            0.11734840256011408,
+            0.013495546687733007
+          ]
+        },
+        {
+          "text": "13 Appropriation: Reserve for Uncollected Taxes (Budget",
+          "confidence": 1,
+          "box": [
+            0.04040417607787544,
+            0.3908434995508384,
+            0.4191030627953078,
+            0.0191299161044034
+          ]
+        },
+        {
+          "text": "Item 1 - Total General Appropriations",
+          "confidence": 1,
+          "box": [
+            0.0761430067692003,
+            0.34854198871209807,
+            0.2734768576250819,
+            0.016494645205411107
+          ]
+        },
+        {
+          "text": "Item 13 - Appropriation: Reserve for Uncollected Taxes",
+          "confidence": 1,
+          "box": [
+            0.0763558893285964,
+            0.3347626839978278,
+            0.39990828279963514,
+            0.014515787904912814
+          ]
+        },
+        {
+          "text": "Amount to Be Raised by Taxation in Municipal Budget",
+          "confidence": 1,
+          "box": [
+            0.06439921091704513,
+            0.29208621148251734,
+            0.3903134740041401,
+            0.01466496901078651
+          ]
+        },
+        {
+          "text": "880,149,264.94",
+          "confidence": 1,
+          "box": [
+            0.6172248795694362,
+            0.8706395347252618,
+            0.11722488174895329,
+            0.011627907319502362
+          ]
+        },
+        {
+          "text": "612,233,193.39",
+          "confidence": 1,
+          "box": [
+            0.6148056949999307,
+            0.6263642704057326,
+            0.1172785616206552,
+            0.013259831341830175
+          ]
+        },
+        {
+          "text": "516,705,236.55",
+          "confidence": 1,
+          "box": [
+            0.6124401924803797,
+            0.5508720928712565,
+            0.11961722231196781,
+            0.011627907319502473
+          ]
+        },
+        {
+          "text": "20,351,000.00",
+          "confidence": 1,
+          "box": [
+            0.6196172238837534,
+            0.3764534882136339,
+            0.11004784863866024,
+            0.011627907319502362
+          ]
+        },
+        {
+          "text": "880,149,264.94",
+          "confidence": 1,
+          "box": [
+            0.610047847536201,
+            0.3488372096290343,
+            0.11961722231196781,
+            0.01162790645252576
+          ]
+        },
+        {
+          "text": "20,351,000.00",
+          "confidence": 1,
+          "box": [
+            0.6196172238837534,
+            0.335755813943016,
+            0.11004784863866024,
+            0.008720930272882677
+          ]
+        },
+        {
+          "text": "900,500,264.94",
+          "confidence": 1,
+          "box": [
+            0.6097254272479599,
+            0.31807253440761896,
+            0.11779313458653984,
+            0.01297068422490899
+          ]
+        },
+        {
+          "text": "612,233,193.39",
+          "confidence": 1,
+          "box": [
+            0.6100478459724133,
+            0.3052325579914116,
+            0.11722488174895329,
+            0.011627907319502473
+          ]
+        },
+        {
+          "text": "288,267,071.55",
+          "confidence": 1,
+          "box": [
+            0.6074393673271642,
+            0.2913731438046917,
+            0.12008822321177959,
+            0.012577671571211368
+          ]
+        }
+      ]
+    },
+    {
+      "pdf_page": 3,
+      "pixel_width": 1335,
+      "pixel_height": 2200,
+      "coordinate_system": "normalized image coordinates, origin bottom-left",
+      "observations": [
+        {
+          "text": "CERTIFICATION OF ADOPTED BUDGET",
+          "confidence": 1,
+          "box": [
+            0.3401435332056657,
+            0.6597923443864322,
+            0.026074378076427707,
+            0.21818782459605834
+          ]
+        },
+        {
+          "text": "for the Fiscal Year 2026.",
+          "confidence": 1,
+          "box": [
+            0.8516746339644541,
+            0.14244186242198342,
+            0.019138773758254346,
+            0.10901162581010293
+          ]
+        },
+        {
+          "text": "Sheet 1",
+          "confidence": 1,
+          "box": [
+            0.11244018827259701,
+            0.5029069774093899,
+            0.021531107182988132,
+            0.04796511563387784
+          ]
+        }
+      ]
+    },
+    {
+      "pdf_page": 4,
+      "pixel_width": 1335,
+      "pixel_height": 2200,
+      "coordinate_system": "normalized image coordinates, origin bottom-left",
+      "observations": [
+        {
+          "text": "MUNICIPAL BUDGET NOTICE",
+          "confidence": 1,
+          "box": [
+            0.9258373060379506,
+            0.43168604763213825,
+            0.02153112931165868,
+            0.20203488436612216
+          ]
+        },
+        {
+          "text": "Be it Resolved, that the following statements of revenues and appropriations shall constitute the Municipal Budget for the year 2026;",
+          "confidence": 1,
+          "box": [
+            0.7918427832059541,
+            0.29357644867020005,
+            0.02406864965747224,
+            0.6337771883877841
+          ]
+        },
+        {
+          "text": "for the Fiscal Year 2026",
+          "confidence": 1,
+          "box": [
+            0.8349282210375955,
+            0.04796512037429379,
+            0.019138774472082454,
+            0.11918604070490058
+          ]
+        },
+        {
+          "text": "does hereby approve the following as the Budget for the year 2026:",
+          "confidence": 1,
+          "box": [
+            0.6722487808997898,
+            0.06976745262643003,
+            0.01913880159754955,
+            0.32412789084694604
+          ]
+        },
+        {
+          "text": "at which time and place objections to said Budget and Tax Resolution for the year 2026 may be presented by taxpayers or other",
+          "confidence": 1,
+          "box": [
+            0.18660282635097614,
+            0.23982560849010615,
+            0.019138849424030963,
+            0.6191860129616477
+          ]
+        },
+        {
+          "text": "Sheet 2",
+          "confidence": 1,
+          "box": [
+            0.10526315477977402,
+            0.5101744186955923,
+            0.021531107896816226,
+            0.04941860545765264
+          ]
+        }
+      ]
+    },
+    {
+      "pdf_page": 6,
+      "pixel_width": 1335,
+      "pixel_height": 2200,
+      "coordinate_system": "normalized image coordinates, origin bottom-left",
+      "observations": [
+        {
+          "text": "SUMMARY OF CURRENT FUND SECTION OF APPROVED BUDGET",
+          "confidence": 1,
+          "box": [
+            0.8779904018092358,
+            0.2921511692150838,
+            0.02153115786478188,
+            0.40261627197265626
+          ]
+        },
+        {
+          "text": "Total General Appropriations excluded from \"CAPS\" (Item O, Sheet 29)",
+          "confidence": 1,
+          "box": [
+            0.6004784420839485,
+            0.49854651265402017,
+            0.02392350913521779,
+            0.37063953746448863
+          ]
+        },
+        {
+          "text": "3. Reserve for Uncollected Taxes (Item M, Sheet 29) Based on Estimated",
+          "confidence": 1,
+          "box": [
+            0.5693779632914625,
+            0.5755814004328257,
+            0.019138810877314616,
+            0.37936046253551137
+          ]
+        },
+        {
+          "text": "4. Total General Appropriations (Item 9, Sheet 29)",
+          "confidence": 1,
+          "box": [
+            0.49339196353786663,
+            0.6917792172717713,
+            0.02636577697571163,
+            0.26325916637073865
+          ]
+        },
+        {
+          "text": "6. Difference: Amount to be Raised by Taxes for Support of Municipal Budget (as follows)",
+          "confidence": 1,
+          "box": [
+            0.4282296313100468,
+            0.4840116332614709,
+            0.021531167858375055,
+            0.4709302312677558
+          ]
+        },
+        {
+          "text": "(a) Local Tax for Municipal Purposes Including Reserve for Uncollected Taxes (Item 6(a), Sheet 11)",
+          "confidence": 1,
+          "box": [
+            0.38950111143722266,
+            0.35460909114834127,
+            0.027144439206151894,
+            0.5175261896306819
+          ]
+        },
+        {
+          "text": "Sheet 3",
+          "confidence": 1,
+          "box": [
+            0.09808612128695109,
+            0.4723837215954365,
+            0.02153110789681624,
+            0.04796511563387784
+          ]
+        },
+        {
+          "text": "YEAR 2026",
+          "confidence": 1,
+          "box": [
+            0.8421052586152759,
+            0.04796511619276378,
+            0.02153110932447233,
+            0.06395348982377491
+          ]
+        },
+        {
+          "text": "20,351,000.00",
+          "confidence": 1,
+          "box": [
+            0.5622009515470366,
+            0.039244187793330054,
+            0.023923455598111598,
+            0.07412790471857245
+          ]
+        },
+        {
+          "text": "900,500,264.94",
+          "confidence": 1,
+          "box": [
+            0.49521530503450956,
+            0.03924418831115373,
+            0.021531112179784706,
+            0.07994185707785872
+          ]
+        },
+        {
+          "text": "612,233,193.39",
+          "confidence": 1,
+          "box": [
+            0.4617224822421901,
+            0.03924418840632271,
+            0.0191387673338016,
+            0.07994185707785861
+          ]
+        }
+      ]
+    }
+  ]
+}

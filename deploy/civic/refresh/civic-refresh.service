@@ -1,0 +1,16 @@
+[Unit]
+Description=Refresh selected official Newark sources without model requests
+Requires=docker.service
+After=docker.service network-online.target
+Wants=network-online.target
+ConditionPathExists=/etc/newark-civic-pulse-host
+
+[Service]
+Type=oneshot
+WorkingDirectory=/opt/newark-civic-pulse
+ExecStart=/opt/newark-civic-pulse/deploy/civic/refresh/run.sh
+ExecStopPost=/opt/newark-civic-pulse/deploy/civic/refresh/run.sh --cleanup
+TimeoutStartSec=300
+TimeoutStopSec=30
+NoNewPrivileges=true
+Restart=no

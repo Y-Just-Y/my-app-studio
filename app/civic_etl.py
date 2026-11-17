@@ -15,6 +15,7 @@ from zoneinfo import ZoneInfo
 import httpx
 
 from app import civic_store
+from app.civic_refresh import RefreshBusy, writer_lock
 
 API_ROOT = "https://webapi.legistar.com/v1/newark"
 CITY_CLERK_URL = "https://www.newarknj.gov/166/Office-of-the-City-Clerk"
@@ -377,6 +378,17 @@ def fetch_documents(as_of, limit=5, *, client=None):
 
 
 def run_import(path, as_of, limit=5, *, client=None):
+    """Share the cross-process writer lock with the scheduled lexical refresh."""
+    try:
+        with writer_lock(path):
+            return _run_import(path, as_of, limit, client=client)
+    except RefreshBusy:
+        raise CivicImportError(
+            "Another civic import is running. Existing records were kept."
+        ) from None
+
+
+def _run_import(path, as_of, limit=5, *, client=None):
     """Commit one complete successful import; partial network results are discarded."""
     documents = fetch_documents(as_of, limit, client=client)
     counters = civic_store.upsert_documents(path, documents)

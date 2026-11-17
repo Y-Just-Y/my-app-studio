@@ -15,7 +15,7 @@
     <div>
       <p class="eyebrow">The current collection</p>
       <h2 id="research-snapshot-title">{{ civic.sources }} source records.<br>{{ civic.chunks }} searchable passages.</h2>
-      <p>A small snapshot of recent Newark council meetings and selected agenda items. It does not cover every meeting, decision, city service or budget figure.</p>
+      <p>A small collection of selected Newark council records and, when imported, reviewed introduced-budget extracts. It does not cover every meeting, decision, city service or budget figure.</p>
       <a class="button" href="/ask">Try Ask Newark <span aria-hidden="true">↗</span></a>
     </div>
     <div class="snapshot-records">
@@ -42,6 +42,8 @@
       <article class="record-card"><span class="badge">Load</span><h3>Save a consistent version.</h3><p>Commit sources and their dependent chunks in one SQLite transaction. Unchanged imports reuse stable identities; changed sources replace their old searchable passages together.</p><p>Refresh compatible embeddings for changed chunks. Failed or incomplete imports preserve the last successful snapshot. A source change during answer preparation returns a retryable conflict instead of mixing revisions.</p></article>
     </div>
     <p class="research-note"><strong>Executed import:</strong> the November 10 research snapshot contains five recent meeting records and two selected agenda items: seven sources and eight chunks. After source-link repairs, a repeat import reported all seven unchanged. These are observed bounded-import results, not a complete Newark calendar.</p>
+    <p class="research-note"><strong>Budget extension:</strong> the official 2026 introduced budget is a 105-page image scan. Selected table amounts were extracted with local OCR and visually checked against PDF pages 1 and 6; blank certification templates on pages 3 and 4 do not establish adoption. The reviewed extract is bound to the exact PDF SHA-256 and keeps the year, status, units, page and different total definitions in its passages. It is not a complete transcription of the budget. {% if civic.budget.available %}<a href="{{ civic.budget.source_url }}" target="_blank" rel="noopener noreferrer">Inspect the original table ↗</a>.{% endif %}</p>
+    <p class="research-note"><strong>Automatic ETL:</strong> a separate nightly server job checks only the selected council feed and the fixed budget URL. It updates versioned keyword-search records without model requests. Failed fetches preserve that source’s last good records; a changed scan requires a reviewed extract before replacement. A shared writer lock prevents overlapping imports. Semantic embedding refresh remains a separate bounded operation, so its coverage is reported independently. Current refresh: {{ civic.refresh.message }} Last attempt: {{ civic.refresh.completed_at or 'Not yet recorded' }}.</p>
   </section>
 
   <section id="research-chunking" class="research-section" aria-labelledby="research-chunking-title">
@@ -102,7 +104,7 @@
   <section id="research-limits" class="research-section" aria-labelledby="research-limits-title">
     <div class="section-heading"><h2 id="research-limits-title">06 / Keep the limits visible.</h2><span class="section-note">Evidence supports a bounded claim.</span></div>
     <div class="record-grid">
-      <article class="record-card"><span class="badge">What the corpus can establish</span><h3>Listed facts, with dates.</h3><p>Imported meeting dates, scheduled times, locations and selected agenda listings can support limited questions. The collection cannot establish the next city meeting, a total budget, a vote or final passage without the relevant evidence.</p></article>
+      <article class="record-card"><span class="badge">What the corpus can establish</span><h3>Listed facts, with dates.</h3><p>Imported meeting dates, scheduled times, locations, selected agenda listings and reviewed introduced-budget amounts can support limited questions. The collection cannot establish the next city meeting, an adopted budget, actual spending, a vote or final passage without the relevant evidence.</p></article>
       <article class="record-card"><span class="badge">What remains to test</span><h3>A broader, human-reviewed sample.</h3><p>More source families, questions, tokenizer-aware boundaries, citation support and useful peer feedback need checking. Dollar spend and latency were not measured in the frozen evaluation. A small success is not a general accuracy or security certification.</p></article>
       <article class="record-card"><span class="badge">The individual assignment</span><h3>Keep authorship and review honest.</h3><p>The portfolio foundation, learner claim verification, real peer feedback and the resulting change/retest remain pending. Private career reflection belongs in Canvas. This research page does not submit the assignment or complete the individual PowerPoint.</p></article>
     </div>

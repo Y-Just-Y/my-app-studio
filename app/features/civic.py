@@ -1,6 +1,7 @@
 """Read-only public civic retrieval and an explicitly configured AI gateway."""
 
 from datetime import datetime
+from decimal import Decimal
 import hashlib
 import json
 from zoneinfo import ZoneInfo
@@ -10,7 +11,17 @@ from fastapi.responses import RedirectResponse
 from pydantic import BaseModel, ConfigDict, Field, ValidationError
 from starlette.concurrency import run_in_threadpool
 
-from app import civic_ai, civic_etl, civic_limits, civic_store, civic_vectors, security
+from app import (
+    civic_ai,
+    civic_budget_policy,
+    civic_documents,
+    civic_etl,
+    civic_limits,
+    civic_refresh,
+    civic_store,
+    civic_vectors,
+    security,
+)
 from app.features.accounts import api_csrf
 
 router = APIRouter()
@@ -30,12 +41,27 @@ def status(request):
     source_status = civic_store.snapshot(database, limit=5)
     provider = civic_ai.configuration_status()
     provider["enabled"] = request.app.state.civic_allow_ai and provider["configured"]
+    budget = civic_documents.budget_snapshot(database)
+    if budget["available"]:
+        budget["display"] = {
+            key: f"${Decimal(budget[key]):,.2f}"
+            for key in (
+                "total_general_exclusive",
+                "reserve",
+                "total_general_including_reserve",
+                "municipal_taxation",
+            )
+        }
     return {
         **source_status,
         "provider": provider,
         "vectors": civic_vectors.index_status(database, provider["embedding_model"]),
+        "budget": budget,
+        "refresh": civic_refresh.refresh_status(database),
         "coverage": (
-            "A bounded snapshot of recent council records, not a complete calendar."
+            "Selected official council records and reviewed introduced-budget "
+            "extracts, when imported. This is not a complete calendar or an "
+            "adopted-budget record."
         ),
     }
 
@@ -163,8 +189,19 @@ def _answer(request, question):
                     "model": None,
                 }
             chunks = _current_chunks(database, chunks)
+            gap = civic_budget_policy.guard_request(question.question, chunks)
+            if gap is not None:
+                return {
+                    **gap,
+                    "mode": "insufficient_evidence",
+                    "retrieval": method,
+                    "sources": [],
+                    "model": None,
+                    "status_guard": "budget_adoption",
+                }
             result = civic_ai.generate_answer(question.question, chunks)
             chunks = _current_chunks(database, chunks)
+            result = civic_budget_policy.guard_answer(question.question, result, chunks)
         except (civic_ai.ModelNotConfigured, civic_ai.ModelServiceError) as error:
             raise HTTPException(503, str(error)) from None
         except civic_vectors.VectorIndexUnavailable:

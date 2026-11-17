@@ -308,6 +308,21 @@ def list_chunks(path):
         ]
 
 
+def get_source(path, source_id):
+    """Read one current public source without depending on catalog pagination."""
+    if not isinstance(source_id, str) or not Path(path).exists():
+        return None
+    with _connection(path) as connection:
+        row = connection.execute(
+            "SELECT * FROM civic_sources WHERE source_id = ?", (source_id,)
+        ).fetchone()
+    if row is None:
+        return None
+    source = dict(row)
+    source["metadata"] = json.loads(source["metadata"])
+    return source
+
+
 def get_chunks(path, identifiers):
     """Resolve only current IDs, so deleted versions cannot enter answer context."""
     identifiers = list(dict.fromkeys(identifiers))[:100]
