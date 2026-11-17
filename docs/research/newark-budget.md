@@ -1,7 +1,8 @@
 # Newark 2026 introduced budget review
 
-November 16, 2026, Eastern. Full local checks passed; deployment, timer activation
-and the hosted result receipt are in progress.
+November 16, 2026, Eastern. Deployment, timer activation, full local checks and
+bounded hosted checks are recorded in the [result receipt](newark-budget-check.json).
+The new private backup and separate temporary restore also passed.
 
 ## Source and selected coverage
 
@@ -72,24 +73,40 @@ nonblocking import lock used by nightly and admin imports.
 
 Twenty-one isolated adapter/CLI tests passed with Black/Pylint. Importing the
 actual reviewed PDF into a temporary database inserted two sources/two chunks;
-reimport reported unchanged two with stable IDs/versions. The local UI preview
-showed nine sources/ten chunks and eight existing vectors before any manual new
-embedding step. Source search exposed the budget passage, and the 390px layout
-had no page overflow. These are AI checks, not new paid-model evaluation results.
+reimport reported unchanged two with stable IDs/versions. The initial production
+import added those two documents incrementally, preserving the original sources,
+eight chunks and accounts, and reached nine sources/ten chunks. Source search
+exposed the budget passage, and the 390px local layout had no page overflow.
 
 On November 16, direct automatic PDF requests from both the Mac and server
 returned **HTTP 403 with normal TLS verification**. Safari supplied the reviewed
 copy for explicit local import. A 403 is a failed refresh: it neither advances
 that source's successful verification date nor proves the automatic path works.
 
-## Prepared nightly refresh
+## Enabled nightly refresh and actual first result
 
-The [prepared job](../../deploy/civic/refresh/README.md) checks the fixed council
+The [job](../../deploy/civic/refresh/README.md) checks the fixed council
 feed with limit five and this fixed PDF URL at **03:15 America/New_York**, with
-up to five minutes of jitter and one active job. It makes no model or embedding
-calls. Keyword data can update while semantic indexing awaits an explicit manual
-step. A changed PDF hash reports review required; a failed source retains its
-last verified records while an independently successful council fetch can load.
+up to five minutes of jitter and one active job. The timer was installed,
+enabled and active; its next observed time was **November 17, 08:19:13 UTC**.
+It makes no model or embedding calls. A changed PDF hash requires review; a failed
+source retains its last verified records while a successful council fetch can load.
+
+The first actual service attempt completed at **November 16, 22:13:53 Eastern**
+with status **partial**, not an all-source success. Council returned five
+documents: one inserted and four unchanged. Budget fetching failed; the separate
+normal-TLS diagnostic returned HTTP 403. The job preserved the budget facts and
+ended with ten sources/eleven chunks. Its nonzero service exit exposes the partial
+result instead of hiding it as a successful refresh.
+
+At job completion, eight of eleven chunks had compatible vectors and the job had
+made zero provider requests. A later **explicit embedding step indexed three
+chunks and reused eight**, producing eleven compatible 1,536-dimensional
+`text-embedding-3-small` vectors. The job receipt's earlier 8/11 count and the
+later current 11/11 count describe different moments. Future changed chunks still
+need the explicit manual embedding command.
+
+## Deployed checks and limits
 
 The full local check passed Black/Pylint, **268 unit/integration tests, 18 lesson
 contracts and three actual Chromium journeys**. Thirty-three isolated status
@@ -100,6 +117,24 @@ review found a resolution-wording bypass; the cited-budget guard and its
 regression were fixed before this full run. These are bounded checks, not proof
 that every generated claim is correct.
 
-Deployment/activation receipts are still in progress. The
-November 10 `newark-results.md` and `newark-results.json` remain immutable: this
-new corpus is not a rerun of their five-question experiment.
+Application revision `69b721007e0b6276a8f80f5fc8a81e7084ac9dbc` was deployed;
+its [Linux/Windows CI](https://github.com/Y-Just-Y/my-app-studio/actions/runs/44008090006)
+passed. The [hosted receipt](newark-budget-check.json) records seven public HTTPS
+routes returning 200 with certificate/hostname verification, anonymous import
+denied with 401 and chat without CSRF denied with 403. Existing accounts, original
+chunks and proxy configuration were preserved; no new cloud resources were created.
+
+One real public `gpt-5-mini` answer returned the introduced total of
+**$900,500,264.94 USD**, citing `newark-budget-2026-introduced-summary-v1-001`.
+The separate approved-total request was refused by the deterministic adoption
+guard with `model: null`. These are **one generated answer and one guard refusal**,
+not two generated answers or a general accuracy measurement. Actual human peer
+review remains separate.
+
+The new private backup and separate temporary restore passed database integrity
+checks. Source/chunk/version fingerprints and vector bytes matched, including
+eleven indexed 1,536-dimensional vectors. The live database was not replaced;
+the temporary restore was removed and the backup remains private.
+
+The November 10 `newark-results.md` and `newark-results.json` remain immutable:
+this new corpus is not a rerun of their five-question experiment.

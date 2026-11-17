@@ -8,7 +8,7 @@ actual evidence; pending is a valid state. Keep explanations/help in
 
 - **Current feature:** Reviewed Newark budget data and nightly selected-source ETL.
 - **Status:** APP-003 is present in merged PR #6. The authorized extension has real Newark ETL, SQLite/FTS5, sqlite-vec embeddings, hybrid retrieval and an OpenAI chatbot. Local full checks passed November 10, 2026. Hosted verification and publication are recorded separately below.
-- **Next step:** Check and deploy the authorized budget/refresh extension. Both Plan entries were verified submitted November 16; Juan's actual feedback, detailed task agreement and own group submission remain pending.
+- **Next step:** Keep source failures and embedding coverage visible, and collect Juan's actual feedback, detailed task agreement and own group submission. Both Plan entries were verified submitted November 16; the budget/refresh extension is deployed and checked below.
 - **Implementation marker:** 3 after explicit cumulative APP-003 checks passed; normal full check also passed.
 
 This repository owns application code. The original three lessons did not include
@@ -188,7 +188,14 @@ APP-003 contracts and three actual Chromium journeys passed November 16. The
 budget status checks include a false approved claim with a valid citation and
 the resolution-wording bypass found during independent AI review. Desktop and
 390px mobile review found no page overflow; source search returned the reviewed
-table passage. Hosted deployment and timer activation are still in progress.
+table passage. Application revision `69b7210` is deployed with both Linux/Windows checks passed.
+The initial two-source budget import preserved accounts and the original chunks.
+The enabled nightly job added one council record and reported a partial result
+for the blocked budget fetch. After one explicit embedding import, the live
+corpus has ten sources, eleven chunks and eleven compatible vectors. One actual
+introduced-total generation and one deterministic approved-total refusal passed;
+a separate backup/restore matched the new source/chunk versions and vector bytes.
+See [hosted extension receipt](docs/research/newark-budget-check.json).
 The original November 10 evaluation remains unchanged. See
 [budget methods and results](docs/research/newark-budget.md) for this separate
 corpus extension and its actual validation boundary.
