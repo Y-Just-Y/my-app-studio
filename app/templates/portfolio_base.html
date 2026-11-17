@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{% block description %}Derrick Parker's IT portfolio: cloud systems, RAG, Docker, CI/CD and server configuration, with project evidence.{% endblock %}">
+  <title>{% block title %}Derrick Parker · IT portfolio{% endblock %}</title>
+  <link rel="stylesheet" href="/static/portfolio.css">
+  {% if request.app.state.live_reload %}<script src="/static/live.js" defer></script>{% endif %}
+</head>
+<body class="portfolio">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header container">
+    <a class="identity" href="/portfolio" aria-label="Derrick Parker portfolio home"><span class="monogram" aria-hidden="true">DP<span></span></span><span>Derrick Parker<small>Information technology</small></span></a>
+    <nav aria-label="Main navigation"><a href="/portfolio#work">Selected work</a><a href="/portfolio#practice">Skills &amp; evidence</a><a href="/portfolio#about">About</a><a class="profile-link" href="https://github.com/Y-Just-Y" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></nav>
+  </header>
+  <main id="main" tabindex="-1">{% block content %}{% endblock %}</main>
+  <footer class="site-footer container"><div><strong>Derrick Parker</strong><span>IT student · NJIT</span></div><div><a href="https://github.com/Y-Just-Y" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a><a href="https://y-just-y.github.io/is373_ci_cd/" target="_blank" rel="noopener noreferrer">Project record <span aria-hidden="true">↗</span></a></div></footer>
+</body>
+</html>

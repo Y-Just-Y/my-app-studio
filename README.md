@@ -7,6 +7,8 @@ source-cited OpenAI answers.
 
 ## Current project
 
+- [Live professional portfolio](https://derrickparker.lwdgyasteri.com/) · [local preview](http://127.0.0.1:8000/portfolio) with `python3 studio.py run`
+- [Live LWDGY ASTERI case study](https://derrickparker.lwdgyasteri.com/portfolio/projects/asteri) · [local preview](http://127.0.0.1:8000/portfolio/projects/asteri)
 - [Live Newark chatbot](https://civic.lwdgyasteri.com/ask) · choose **AI answer with citations**
 - [Live research and methods](https://civic.lwdgyasteri.com/research)
 - [Combined portfolio and RAG research record](https://y-just-y.github.io/is373_ci_cd/)
