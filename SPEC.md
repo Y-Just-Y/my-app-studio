@@ -41,8 +41,9 @@ The ASTERI page records end-to-end ownership with AI assistance explicit.
 Preferred profile/contact links and resume/LinkedIn still need review.
 No graduation date, work history or unaided authorship is inferred. AI drafted
 the page and the summaries. The learner's November 11 browser observation and
-keep decision are recorded below; a check explanation and human peer feedback
-remain pending.
+keep decision are recorded below; their November 16 RAG check reason is recorded
+in [LEARNING.md](LEARNING.md). Human peer feedback and independent claim
+verification remain pending.
 
 **Release record:** Review branch `codex/individual-portfolio` is based on the
 checked RAG branch. [Draft PR #8](https://github.com/Y-Just-Y/my-app-studio/pull/8)
@@ -58,8 +59,9 @@ focused the skip link and activated the main content target. These are AI checks
 
 **Learner review, November 11, 2026 Eastern:** “I clicked the ASTERI case study
 and it clearly shows the work I did”. The learner chose to keep it and requested
-the Newark group Plan next. This records their own observation and decision;
-Juan's actual feedback and a learner explanation of a check remain pending.
+the Newark group Plan next. This records their own observation and decision.
+The November 16 RAG check reason is recorded in [LEARNING.md](LEARNING.md);
+Juan's actual feedback and independent claim verification remain pending.
 
 ### LWDGY ASTERI case-study draft
 
