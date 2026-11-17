@@ -4,10 +4,11 @@ from datetime import datetime
 from decimal import Decimal
 import hashlib
 import json
+from pathlib import Path
 from zoneinfo import ZoneInfo
 
 from fastapi import APIRouter, HTTPException, Query, Request
-from fastapi.responses import RedirectResponse
+from fastapi.responses import FileResponse, RedirectResponse
 from pydantic import BaseModel, ConfigDict, Field, ValidationError
 from starlette.concurrency import run_in_threadpool
 
@@ -25,6 +26,19 @@ from app import (
 from app.features.accounts import api_csrf
 
 router = APIRouter()
+
+
+@router.get("/group-plan", include_in_schema=False)
+def group_plan_page(request: Request):
+    """Serve the reviewed public team draft without requiring workspace access."""
+    public = request.app.state.settings.database.parent / "public"
+    reviewed = public / "group-plan.html"
+    if not public.is_symlink() and not reviewed.is_symlink() and reviewed.is_file():
+        return FileResponse(reviewed, media_type="text/html")
+    return FileResponse(
+        Path(__file__).resolve().parents[1] / "data" / "group-plan.html",
+        media_type="text/html",
+    )
 
 
 class Question(BaseModel):

@@ -8,7 +8,7 @@ actual evidence; pending is a valid state. Keep explanations/help in
 
 - **Current feature:** Reviewed Newark budget data and nightly selected-source ETL.
 - **Status:** APP-003 is present in merged PR #6. The authorized extension has real Newark ETL, SQLite/FTS5, sqlite-vec embeddings, hybrid retrieval and an OpenAI chatbot. Local full checks passed November 10, 2026. Hosted verification and publication are recorded separately below.
-- **Next step:** Keep source failures and embedding coverage visible, and collect Juan's actual feedback, detailed task agreement and own group submission. Both Plan entries were verified submitted November 16; the budget/refresh extension is deployed and checked below.
+- **Next step:** Keep source failures and embedding coverage visible, apply Juan's November 17 portfolio feedback, and record the detailed task agreement and own group submission. Both Plan entries were verified submitted November 16; the budget/refresh extension is deployed and checked below.
 - **Implementation marker:** 3 after explicit cumulative APP-003 checks passed; normal full check also passed.
 
 This repository owns application code. The original three lessons did not include
@@ -42,8 +42,8 @@ Preferred profile/contact links and resume/LinkedIn still need review.
 No graduation date, work history or unaided authorship is inferred. AI drafted
 the page and the summaries. The learner's November 11 browser observation and
 keep decision are recorded below; their November 16 RAG check reason is recorded
-in [LEARNING.md](LEARNING.md). Human peer feedback and independent claim
-verification remain pending.
+in [LEARNING.md](LEARNING.md). Juan's November 17 portfolio feedback is recorded
+below; independent claim verification and RAG peer checks remain pending.
 
 **Release record:** Review branch `codex/individual-portfolio` is based on the
 checked RAG branch. [Draft PR #8](https://github.com/Y-Just-Y/my-app-studio/pull/8)
@@ -61,7 +61,32 @@ focused the skip link and activated the main content target. These are AI checks
 and it clearly shows the work I did”. The learner chose to keep it and requested
 the Newark group Plan next. This records their own observation and decision.
 The November 16 RAG check reason is recorded in [LEARNING.md](LEARNING.md);
-Juan's actual feedback and independent claim verification remain pending.
+Juan's later portfolio feedback is recorded below. Independent claim verification
+remains pending.
+
+### Portfolio peer feedback · November 17, 2026 Eastern
+
+**Third-party feedback (paraphrase):** Derrick supplied Juan Baez's portfolio
+feedback. Juan identified the cloud/platform and infrastructure direction through
+Linux, networking, Docker, CI/CD, deployment and AI/data work. He highlighted
+ASTERI's Docker, server, reverse-proxy and deployment/maintenance work as the
+clearest example, and asked for shorter, plainer project descriptions so visitors
+can understand the projects quickly.
+
+**Change:** Simplified the featured project descriptions/evidence notes, two
+supporting descriptions, and ASTERI's opening and problem paragraphs. The approved
+introduction, ownership and AI-assistance disclosures, evidence links, historical
+dates, release policy and technical limits remain unchanged.
+
+**Retest (AI checks):** The normal full repository check passed November 17
+with `PYTHONTZPATH=`: Black, Pylint, 270 unit/integration tests, 18 APP-003
+contracts and three real Chromium journeys. The source fingerprint stayed stable.
+AI visual review checked the portfolio and ASTERI opening at desktop and 390px
+width, and the complete hosted group draft at both widths with six readable
+tables and its external stylesheet. No horizontal page overflow was observed.
+Juan's feedback describes the earlier portfolio; a peer response to the revised
+wording has not been recorded. The group draft route serves a fixed reviewed
+public snapshot, separate from the RAG corpus and private account files.
 
 ### LWDGY ASTERI case-study draft
 
