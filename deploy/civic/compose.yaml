@@ -12,7 +12,7 @@ x-app-build: &app-build
         && install -d -o 10001 -g 10001 -m 0700 /app/runtime
     COPY app/ app/
     COPY studio_tools/ studio_tools/
-    COPY civic_import.py civic_embed.py ./
+    COPY civic_import.py civic_embed.py civic_budget_import.py civic_refresh.py ./
     USER 10001:10001
     CMD ["python", "-m", "uvicorn", "app.main:create_app", "--factory", "--host", "0.0.0.0", "--port", "8000", "--no-access-log", "--proxy-headers", "--forwarded-allow-ips", "*"]
 
@@ -51,6 +51,7 @@ services:
       OPENAI_CHAT_MODEL: ${OPENAI_CHAT_MODEL:-gpt-5-mini}
       OPENAI_EMBEDDING_MODEL: ${OPENAI_EMBEDDING_MODEL:-text-embedding-3-small}
       CIVIC_AI_ENABLED: ${CIVIC_AI_ENABLED:-0}
+      CIVIC_REFRESH_SCHEDULE: ${CIVIC_REFRESH_SCHEDULE:-disabled}
       STUDIO_LIVE_RELOAD: "0"
     expose: ["8000"]
     volumes:

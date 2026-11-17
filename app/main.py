@@ -96,9 +96,7 @@ def create_app(settings=None):
         return application.state.templates.TemplateResponse(
             request=request,
             name="home.html",
-            context={
-                "civic": civic_store.snapshot(application.state.civic_database, limit=3)
-            },
+            context={"civic": civic.status(request)},
         )
 
     @application.get("/docs", include_in_schema=False)

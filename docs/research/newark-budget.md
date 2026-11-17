@@ -1,0 +1,105 @@
+# Newark 2026 introduced budget review
+
+November 16, 2026, Eastern. Full local checks passed; deployment, timer activation
+and the hosted result receipt are in progress.
+
+## Source and selected coverage
+
+The user supplied the official [City of Newark introduced legal-line budget](https://www.newarknj.gov/DocumentCenter/View/3062/2026-City-of-Newark-Introduced--Legal-Line-Budget-).
+It is a 105-page image-only scan: ordinary PDF text extraction returned no
+selectable text. AI used local Apple Vision OCR and visually inspected
+Poppler-rendered pages **1, 3, 4 and 6**, including the year columns and row labels.
+The [reviewed public extract](../../app/data/newark_2026_introduced_budget.json)
+retains selected OCR bounding boxes/confidence, raw amount strings and review
+provenance. Confidence is extraction metadata; it does not establish correctness
+or human peer approval. The other pages are not indexed.
+
+Reviewed PDF SHA-256:
+`dd9387451debf0b36c79d84e8d37fcc85466e823d4627bd5f0b04e82ab304474`
+
+## Repeat the bounded local extraction
+
+The optional [macOS Vision helper](review_budget_ocr.swift) reproduces OCR candidates
+with page numbers, bounding boxes and confidence. It uses local system frameworks;
+it is not installed in the server image or run by the nightly job. The reviewed
+PDF is retained privately under ignored `runtime/source-documents/` on the Mac.
+
+```sh
+swift docs/research/review_budget_ocr.swift runtime/source-documents/newark-2026-introduced-budget.pdf /tmp/newark-budget-ocr 1 6
+```
+
+Compare the OCR candidates with the rendered table columns and row labels before
+changing the reviewed extract. OCR alone cannot establish adoption or final approval.
+
+## Figures and status
+
+These are **2026 introduced-budget figures in USD**, from
+[PDF page 1](https://www.newarknj.gov/DocumentCenter/View/3062/2026-City-of-Newark-Introduced--Legal-Line-Budget-#page=1),
+an unnumbered computation sheet:
+
+| Label | USD |
+| --- | ---: |
+| Total General Appropriations excluding Reserve for Uncollected Taxes | 880,149,264.94 |
+| Reserve for Uncollected Taxes | 20,351,000.00 |
+| Total General Appropriations including that reserve | 900,500,264.94 |
+| Amount to Be Raised by Taxation in Municipal Budget | 288,267,071.55 |
+
+[PDF page 6, printed Sheet 3](https://www.newarknj.gov/DocumentCenter/View/3062/2026-City-of-Newark-Introduced--Legal-Line-Budget-#page=6),
+corroborates the total and reserve under **YEAR 2026**. Page 1 also lists Total
+Anticipated Revenues of $612,233,193.39. Its separate $516,705,236.55 taxation
+total includes other taxes; it is not the municipal-budget taxation amount above.
+
+**Introduction date is unknown; adoption is not verified.** PDF page 3, printed
+Sheet 1, has an unfilled Certification of Adopted Budget. Page 4, Sheet 2, has
+blank resolution/approval/hearing dates and recorded-vote fields. The preprinted
+approved-budget heading on Sheet 3 is not adoption evidence. The official source
+filename identifies this as an introduced budget; this review does not establish
+a later adopted total or an exhaustive search for adoption records.
+
+## Import and observed checks
+
+[The adapter](../../app/civic_documents.py) emits two single-chunk documents:
+`newark-budget-2026-introduced-summary` and
+`newark-budget-2026-introduced-status`. Each carries the introduced status, fiscal
+year, relevant labels/units, page references and reviewed PDF hash. Table rows
+retain their column context rather than splitting amounts away from labels.
+
+[The explicit CLI](../../civic_budget_import.py) accepts a local PDF or fetches
+only the fixed official URL. It bounds response type, bytes and time, disables
+redirects, and verifies the full PDF hash. Unknown bytes require review; they do
+not trigger automatic OCR or replace reviewed facts. The budget CLI shares the
+nonblocking import lock used by nightly and admin imports.
+
+Twenty-one isolated adapter/CLI tests passed with Black/Pylint. Importing the
+actual reviewed PDF into a temporary database inserted two sources/two chunks;
+reimport reported unchanged two with stable IDs/versions. The local UI preview
+showed nine sources/ten chunks and eight existing vectors before any manual new
+embedding step. Source search exposed the budget passage, and the 390px layout
+had no page overflow. These are AI checks, not new paid-model evaluation results.
+
+On November 16, direct automatic PDF requests from both the Mac and server
+returned **HTTP 403 with normal TLS verification**. Safari supplied the reviewed
+copy for explicit local import. A 403 is a failed refresh: it neither advances
+that source's successful verification date nor proves the automatic path works.
+
+## Prepared nightly refresh
+
+The [prepared job](../../deploy/civic/refresh/README.md) checks the fixed council
+feed with limit five and this fixed PDF URL at **03:15 America/New_York**, with
+up to five minutes of jitter and one active job. It makes no model or embedding
+calls. Keyword data can update while semantic indexing awaits an explicit manual
+step. A changed PDF hash reports review required; a failed source retains its
+last verified records while an independently successful council fetch can load.
+
+The full local check passed Black/Pylint, **268 unit/integration tests, 18 lesson
+contracts and three actual Chromium journeys**. Thirty-three isolated status
+policy cases and four HTTP/UI cases cover introduced/adopted fiscal years,
+negations, cited-source status, an unsupported approved-total request and a
+deliberately false mocked answer carrying a valid citation. An independent AI
+review found a resolution-wording bypass; the cited-budget guard and its
+regression were fixed before this full run. These are bounded checks, not proof
+that every generated claim is correct.
+
+Deployment/activation receipts are still in progress. The
+November 10 `newark-results.md` and `newark-results.json` remain immutable: this
+new corpus is not a rerun of their five-question experiment.

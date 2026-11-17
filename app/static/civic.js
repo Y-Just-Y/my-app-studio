@@ -74,7 +74,12 @@ if (root) {
       const result = await response.json();
       if (!response.ok) throw new Error(typeof result.detail === "string" ? result.detail : "That request could not be completed.");
       const item = message("assistant", result.answer);
-      paragraph(item, result.mode === "ai" ? "AI-generated · " + result.model + " · " + result.retrieval + " retrieval" : "Source search · no AI-generated answer", "message-mode");
+      const modeLabel = result.insufficient_evidence
+        ? "Insufficient evidence · no supported answer"
+        : result.mode === "ai"
+          ? "AI-generated · " + result.model + " · " + result.retrieval + " retrieval"
+          : "Source search · no AI-generated answer";
+      paragraph(item, modeLabel, "message-mode");
       evidence(item, result.sources || []);
       question.value = "";
       status.textContent = "Evidence checked against the saved snapshot.";
