@@ -6,9 +6,9 @@ actual evidence; pending is a valid state. Keep explanations/help in
 
 ## Current stage
 
-- **Current feature:** Reviewed Newark budget data and nightly selected-source ETL.
+- **Current feature:** Portfolio peer feedback and shared group Plan access.
 - **Status:** APP-003 is present in merged PR #6. The authorized extension has real Newark ETL, SQLite/FTS5, sqlite-vec embeddings, hybrid retrieval and an OpenAI chatbot. Local full checks passed November 10, 2026. Hosted verification and publication are recorded separately below.
-- **Next step:** Keep source failures and embedding coverage visible, apply Juan's November 17 portfolio feedback, and record the detailed task agreement and own group submission. Both Plan entries were verified submitted November 16; the budget/refresh extension is deployed and checked below.
+- **Next step:** Ask Juan to retest the shorter portfolio descriptions and confirm the group's detailed task agreement and his own submission. Keep source failures and embedding coverage visible. Both Plan entries were updated November 17; their original on-time November 16 submissions are preserved.
 - **Implementation marker:** 3 after explicit cumulative APP-003 checks passed; normal full check also passed.
 
 This repository owns application code. The original three lessons did not include
@@ -87,6 +87,25 @@ tables and its external stylesheet. No horizontal page overflow was observed.
 Juan's feedback describes the earlier portfolio; a peer response to the revised
 wording has not been recorded. The group draft route serves a fixed reviewed
 public snapshot, separate from the RAG corpus and private account files.
+
+**Publication and delivery:** [PR #10](https://github.com/Y-Just-Y/my-app-studio/pull/10)
+published the changes at application revision `25696c6`.
+[Linux and Windows CI](https://github.com/Y-Just-Y/my-app-studio/actions/runs/44147712710)
+passed for that exact revision. The existing Civic app was updated November 17
+at 1:28 p.m. Eastern; the portfolio, ASTERI case study,
+[public group Plan](https://civic.lwdgyasteri.com/group-plan) and stylesheet returned
+HTTPS 200. The app is healthy. A fresh private backup passed integrity checks;
+all three live databases retained their table counts and content fingerprints
+after the app-only restart. Proxy configuration/start time and the enabled nightly
+refresh timer stayed unchanged. No paid model calls were needed.
+
+Safari verified both requested updated Canvas attempts on November 17: individual
+at **1:29 p.m. Eastern** and group at **1:30 p.m. Eastern**, each with Additional
+comment exactly **Updated submission**. Canvas labels these later attempts late.
+The original November 16 **9:43 p.m. Eastern** on-time submissions remain the
+earlier attempts; no grade or late-penalty outcome is inferred. Juan's repository
+WRITE access is active. His own group submission, detailed task agreement, group
+research review and revised-copy retest remain separate pending work.
 
 ### LWDGY ASTERI case-study draft
 
