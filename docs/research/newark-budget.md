@@ -92,7 +92,8 @@ enabled and active; its next observed time was **November 17, 08:19:13 UTC**.
 It makes no model or embedding calls. A changed PDF hash requires review; a failed
 source retains its last verified records while a successful council fetch can load.
 
-The first actual service attempt completed at **November 16, 22:13:53 Eastern**
+The first service attempt was manually started to verify the configured nightly
+job; no calendar-triggered execution has yet been observed. It completed at **November 16, 22:13:53 Eastern**
 with status **partial**, not an all-source success. Council returned five
 documents: one inserted and four unchanged. Budget fetching failed; the separate
 normal-TLS diagnostic returned HTTP 403. The job preserved the budget facts and
@@ -127,7 +128,8 @@ chunks and proxy configuration were preserved; no new cloud resources were creat
 One real public `gpt-5-mini` answer returned the introduced total of
 **$900,500,264.94 USD**, citing `newark-budget-2026-introduced-summary-v1-001`.
 The separate approved-total request was refused by the deterministic adoption
-guard with `model: null`. These are **one generated answer and one guard refusal**,
+guard with `model: null`. Hybrid retrieval still embedded that question; its
+generation request was skipped. These are **one generated answer and one guard refusal**,
 not two generated answers or a general accuracy measurement. Actual human peer
 review remains separate.
 

@@ -71,49 +71,6 @@
       "compatible": true
     }
   },
-  "first_scheduled_job": {
-    "schema_version": 1,
-    "status": "partial",
-    "message": "Some sources could not be checked. Their saved records were kept.",
-    "started_at": "2026-11-17T03:13:47.790435+00:00",
-    "completed_at": "2026-11-17T03:13:53.037000+00:00",
-    "last_success_at": null,
-    "sources": {
-      "council": {
-        "url": "https://webapi.legistar.com/v1/newark",
-        "status": "ok",
-        "last_success_at": "2026-11-17T03:13:53.033827+00:00",
-        "documents": 5
-      },
-      "budget_2026_introduced": {
-        "url": "https://www.newarknj.gov/DocumentCenter/View/3062/2026-City-of-Newark-Introduced--Legal-Line-Budget-",
-        "status": "error",
-        "last_success_at": null,
-        "documents": 0
-      }
-    },
-    "load": {
-      "inserted": 1,
-      "updated": 0,
-      "unchanged": 4
-    },
-    "corpus": {
-      "sources": 10,
-      "chunks": 11
-    },
-    "semantic_index": {
-      "indexed_chunks": 8,
-      "total_chunks": 11,
-      "complete": false,
-      "mode": "manual",
-      "requests": 0
-    },
-    "schedule": {
-      "configured": true,
-      "time": "03:15",
-      "timezone": "America/New_York"
-    }
-  },
   "nightly_timer": {
     "enabled": true,
     "active": true,
@@ -254,5 +211,50 @@
     "pdf_page_citation": 1,
     "paid_provider_requests": 0
   },
-  "documentation_updated_at": "2026-11-17T03:22:16.585391+00:00"
+  "documentation_updated_at": "2026-11-17T03:22:16.585391+00:00",
+  "first_service_verification_run": {
+    "schema_version": 1,
+    "status": "partial",
+    "message": "Some sources could not be checked. Their saved records were kept.",
+    "started_at": "2026-11-17T03:13:47.790435+00:00",
+    "completed_at": "2026-11-17T03:13:53.037000+00:00",
+    "last_success_at": null,
+    "sources": {
+      "council": {
+        "url": "https://webapi.legistar.com/v1/newark",
+        "status": "ok",
+        "last_success_at": "2026-11-17T03:13:53.033827+00:00",
+        "documents": 5
+      },
+      "budget_2026_introduced": {
+        "url": "https://www.newarknj.gov/DocumentCenter/View/3062/2026-City-of-Newark-Introduced--Legal-Line-Budget-",
+        "status": "error",
+        "last_success_at": null,
+        "documents": 0
+      }
+    },
+    "load": {
+      "inserted": 1,
+      "updated": 0,
+      "unchanged": 4
+    },
+    "corpus": {
+      "sources": 10,
+      "chunks": 11
+    },
+    "semantic_index": {
+      "indexed_chunks": 8,
+      "total_chunks": 11,
+      "complete": false,
+      "mode": "manual",
+      "requests": 0
+    },
+    "schedule": {
+      "configured": true,
+      "time": "03:15",
+      "timezone": "America/New_York"
+    },
+    "trigger": "Manually started via systemctl to verify the configured nightly service; no calendar-triggered run has yet been observed."
+  },
+  "provider_usage_note": "The approved-total refusal skipped generation; hybrid retrieval still made a query-embedding request. Nightly ETL made no provider requests."
 }
